@@ -5,11 +5,22 @@ import {BuildOptions} from "./types/config";
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const {isDev} = options
 
-    const typeScriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
+    const assetsLoader = {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
     }
+
+    const svgLoader = {
+        test: /\.svg$/i,
+        use: ['@svgr/webpack'],
+    }
+
+    const
+        typeScriptLoader = {
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
+        }
 
     const sassLoader = {
         test: /\.s[ac]ss$/i,
@@ -31,6 +42,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     }
 
     return [
+        assetsLoader,
+        svgLoader,
         typeScriptLoader,
         sassLoader
     ]

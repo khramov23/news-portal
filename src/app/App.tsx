@@ -4,15 +4,18 @@ import './styles/index.scss'
 import {cls} from "shared/lib/classNames";
 import {AppRouter} from "app/providers/AppRouter";
 import {Navbar} from "widgets/Navbar";
+import {Sidebar} from "widgets/Sidebar";
 
 const App = () => {
-    const {theme, toggleTheme} = useTheme()
+    const {theme} = useTheme()
 
     return (
         <div className={cls('app', theme)}>
-            <Navbar />
-            <button onClick={toggleTheme}>Toggle</button>
-            <AppRouter />
+            <Navbar/>
+            <div className='center'>
+                <Sidebar/>
+                <AppRouter />
+            </div>
         </div>
     );
 };

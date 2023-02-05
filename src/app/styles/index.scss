@@ -12,3 +12,12 @@
   min-height: 100vh;
   transition: all 0.3s;
 }
+
+.center {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+}

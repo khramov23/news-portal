@@ -12,4 +12,4 @@ export const cls = (...args: Array<string | Mods>): string =>
         } else {
             return ''
         }
-    }).join(' ')
+    }).filter(cn => cn !== '').join(' ')

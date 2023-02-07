@@ -2,7 +2,7 @@ type Mods = Record<string, string | boolean>
 
 export const cls = (...args: Array<string | Mods>): string =>
     args.map(arg => {
-        if (typeof arg === "string") {
+        if (typeof arg === 'string') {
             return arg
         } else if (typeof arg === 'object') {
             return Object.entries(arg)
@@ -13,4 +13,3 @@ export const cls = (...args: Array<string | Mods>): string =>
             return ''
         }
     }).join(' ')
-

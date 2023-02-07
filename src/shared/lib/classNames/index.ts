@@ -1,1 +1,1 @@
-export {cls} from "./classNames";
+export { cls } from './classNames'

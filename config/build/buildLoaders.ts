@@ -1,25 +1,36 @@
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./types/config";
+import type webpack from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { type BuildOptions } from './types/config'
 
-export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-    const {isDev} = options
+export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
+    const { isDev } = options
+
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env']
+            }
+        }
+    }
 
     const assetsLoader = {
         test: /\.(png|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: 'asset/resource'
     }
 
     const svgLoader = {
         test: /\.svg$/i,
-        use: ['@svgr/webpack'],
+        use: ['@svgr/webpack']
     }
 
     const
         typeScriptLoader = {
             test: /\.tsx?$/,
             use: 'ts-loader',
-            exclude: /node_modules/,
+            exclude: /node_modules/
         }
 
     const sassLoader = {
@@ -34,16 +45,17 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
                         localIdentName: isDev
                             ? '[path][name]__[local]--[hash:base64:8]'
                             : '[hash:base64:8]'
-                    },
+                    }
                 }
             },
-            "sass-loader",
-        ],
+            'sass-loader'
+        ]
     }
 
     return [
         assetsLoader,
         svgLoader,
+        babelLoader,
         typeScriptLoader,
         sassLoader
     ]

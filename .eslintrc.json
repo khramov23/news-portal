@@ -6,7 +6,8 @@
     "extends": [
         "plugin:react/recommended",
         "standard-with-typescript",
-        "plugin:react/jsx-runtime"
+        "plugin:react/jsx-runtime",
+        "plugin:i18next/recommended"
     ],
     "overrides": [
     ],
@@ -16,7 +17,8 @@
         "project": ["./tsconfig.json"]
     },
     "plugins": [
-        "react"
+        "react",
+        "i18next"
     ],
     "rules": {
         "@typescript-eslint/prefer-nullish-coalescing": "off",
@@ -26,6 +28,9 @@
         "@typescript-eslint/indent": ["error", 4],
         "@typescript-eslint/no-unused-vars": "warn",
         "@typescript-eslint/naming-convention": "warn",
-        "@typescript-eslint/no-floating-promises": "warn"
+        "@typescript-eslint/no-floating-promises": "warn",
+        "i18next/no-literal-string": ["error", {
+            "markupOnly": true
+        }]
     }
 }

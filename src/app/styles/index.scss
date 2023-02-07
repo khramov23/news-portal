@@ -1,23 +1,21 @@
 @import "reset";
-@import "shared/styles/variables/global.scss";
-@import "shared/styles/themes/dark.scss";
-@import "shared/styles/themes/light.scss";
+@import "shared/styles/variables/global";
+@import "shared/styles/themes/dark";
+@import "shared/styles/themes/light";
 
 .app {
-  font: var(--font-m);
-
-  background: var(--bg-color);
-  color: var(--primary-color);
-
-  min-height: 100vh;
-  transition: all 0.3s;
+    font: var(--font-m);
+    background: var(--bg-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+    transition: all 0.3s;
 }
 
 .center {
-  display: flex;
+    display: flex;
 }
 
 .page-wrapper {
-  flex-grow: 1;
-  padding: 20px;
+    flex-grow: 1;
+    padding: 20px;
 }

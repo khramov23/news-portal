@@ -6,12 +6,12 @@ import './shared/config/i18n/i18n.config'
 import { ErrorBoundary } from 'app/ErrorBoundary'
 
 render(
-    <ErrorBoundary >
-        <BrowserRouter>
+    <BrowserRouter>
+        <ErrorBoundary>
             <ThemeProvider>
                 <App/>
             </ThemeProvider>
-        </BrowserRouter>
-    </ErrorBoundary>,
+        </ErrorBoundary>
+    </BrowserRouter>,
     document.getElementById('root')
 )

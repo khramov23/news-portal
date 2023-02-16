@@ -5,20 +5,22 @@ import { cls } from 'shared/lib/classNames'
 import { AppRouter } from 'app/providers/AppRouter'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
+import { ErrorBoundary } from 'app/ErrorBoundary'
 
 const App = () => {
     const { theme } = useTheme()
 
     return (
         <div className={cls('app', theme)}>
-            <Suspense fallback={''}>
-                <Navbar/>
-                <div className='center'>
-                    <Sidebar/>
-                    <AppRouter />
-                </div>
-            </Suspense>
-
+            <ErrorBoundary>
+                <Suspense fallback={''}>
+                    <Navbar/>
+                    <div className='center'>
+                        <Sidebar/>
+                        <AppRouter />
+                    </div>
+                </Suspense>
+            </ErrorBoundary>
         </div>
     )
 }

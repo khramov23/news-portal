@@ -1,5 +1,5 @@
 .button {
-    color: var(--inverted-primary-color);
+    color: var(--primary-color);
 }
 
 .clear {
@@ -7,4 +7,10 @@
     background: none;
     outline: none;
     padding: 0;
+}
+
+.outline {
+    border: 1px solid var(--primary-color);
+    padding: 10px 15px;
+    background: transparent;
 }

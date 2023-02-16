@@ -22,7 +22,6 @@
     }
   },
   "include": [
-    "./config/jest/setupTests.ts",
-    "src"
+    "./"
   ]
 }

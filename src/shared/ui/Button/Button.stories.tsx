@@ -5,7 +5,7 @@ import { Button, ThemeButton } from './Button'
 export default {
     title: 'shared/Button',
     args: {
-        children: Button
+        children: 'Button'
     },
     component: Button
 } as ComponentMeta<typeof Button>

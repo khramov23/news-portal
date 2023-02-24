@@ -3,12 +3,15 @@
 @import "shared/styles/themes/dark";
 @import "shared/styles/themes/light";
 
-.app {
+.app,
+.appModal {
     font: var(--font-m);
-    background: var(--bg-color);
     color: var(--primary-color);
+}
+
+.app {
+    background: var(--bg-color);
     min-height: 100vh;
-    transition: all 0.3s;
 }
 
 .center {

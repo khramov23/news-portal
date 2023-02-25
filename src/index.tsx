@@ -4,11 +4,14 @@ import { ThemeProvider } from 'app/providers/ThemeProvider'
 import { App } from 'app'
 import './shared/config/i18n/i18n.config'
 import 'app/styles/index.scss'
+import { StoreProvider } from 'app/providers/StoreProvider'
 
 render(
     <BrowserRouter>
         <ThemeProvider>
-            <App/>
+            <StoreProvider>
+                <App/>
+            </StoreProvider>
         </ThemeProvider>
     </BrowserRouter>,
     document.getElementById('root')

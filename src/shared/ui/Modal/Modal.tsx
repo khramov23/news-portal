@@ -1,4 +1,4 @@
-import { type FC, type MouseEvent, type ReactNode, useCallback, useEffect } from 'react'
+import { type FC, type MouseEvent, type ReactNode, useCallback, useEffect, useState } from 'react'
 
 import styles from './Modal.module.scss'
 import { cls } from 'shared/lib/classNames'
@@ -10,11 +10,13 @@ interface ModalProps {
     children?: ReactNode
     isOpen?: boolean
     onClose?: () => void
+    lazy?: boolean
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-    const { onClose, isOpen, className, children } = props
+    const { onClose, isOpen, className, children, lazy } = props
     const { theme } = useTheme()
+    const [isMounted, setIsMounted] = useState(false)
 
     const onContentClick = (event: MouseEvent) => {
         event.stopPropagation()
@@ -23,6 +25,14 @@ export const Modal: FC<ModalProps> = (props) => {
     const closeHandler = useCallback(() => {
         if (onClose) { onClose() }
     }, [onClose])
+
+    useEffect(() => {
+        if (isOpen) { setIsMounted(true) }
+
+        return () => {
+            setIsMounted(false)
+        }
+    }, [isOpen])
 
     useEffect(() => {
         const onKeyDown = (e: KeyboardEvent) => {
@@ -39,6 +49,10 @@ export const Modal: FC<ModalProps> = (props) => {
             window.removeEventListener('keydown', onKeyDown)
         }
     }, [closeHandler, isOpen])
+
+    if (lazy && !isMounted) {
+        return null
+    }
 
     return (
         <Portal>

@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { type FC, memo } from 'react'
 
 import styles from './PageError.module.scss'
 import { cls } from 'shared/lib/classNames'
@@ -9,7 +9,7 @@ interface PageErrorProps {
     className?: string
 }
 
-export const PageError: FC<PageErrorProps> = ({ className }) => {
+export const PageError: FC<PageErrorProps> = memo(({ className }) => {
     const { t } = useTranslation()
 
     const reload = () => {
@@ -22,4 +22,4 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
             <Button onClick={reload}>{t('Обновить страницу')}</Button>
         </div>
     )
-}
+})

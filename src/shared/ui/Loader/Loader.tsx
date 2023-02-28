@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { type FC, memo } from 'react'
 
 import styles from './Loader.module.scss'
 
@@ -6,7 +6,7 @@ interface LoaderProps {
     className?: string
 }
 
-export const Loader: FC<LoaderProps> = ({ className }) => {
+export const Loader: FC<LoaderProps> = memo(({ className }) => {
     return (
         <div className={className}>
             <div className={styles.loader}>
@@ -25,4 +25,4 @@ export const Loader: FC<LoaderProps> = ({ className }) => {
             </div>
         </div>
     )
-}
+})

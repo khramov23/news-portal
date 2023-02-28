@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { type FC, memo } from 'react'
 
 import styles from './PageLoader.module.scss'
 import { cls } from 'shared/lib/classNames'
@@ -8,10 +8,10 @@ interface PageLoaderProps {
     className?: string
 }
 
-export const PageLoader: FC<PageLoaderProps> = ({ className }) => {
+export const PageLoader: FC<PageLoaderProps> = memo(({ className }) => {
     return (
         <div className={cls(styles.pageLoader, className)}>
             <Loader />
         </div>
     )
-}
+})

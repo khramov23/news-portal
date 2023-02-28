@@ -1,0 +1,23 @@
+.item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    fill: var(--inverted-primary-color);
+    width: 20px;
+}
+
+.collapsed {
+    span {
+        opacity: 0;
+        width: 0;
+    }
+
+    .icon {
+        width: 30px;
+        margin: 0 auto;
+    }
+}

@@ -1,6 +1,6 @@
 type Mods = Record<string, string | boolean>
 
-export const cls = (...args: Array<string | Mods>): string =>
+export const cls = (...args: Array<string | Mods | undefined>): string =>
     args.map(arg => {
         if (typeof arg === 'string') {
             return arg

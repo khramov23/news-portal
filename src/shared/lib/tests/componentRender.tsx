@@ -15,12 +15,12 @@ export function componentRender (component: ReactNode, options: componentRenderO
     const { initialPath = '/', initialState } = options
 
     render(
-        <StoreProvider initialState={initialState as StateSchema}>
-            <MemoryRouter initialEntries={[initialPath]}>
+        <MemoryRouter initialEntries={[initialPath]}>
+            <StoreProvider initialState={initialState as StateSchema}>
                 <I18nextProvider i18n={i18n}>
                     {component}
                 </I18nextProvider>
-            </MemoryRouter>
-        </StoreProvider>
+            </StoreProvider>
+        </MemoryRouter>
     )
 }

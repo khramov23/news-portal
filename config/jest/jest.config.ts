@@ -60,7 +60,8 @@ export default {
 
     // A set of global variables that need to be available in all test environments
     globals: {
-        __IS_DEV__: false
+        __IS_DEV__: false,
+        __API__: ''
     }
 
     // Indicates whether the coverage information should be collected while executing the test

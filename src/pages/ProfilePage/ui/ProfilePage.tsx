@@ -1,7 +1,6 @@
 import { type FC, useEffect } from 'react'
 
 import { cls } from 'shared/lib/classNames'
-import { useTranslation } from 'react-i18next'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
@@ -15,11 +14,10 @@ const reducers: ReducersList = {
 }
 
 const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
-    const { t } = useTranslation()
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        dispatch(fetchProfileData())
+        if (__PROJECT__ !== 'storybook') { dispatch(fetchProfileData()) }
     }, [dispatch])
 
     return (

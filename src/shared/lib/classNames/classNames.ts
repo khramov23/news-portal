@@ -1,4 +1,4 @@
-type Mods = Record<string, string | boolean>
+type Mods = Record<string, string | boolean | undefined>
 
 export const cls = (...args: Array<string | Mods | undefined>): string =>
     args.map(arg => {

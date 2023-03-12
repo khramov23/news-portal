@@ -1,6 +1,5 @@
-import { type DeepPartial } from 'redux'
-import { type StateSchema } from 'app/providers/StoreProvider'
 import { getLoginUsername } from './getLoginUsername'
+import { type StateSchema } from 'app/providers/StoreProvider'
 
 describe('getLoginUsername', () => {
     test('works with value', () => {

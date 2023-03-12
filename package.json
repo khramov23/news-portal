@@ -6,7 +6,7 @@
   "scripts": {
     "webpack": "webpack",
     "start": "webpack serve --env port=3000",
-    "start:server": "node ./json-server/index.js",
+    "server:start": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",

@@ -15,7 +15,8 @@ interface TextProps {
     theme?: TextTheme
 }
 
-export const Text: FC<TextProps> = memo(({ className, text, title, theme }) => {
+export const Text: FC<TextProps> = memo((props) => {
+    const { className, text, title, theme = TextTheme.PRIMARY } = props
     return (
         <div className={cls(styles.text, styles[theme], className)}>
             {title && <p className={styles.title}>{title}</p>}

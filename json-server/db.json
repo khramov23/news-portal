@@ -26,13 +26,13 @@
     }
   ],
   "profile": {
-    "first": "Егор",
+    "firstname": "Егор",
     "lastname": "Храмов",
     "age": 21,
-    "currency": "RUB",
-    "country": "Russia",
+    "currency": "USD",
+    "country": "Kazakhstan",
     "city": "Moscow",
     "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    "avatar": "https://sun9-53.userapi.com/impg/hPOVlD1HzxKc6T3fadBD1DhIYS64a9RxnulKPw/U0451vxiGCI.jpg?size=563x556&quality=95&sign=7650dd8f969b8c967e43270755c41778&type=album"
   }
 }

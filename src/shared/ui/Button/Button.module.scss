@@ -25,6 +25,12 @@
     background: transparent;
 }
 
+.outlineError {
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+    background: transparent;
+}
+
 .background {
     background: var(--bg-color);
     color: var(--primary-color);

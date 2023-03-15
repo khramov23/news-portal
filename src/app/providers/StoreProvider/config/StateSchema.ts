@@ -3,7 +3,7 @@ import { type UserSchema } from 'entities/User'
 import { type LoginSchema } from 'features/AuthByUsername'
 import { type AnyAction, type CombinedState, type EnhancedStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
 import { type createReduxStore } from './store'
-import { type ProfileSchema } from 'entities/Profile'
+import { type ProfileSchema } from 'features/EditProfileCard'
 import { type AxiosInstance } from 'axios'
 import { type NavigateFunction } from 'react-router'
 
@@ -39,4 +39,5 @@ export interface ThunkExtra {
 export interface ThunkApi<T> {
     extra: ThunkExtra
     rejectValue: T
+    state: StateSchema
 }

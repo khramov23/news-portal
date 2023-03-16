@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect } from 'react'
+import { type FC, useCallback, useEffect, useMemo } from 'react'
 
 import styles from './EditProfileCard.module.scss'
 import { cls } from 'shared/lib/classNames'
@@ -15,6 +15,12 @@ import { getProfileReadonly } from 'features/EditProfileCard/model/selectors/get
 import { getProfileForm } from 'features/EditProfileCard/model/selectors/getProfileForm/getProfileForm'
 import { type Currency } from 'entities/Currency'
 import { type Country } from 'entities/Country'
+import {
+    getProfileValidateErrors
+} from 'features/EditProfileCard/model/selectors/getProfileValidateErrors/getProfileValidateErrors'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
+import { ValidateError } from 'features/EditProfileCard/model/types/profileSchema'
+import { useTranslation } from 'react-i18next'
 
 const reducers: ReducersList = {
     profile: profileReducer
@@ -25,11 +31,27 @@ interface EditProfileCardProps {
 }
 
 export const EditProfileCard: FC<EditProfileCardProps> = ({ className }) => {
+    const { t } = useTranslation('profile')
+
     const form = useSelector(getProfileForm)
     const isLoading = useSelector(getProfileIsLoading)
     const error = useSelector(getProfileError)
     const readonly = useSelector(getProfileReadonly)
+    const validateErrors = useSelector(getProfileValidateErrors)
     const dispatch = useAppDispatch()
+
+    const validateErrorTranslates = useMemo<Record<ValidateError, string>>(() => ({
+        [ValidateError.INCORRECT_AGE]: t('Некорректный возраст'),
+        [ValidateError.INCORRECT_AVATAR]: t('Некорректный url для аватара'),
+        [ValidateError.INCORRECT_CITY]: t('Некорректный город'),
+        [ValidateError.INCORRECT_COUNTRY]: t('Некорректная страна'),
+        [ValidateError.INCORRECT_CURRENCY]: t('Некорректная валюта'),
+        [ValidateError.INCORRECT_FIRSTNAME]: t('Некорректное имя'),
+        [ValidateError.INCORRECT_LASTNAME]: t('Некорректная фамилия'),
+        [ValidateError.INCORRECT_USERNAME]: t('Некорректный псевдоним'),
+        [ValidateError.NO_DATA]: t('Данные не указаны'),
+        [ValidateError.SERVER_ERROR]: t('Ошибка на стороне сервера')
+    }), [t])
 
     const onChangeFirstname = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ firstname: value || '' }))
@@ -71,6 +93,9 @@ export const EditProfileCard: FC<EditProfileCardProps> = ({ className }) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={cls(styles.editProfileCard, className)}>
                 <EditProfileCardHeader />
+                {validateErrors?.length && validateErrors.map(err =>
+                    <Text key={validateErrorTranslates[err]} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
+                )}
                 <ProfileCard
                     data={form}
                     isLoading={isLoading}

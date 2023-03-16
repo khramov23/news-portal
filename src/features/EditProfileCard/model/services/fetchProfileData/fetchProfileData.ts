@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import i18n from 'i18next'
 import { type ThunkApi } from 'app/providers/StoreProvider'
-import { type Profile } from '../types/profileSchema'
+import { type Profile } from '../../types/profileSchema'
 
 export const fetchProfileData = createAsyncThunk<Profile, void, ThunkApi<string>>(
     'profile/fetchProfileData',
@@ -16,7 +15,7 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkApi<string>
 
             return response.data
         } catch (e) {
-            return rejectWithValue(i18n.t('Неправильный логин или пароль'))
+            return rejectWithValue('error')
         }
     }
 )

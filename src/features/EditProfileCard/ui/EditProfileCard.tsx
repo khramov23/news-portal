@@ -7,7 +7,7 @@ import { getProfileIsLoading } from '../model/selectors/getProfileIsLoading/getP
 import { getProfileError } from '../model/selectors/getProfileError/getProfileError'
 import { ProfileCard } from 'entities/Profile'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
-import { fetchProfileData } from '../model/services/fetchProfileData'
+import { fetchProfileData } from '../model/services/fetchProfileData/fetchProfileData'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { profileActions, profileReducer } from '../model/slice/profileSlice'
 import { EditProfileCardHeader } from './EditProfileCardHeader/EditProfileCardHeader'

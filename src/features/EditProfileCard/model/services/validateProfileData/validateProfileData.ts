@@ -1,5 +1,5 @@
-import { type Profile, ValidateError } from '../../model/types/profileSchema'
-import { urlRegexp } from '../../const/regexp'
+import { type Profile, ValidateError } from '../../../model/types/profileSchema'
+import { urlRegexp } from '../../../const/regexp'
 import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
 

@@ -8,8 +8,8 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
-import { profileActions } from 'features/EditProfileCard'
-import { saveProfileData } from 'features/EditProfileCard/model/services/saveProfileData'
+import { profileActions } from '../../model/slice/profileSlice'
+import { saveProfileData } from '../../model/services/saveProfileData/saveProfileData'
 
 interface EditProfileCardHeaderProps {
     className?: string
@@ -29,7 +29,7 @@ export const EditProfileCardHeader: FC<EditProfileCardHeaderProps> = ({ classNam
     }, [dispatch])
 
     const onProfileSave = useCallback(() => {
-        dispatch(saveProfileData())
+        if (__PROJECT__ !== 'storybook') { dispatch(saveProfileData()) }
     }, [dispatch])
 
     return (

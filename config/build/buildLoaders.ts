@@ -12,7 +12,8 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
         use: {
             loader: 'babel-loader',
             options: {
-                presets: ['@babel/preset-env']
+                presets: ['@babel/preset-env'],
+                plugins: [isDev && 'react-refresh/babel'].filter(Boolean)
             }
         }
     }

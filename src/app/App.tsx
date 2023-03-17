@@ -5,12 +5,14 @@ import { Sidebar } from 'widgets/Sidebar'
 import { ErrorBoundary } from 'app/ErrorBoundary'
 import { cls } from 'shared/lib/classNames'
 import { useTheme } from 'shared/lib/theme/useTheme'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { userActions } from 'entities/User'
+import { getRouterMounted } from 'entities/User/model/selectors/getRouterMounted/getRouterMounted'
 
 const App = () => {
     const { theme } = useTheme()
     const dispatch = useDispatch()
+    const routerMounted = useSelector(getRouterMounted)
 
     useEffect(() => {
         dispatch(userActions.initAuthData())
@@ -23,7 +25,7 @@ const App = () => {
                     <Navbar/>
                     <div className='center'>
                         <Sidebar/>
-                        <AppRouter/>
+                        {routerMounted && <AppRouter/>}
                     </div>
                 </Suspense>
             </ErrorBoundary>

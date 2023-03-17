@@ -4,7 +4,6 @@ import { EditProfileCard } from './EditProfileCard'
 import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator'
 import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
-import Avatar from 'shared/assets/tests/avatar.jpg'
 import { type Profile } from 'features/EditProfileCard'
 import { ValidateError } from 'features/EditProfileCard/model/types/profileSchema'
 
@@ -23,7 +22,7 @@ const data: Profile = {
     username: 'admin',
     city: 'Nizhniy Novgorod',
     country: Country.Russia,
-    avatar: Avatar
+    avatar: 'https://klike.net/uploads/posts/2018-12/1544425270_1.jpg'
 }
 
 export const Primary = Template.bind({})

@@ -4,10 +4,12 @@ import { type ReducersMapObject } from '@reduxjs/toolkit'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
 import { type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { profileReducer } from 'features/EditProfileCard'
+import { articleReducer } from 'entities/Article/model/slice/articleSlice'
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
-    profile: profileReducer
+    profile: profileReducer,
+    article: articleReducer
 }
 
 export const StoreDecorator = (

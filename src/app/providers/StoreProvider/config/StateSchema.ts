@@ -6,6 +6,7 @@ import { type createReduxStore } from './store'
 import { type ProfileSchema } from 'features/EditProfileCard'
 import { type AxiosInstance } from 'axios'
 import { type NavigateFunction } from 'react-router'
+import { type ArticleSchema } from 'entities/Article'
 
 export interface StateSchema {
     counter: CounterSchema
@@ -14,6 +15,7 @@ export interface StateSchema {
     // Асинхронные редюсеры
     loginForm?: LoginSchema
     profile?: ProfileSchema
+    article?: ArticleSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

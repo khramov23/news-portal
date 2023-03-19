@@ -7,6 +7,7 @@ import { type ProfileSchema } from 'features/EditProfileCard'
 import { type AxiosInstance } from 'axios'
 import { type NavigateFunction } from 'react-router'
 import { type ArticleSchema } from 'entities/Article'
+import { type ArticleCommentsSchema } from 'features/ArticleComments'
 
 export interface StateSchema {
     counter: CounterSchema
@@ -16,6 +17,7 @@ export interface StateSchema {
     loginForm?: LoginSchema
     profile?: ProfileSchema
     article?: ArticleSchema
+    articleComments?: ArticleCommentsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

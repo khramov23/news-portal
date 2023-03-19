@@ -5,6 +5,8 @@ import { cls } from 'shared/lib/classNames'
 import { useTranslation } from 'react-i18next'
 import { ArticleDetails } from 'entities/Article'
 import { useParams } from 'react-router'
+import { Text } from 'shared/ui/Text/Text'
+import { ArticleCommentList } from 'features/ArticleComments/ui/ArticleCommentList/ArticleCommentList'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -23,6 +25,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
     return (
         <div className={cls(styles.articleDetailsPage, className)}>
             <ArticleDetails id={id} />
+            <Text className={styles.commentTitle} title={t('Комментарии')} />
+            <ArticleCommentList articleId={id} />
         </div>
     )
 }

@@ -1,0 +1,17 @@
+.code {
+    position: relative;
+    background: var(--code-bg-color);
+    border: 1px solid var(--primary-color);
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.icon path {
+    stroke: var(--primary-color);
+}
+
+.button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}

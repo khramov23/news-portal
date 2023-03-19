@@ -1,11 +1,11 @@
-.title {
-    font: var(--font-l);
-    color: var(--primary-color);
-}
+.primary {
+    .title {
+        color: var(--primary-color);
+    }
 
-.text {
-    font: var(--font-m);
-    color: var(--secondary-color);
+    .text {
+        color: var(--primary-color);
+    }
 }
 
 .error {
@@ -28,4 +28,24 @@
 
 .center {
     text-align: center;
+}
+
+.l {
+    .title {
+        font: var(--font-l);
+    }
+
+    .text {
+        font: var(--font-m);
+    }
+}
+
+.xl {
+    .title {
+        font: var(--font-xl);
+    }
+
+    .text {
+        font: var(--font-l);
+    }
 }

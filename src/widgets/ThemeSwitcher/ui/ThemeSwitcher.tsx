@@ -4,8 +4,8 @@ import { cls } from 'shared/lib/classNames'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { useTheme } from 'shared/lib/theme/useTheme'
 import { Theme } from 'shared/lib/theme/ThemeContext'
-import DarkSwitcher from 'shared/assets/theme-dark.svg'
-import LightSwitcher from 'shared/assets/theme-light.svg'
+import DarkSwitcher from 'shared/assets/icons/theme-dark.svg'
+import LightSwitcher from 'shared/assets/icons/theme-light.svg'
 
 import styles from './ThemeSwitcher.module.scss'
 

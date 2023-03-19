@@ -1,3 +1,5 @@
 .articleCodeBlockComponent {
-    display: block;
+    background: var(--inverted-bg-color);
+    color: var(--inverted-primary-color);
+    padding: 20px;
 }

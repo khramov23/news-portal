@@ -1,9 +1,9 @@
 import { type ReactElement, type SVGProps } from 'react'
 
-import MainIcon from 'shared/assets/main.svg'
-import AboutIcon from 'shared/assets/about.svg'
-import ProfileIcon from 'shared/assets/profile.svg'
-import ArticlesIcon from 'shared/assets/articles.svg'
+import MainIcon from 'shared/assets/icons/main.svg'
+import AboutIcon from 'shared/assets/icons/about.svg'
+import ProfileIcon from 'shared/assets/icons/profile.svg'
+import ArticlesIcon from 'shared/assets/icons/articles.svg'
 import { RoutePath } from 'shared/config/routes/routes.config'
 
 export interface SidebarItemType {

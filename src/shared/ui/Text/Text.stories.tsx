@@ -53,3 +53,10 @@ Error.args = {
     theme: TextTheme.ERROR
 }
 Error.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const SizeXL = Template.bind({})
+SizeXL.args = {
+    title: 'Title',
+    text: 'Some text about something',
+    size: 'xl'
+}

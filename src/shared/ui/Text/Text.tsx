@@ -9,6 +9,7 @@ export enum TextTheme {
 }
 
 type Align = 'center' | 'left' | 'right'
+type Size = 'l' | 'xl'
 
 interface TextProps {
     className?: string
@@ -16,12 +17,13 @@ interface TextProps {
     text?: string
     theme?: TextTheme
     align?: Align
+    size?: Size
 }
 
 export const Text: FC<TextProps> = memo((props) => {
-    const { className, text, title, theme = TextTheme.PRIMARY, align = 'left' } = props
+    const { className, text, title, theme = TextTheme.PRIMARY, align = 'left', size = 'l' } = props
     return (
-        <div className={cls(styles.text, styles[theme], className, styles[align])}>
+        <div className={cls(styles.text, styles[theme], className, styles[align], styles[size])}>
             {title && <p className={styles.title}>{title}</p>}
             {text && <p className={styles.text}>{text}</p>}
         </div>

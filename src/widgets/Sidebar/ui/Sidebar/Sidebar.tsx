@@ -16,9 +16,11 @@ interface SidebarProps {
 export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     const [collapsed, setCollapsed] = useState(false)
     const sidebarItems = useSelector(getSidebarItems)
+    let a = 5
 
     const toggleCollapsed = () => {
         setCollapsed(prev => !prev)
+        a += 5
     }
 
     const itemsList = useMemo(() => {

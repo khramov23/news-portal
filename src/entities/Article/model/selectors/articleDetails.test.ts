@@ -12,6 +12,11 @@ describe('getArticleData', () => {
             img: 'someurl',
             subtitle: 'Subtitle',
             title: 'title',
+            user: {
+                id: '1',
+                username: 'khramov',
+                avatar: 'something.com '
+            },
             createdAt: '25.03.2017',
             blocks: [{
                 type: ArticleBlockType.CODE,

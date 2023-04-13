@@ -1,21 +1,18 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
-import ArticlesPage from './ArticlesPage'
+import { Card } from './Card'
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from 'shared/lib/theme/ThemeContext'
 
 export default {
-    title: 'pages/ArticlesPage',
-    component: ArticlesPage,
-    parameters: {
-        router: {
-            route: '/articles',
-            path: '/articles'
-        }
+    title: 'shared/Card',
+    component: Card,
+    args: {
+        children: 'something inside'
     }
-} as ComponentMeta<typeof ArticlesPage>
+} as ComponentMeta<typeof Card>
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />
+const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />
 
 export const Light = Template.bind({})
 

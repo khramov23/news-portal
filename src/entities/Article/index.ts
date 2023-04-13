@@ -1,5 +1,7 @@
 export type { Article } from './model/types/article'
+export { ArticleView } from './model/types/article'
 export type { ArticleSchema } from './model/types/articleSchema'
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
 export { articleReducer } from './model/slice/articleSlice'
 export { articleMock } from './model/mocks/article'
+export { ArticleList } from './ui/ArticleList/ArticleList'

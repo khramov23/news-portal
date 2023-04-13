@@ -1,0 +1,11 @@
+.SMALL {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.BIG {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

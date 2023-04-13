@@ -1,5 +1,6 @@
 import { type Article } from 'entities/Article'
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article'
+import { profileMock } from 'entities/Profile'
 
 export const articleMock: Article = {
     id: '1',
@@ -8,7 +9,16 @@ export const articleMock: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2023',
-    type: [ArticleType.IT],
+    user: {
+        id: '1',
+        username: 'khramov',
+        avatar: profileMock.avatar
+    },
+    type: [
+        ArticleType.IT,
+        ArticleType.ECONOMICS,
+        ArticleType.SCIENCE
+    ],
     blocks: [
         {
             id: '1',

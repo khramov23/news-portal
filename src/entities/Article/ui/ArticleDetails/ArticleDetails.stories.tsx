@@ -6,7 +6,7 @@ import { type ArticleSchema } from 'entities/Article'
 import { articleMock } from '../../model/mocks/article'
 
 export default {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails
 } as ComponentMeta<typeof ArticleDetails>
 

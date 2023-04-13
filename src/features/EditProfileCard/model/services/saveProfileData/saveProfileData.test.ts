@@ -5,6 +5,7 @@ import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
 
 const form: Profile = {
+    id: '1',
     age: 21,
     currency: Currency.RUB,
     lastname: 'Khramov',

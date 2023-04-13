@@ -10,6 +10,8 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 import { profileActions } from '../../model/slice/profileSlice'
 import { saveProfileData } from '../../model/services/saveProfileData/saveProfileData'
+import { getProfileData } from 'features/EditProfileCard/model/selectors/getProfileData/getProfileData'
+import { getUserAuthData } from 'entities/User'
 
 interface EditProfileCardHeaderProps {
     className?: string
@@ -19,6 +21,10 @@ export const EditProfileCardHeader: FC<EditProfileCardHeaderProps> = ({ classNam
     const { t } = useTranslation('profile')
     const readonly = useSelector(getProfileReadonly)
     const dispatch = useAppDispatch()
+
+    const profileData = useSelector(getProfileData)
+    const userData = useSelector(getUserAuthData)
+    const isMyProfile = profileData?.id === userData?.id
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false))
@@ -35,8 +41,8 @@ export const EditProfileCardHeader: FC<EditProfileCardHeaderProps> = ({ classNam
     return (
         <div className={cls(styles.editProfileCardHeader, className)}>
             <Text title={t('Профиль')} />
-            {}
-            {readonly
+
+            {isMyProfile && (readonly
                 ? (
                     <Button onClick={onEdit}>
                         {t('Редактировать')}
@@ -51,7 +57,7 @@ export const EditProfileCardHeader: FC<EditProfileCardHeaderProps> = ({ classNam
                             {t('Сохранить ')}
                         </Button>
                     </div>
-                )}
+                ))}
 
         </div>
     )

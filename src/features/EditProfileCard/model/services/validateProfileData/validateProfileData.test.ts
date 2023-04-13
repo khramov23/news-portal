@@ -6,6 +6,7 @@ import { Country } from 'entities/Country'
 describe('validateProfileData', () => {
     test('all success', async () => {
         const data: Profile = {
+            id: '1',
             age: 21,
             currency: Currency.RUB,
             lastname: 'Khramov',
@@ -20,6 +21,7 @@ describe('validateProfileData', () => {
 
     test('firstname error', () => {
         const data: Profile = {
+            id: '1',
             age: 21,
             currency: Currency.RUB,
             lastname: 'Khramov',
@@ -34,6 +36,7 @@ describe('validateProfileData', () => {
 
     test('lastname error', () => {
         const data: Profile = {
+            id: '1',
             age: 21,
             currency: Currency.RUB,
             lastname: 's',
@@ -48,6 +51,7 @@ describe('validateProfileData', () => {
 
     test('age error', async () => {
         const data: Profile = {
+            id: '1',
             age: 215,
             currency: Currency.RUB,
             lastname: 'Khramov',
@@ -62,6 +66,7 @@ describe('validateProfileData', () => {
 
     test('currency error', async () => {
         const data: Profile = {
+            id: '1',
             age: 21,
             currency: 'something' as Currency,
             lastname: 'Khramov',
@@ -76,6 +81,7 @@ describe('validateProfileData', () => {
 
     test('country error', async () => {
         const data: Profile = {
+            id: '1',
             age: 21,
             currency: Currency.RUB,
             lastname: 'Khramov',
@@ -90,6 +96,7 @@ describe('validateProfileData', () => {
 
     test('city error', async () => {
         const data: Profile = {
+            id: '1',
             age: 21,
             currency: Currency.RUB,
             lastname: 'Khramov',
@@ -104,6 +111,7 @@ describe('validateProfileData', () => {
 
     test('avatar error', async () => {
         const data: Profile = {
+            id: '1',
             age: 21,
             currency: Currency.RUB,
             lastname: 'Khramov',
@@ -118,6 +126,7 @@ describe('validateProfileData', () => {
 
     test('username error', async () => {
         const data: Profile = {
+            id: '1',
             age: 21,
             currency: Currency.RUB,
             lastname: 'Khramov',
@@ -132,6 +141,7 @@ describe('validateProfileData', () => {
 
     test('many errors', async () => {
         const data: Profile = {
+            id: '1',
             age: 2,
             currency: 'something' as Currency,
             lastname: 'K',

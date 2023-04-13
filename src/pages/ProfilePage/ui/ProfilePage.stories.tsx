@@ -24,8 +24,8 @@ export default {
     component: ProfilePage,
     parameters: {
         router: {
-            route: '/profile',
-            path: '/profile'
+            path: '/profile/:id',
+            route: '/profile/1'
         }
     },
     decorators: [

@@ -7,6 +7,7 @@ import { ArticleDetails } from 'entities/Article'
 import { useParams } from 'react-router'
 import { Text } from 'shared/ui/Text/Text'
 import { ArticleCommentList } from 'features/ArticleComments/ui/ArticleCommentList/ArticleCommentList'
+import { ArticleCommentsForm } from 'features/ArticleComments'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -26,6 +27,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
         <div className={cls(styles.articleDetailsPage, className)}>
             <ArticleDetails id={id} />
             <Text className={styles.commentTitle} title={t('Комментарии')} />
+            <ArticleCommentsForm />
             <ArticleCommentList articleId={id} />
         </div>
     )

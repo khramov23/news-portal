@@ -92,16 +92,34 @@
       "userId": "1"
     },
     {
-      "id": "2",
-      "text": "some comment 2",
+      "text": "работает?",
+      "userId": "2",
       "articleId": "1",
-      "userId": "1"
+      "id": "jZdbYQ7"
     },
     {
-      "id": "3",
-      "text": "some comment 3",
+      "text": "точно работает?",
+      "userId": "2",
       "articleId": "1",
-      "userId": "1"
+      "id": "mYc1ISF"
+    },
+    {
+      "text": "коммент от админа",
+      "userId": "1",
+      "articleId": "1",
+      "id": "J9Tjkt0"
+    },
+    {
+      "text": "something",
+      "userId": "1",
+      "articleId": "1",
+      "id": "Krrv7ek"
+    },
+    {
+      "text": "something more",
+      "userId": "2",
+      "articleId": "1",
+      "id": "lMLeFHG"
     }
   ],
   "users": [
@@ -114,21 +132,34 @@
     },
     {
       "id": "2",
+      "avatar": "https://sun9-17.userapi.com/impg/88g88JCZ_V_KoGfqpJ_Em5_V8mdEzf09II3waA/_1orgxg5Zfk.jpg?size=548x604&quality=96&sign=e5e8aaf92b430e5ca056c6343240fc2b&type=album",
       "username": "user",
       "password": "123",
-      "role": "USER",
-      "avatar": "https://sun9-14.userapi.com/impg/ZkBrdQg3h0o-DcZ9MpROJXL-_lEdI66PDDEclQ/hVP7d4jfPZo.jpg?size=811x608&quality=96&sign=aae128175cd25bbbe67bcab968ff86d3&type=album"
+      "role": "USER"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "Храмов",
-    "age": 21,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Москва",
-    "username": "admin",
-    "avatar": "https://sun9-14.userapi.com/impg/ZkBrdQg3h0o-DcZ9MpROJXL-_lEdI66PDDEclQ/hVP7d4jfPZo.jpg?size=811x608&quality=96&sign=aae128175cd25bbbe67bcab968ff86d3&type=album",
-    "firstname": "Егор"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "lastname": "Храмов",
+      "firstname": "Егор",
+      "age": 21,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Москва",
+      "username": "admin",
+      "avatar": "https://sun9-14.userapi.com/impg/ZkBrdQg3h0o-DcZ9MpROJXL-_lEdI66PDDEclQ/hVP7d4jfPZo.jpg?size=811x608&quality=96&sign=aae128175cd25bbbe67bcab968ff86d3&type=album"
+    },
+    {
+      "id": "2",
+      "lastname": "Левацкий",
+      "firstname": "Илюшка",
+      "age": 19,
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "Минск",
+      "username": "user",
+      "avatar": "https://sun9-17.userapi.com/impg/88g88JCZ_V_KoGfqpJ_Em5_V8mdEzf09II3waA/_1orgxg5Zfk.jpg?size=548x604&quality=96&sign=e5e8aaf92b430e5ca056c6343240fc2b&type=album"
+    }
+  ]
 }

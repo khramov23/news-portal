@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect, useMemo } from 'react'
+import { type FC, useCallback, useMemo } from 'react'
 
 import styles from './EditProfileCard.module.scss'
 import { cls } from 'shared/lib/classNames'
@@ -21,6 +21,7 @@ import {
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { ValidateError } from 'features/EditProfileCard/model/types/profileSchema'
 import { useTranslation } from 'react-i18next'
+import { useInitialEffect } from 'shared/hooks/useInitialEffect'
 
 const reducers: ReducersList = {
     profile: profileReducer
@@ -28,9 +29,10 @@ const reducers: ReducersList = {
 
 interface EditProfileCardProps {
     className?: string
+    profileId: string
 }
 
-export const EditProfileCard: FC<EditProfileCardProps> = ({ className }) => {
+export const EditProfileCard: FC<EditProfileCardProps> = ({ className, profileId }) => {
     const { t } = useTranslation('profile')
 
     const form = useSelector(getProfileForm)
@@ -85,9 +87,9 @@ export const EditProfileCard: FC<EditProfileCardProps> = ({ className }) => {
         dispatch(profileActions.updateProfile({ country: value }))
     }, [dispatch])
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') { dispatch(fetchProfileData()) }
-    }, [dispatch])
+    useInitialEffect(() => {
+        void dispatch(fetchProfileData(profileId))
+    })
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

@@ -1,0 +1,12 @@
+.addCommentForm {
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input {
+    flex-grow: 1;
+}

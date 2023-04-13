@@ -3,7 +3,7 @@ import { type FC, memo } from 'react'
 import styles from './ArticleCommentList.module.scss'
 import { cls } from 'shared/lib/classNames'
 import { useSelector } from 'react-redux'
-import { articleCommentsReducer, getArticleComments } from 'features/ArticleComments/model/slice/articleCommentsSlice'
+import { articleCommentsReducer, getArticleComments } from '../../model/slice/articleCommentsSlice/articleCommentsSlice'
 import { CommentList } from 'entities/Comment'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import {
@@ -12,7 +12,7 @@ import {
 } from 'features/ArticleComments/model/selectors/articleComments'
 import { useInitialEffect } from 'shared/hooks/useInitialEffect'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
-import { fetchArticleCommentsById } from 'features/ArticleComments/model/services/fetchArticleCommentsById'
+import { fetchArticleCommentsById } from '../../model/services/fetchArticleCommentsById/fetchArticleCommentsById'
 
 interface ArticleCommentListProps {
     className?: string

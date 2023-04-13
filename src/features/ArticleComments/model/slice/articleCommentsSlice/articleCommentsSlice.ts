@@ -13,7 +13,7 @@ export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
 )
 
 const articleCommentsSlice = createSlice({
-    name: 'books',
+    name: 'articleComments',
     initialState: commentsAdapter.getInitialState<ArticleCommentsSchema>({
         isLoading: false,
         error: undefined,

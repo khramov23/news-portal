@@ -6,13 +6,15 @@ import { type ReducersList } from 'shared/lib/components/DynamicModuleLoader/Dyn
 import { profileReducer } from 'features/EditProfileCard'
 import { articleReducer } from 'entities/Article/model/slice/articleSlice'
 import { articleCommentsFormReducer, articleCommentsReducer } from 'features/ArticleComments'
+import { articlesPageReducer } from 'pages/ArticlesPage'
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
     article: articleReducer,
     articleComments: articleCommentsReducer,
-    articleCommentsForm: articleCommentsFormReducer
+    articleCommentsForm: articleCommentsFormReducer,
+    articlesPage: articlesPageReducer
 }
 
 export const StoreDecorator = (

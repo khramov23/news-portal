@@ -12,6 +12,7 @@ interface ArticleListProps {
     className?: string
     articles: Article[]
     isLoading?: boolean
+    error?: string
     view?: ArticleView
 }
 
@@ -26,13 +27,24 @@ const getSkeletons = (view: ArticleView): ReactNode => <>
 </>
 
 export const ArticleList: FC<ArticleListProps> = memo((props) => {
-    const { articles, className, isLoading, view = ArticleView.BIG } = props
+    const { articles, className, isLoading, view = ArticleView.BIG, error } = props
     const { t } = useTranslation()
 
     if (isLoading) {
         return (
             <div className={cls(styles.articleList, className, styles[view])}>
                 {getSkeletons(view)}
+            </div>
+        )
+    }
+
+    if (error) {
+        return (
+            <div className={cls(styles.articleList, className, styles[view])}>
+                <Text
+                    title={t('Произошла ошибка при загрузке статей')}
+                    text={t('Попробуйте перезагрузить страницу')}
+                />
             </div>
         )
     }

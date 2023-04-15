@@ -12,5 +12,18 @@ const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />
 export const Primary = Template.bind({})
 Primary.args = {
     label: 'Выберите что-нибудь',
-    options: ['рыбов', 'макароны', '0.25 компотика']
+    options: [
+        {
+            value: 'fish',
+            content: 'рыбов'
+        },
+        {
+            value: 'paste',
+            content: 'макароны'
+        },
+        {
+            value: 'compote',
+            content: '0.25 компотика'
+        }
+    ]
 }

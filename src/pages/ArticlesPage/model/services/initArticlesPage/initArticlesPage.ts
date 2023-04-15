@@ -13,9 +13,7 @@ export const initArticlesPage = createAsyncThunk<void, void, ThunkApi<string> >(
 
         if (!initiated) {
             void dispatch(articlesPageActions.initView())
-            void dispatch(fetchArticles({
-                page: 1
-            }))
+            void dispatch(fetchArticles({}))
         }
     }
 )

@@ -1,26 +1,37 @@
-import { type ChangeEvent, type FC, memo, useMemo } from 'react'
+import { type ChangeEvent, useMemo } from 'react'
 
 import styles from './Select.module.scss'
 import { cls } from 'shared/lib/classNames'
 
-interface SelectProps {
+export interface SelectOption<T extends string> {
+    value: T
+    content: string
+}
+
+interface SelectProps<T extends string> {
     className?: string
     label?: string
-    value?: string
-    onChange?: (value: string) => void
-    options?: string[]
+    value?: T
+    onChange?: (value: T) => void
+    options?: Array<SelectOption<T>>
     readonly?: boolean
 }
 
-export const Select: FC<SelectProps> = memo((props) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
     const { className, label, options, value, onChange, readonly } = props
 
     const optionsList = useMemo(() => options?.map(opt =>
-        <option className={styles.option} key={opt}>{opt}</option>
+        <option
+            className={styles.option}
+            key={opt.value}
+            value={opt.value}
+        >
+            {opt.content}
+        </option>
     ), [options])
 
     const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(e.target.value)
+        onChange?.(e.target.value as T)
     }
 
     return (
@@ -30,9 +41,14 @@ export const Select: FC<SelectProps> = memo((props) => {
                     {label + '>'}
                 </div>
             )}
-            <select disabled={readonly} className={cls(styles.select, { [styles.readonly]: readonly })} value={value} onChange={onSelectChange}>
+            <select
+                disabled={readonly}
+                className={cls(styles.select, { [styles.readonly]: readonly })}
+                value={value}
+                onChange={onSelectChange}
+            >
                 {optionsList}
             </select>
         </div>
     )
-})
+}

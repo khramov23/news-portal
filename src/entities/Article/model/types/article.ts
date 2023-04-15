@@ -11,6 +11,12 @@ export enum ArticleView {
     SMALL = 'SMALL'
 }
 
+export enum ArticleSortType {
+    TITLE = 'title',
+    VIEWS = 'views',
+    DATE = 'date'
+}
+
 export interface ArticleBlockBase {
     id: string
     type: ArticleBlockType

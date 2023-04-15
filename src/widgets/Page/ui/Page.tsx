@@ -33,7 +33,8 @@ export const Page: FC<PageProps> = ({ className, children, onPageScrolled }) => 
 
     useLayoutEffect(() => {
         wrapperRef.current.scrollTop = scrollTop
-    })
+        // eslint-disable-next-line
+    }, [])
 
     const onScroll = useThrottle((e: UIEvent<HTMLElement>) => {
         void dispatch(scrollRestorationActions.setScrollPosition({

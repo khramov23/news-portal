@@ -15,10 +15,12 @@ import { type ArticleSchema } from 'entities/Article'
 import { type ArticleCommentsSchema } from 'features/ArticleComments'
 import { type ArticleCommentsFormSchema } from 'features/ArticleComments/model/types/articleCommentsFormSchema'
 import { type ArticlesPageSchema } from 'pages/ArticlesPage'
+import { type ScrollRestorationSchema } from 'widgets/ScrollRestoration'
 
 export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
+    scroll: ScrollRestorationSchema
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema

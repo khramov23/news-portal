@@ -4,15 +4,20 @@ import styles from './ArticlesPage.module.scss'
 import { cls } from 'shared/lib/classNames'
 import { ArticleList } from 'entities/Article'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { articlesPageActions, articlesPageReducer, getArticles } from '../model/slice/articlesPageSlice'
+import { articlesPageReducer, getArticles } from '../model/slice/articlesPageSlice'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 import { useInitialEffect } from 'shared/hooks/useInitialEffect'
-import { fetchArticles } from '../model/services/fetchArticles/fetchArticles'
 import { useSelector } from 'react-redux'
-import { getArticlesError, getArticlesIsLoading, getArticlesView } from '../model/selectors/articlesPage'
+import {
+    getArticlesError,
+    getArticlesIsLoading,
+    getArticlesPageInitiated,
+    getArticlesView
+} from '../model/selectors/articlesPage'
 import { ArticlesViewSelector } from 'features/ArticlesViewSelector'
 import { Page } from 'widgets/Page'
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage'
 
 interface ArticlesPageProps {
     className?: string
@@ -31,10 +36,7 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
     const view = useSelector(getArticlesView)
 
     useInitialEffect(() => {
-        void dispatch(articlesPageActions.initView())
-        void dispatch(fetchArticles({
-            page: 1
-        }))
+        void dispatch(initArticlesPage())
     })
 
     const onPageScrolled = useCallback(() => {
@@ -42,7 +44,7 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
     }, [dispatch])
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false} >
             <Page onPageScrolled={onPageScrolled}>
                 <ArticlesViewSelector view={view} />
                 <div className={cls(styles.articlesPage, className)}>

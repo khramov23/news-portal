@@ -1,11 +1,16 @@
 import { type CounterSchema } from 'entities/Counter'
 import { type UserSchema } from 'entities/User'
 import { type LoginSchema } from 'features/AuthByUsername'
-import { type AnyAction, type CombinedState, type EnhancedStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
+import {
+    type AnyAction,
+    type CombinedState,
+    type EnhancedStore,
+    type Reducer,
+    type ReducersMapObject
+} from '@reduxjs/toolkit'
 import { type createReduxStore } from './store'
 import { type ProfileSchema } from 'features/EditProfileCard'
 import { type AxiosInstance } from 'axios'
-import { type NavigateFunction } from 'react-router'
 import { type ArticleSchema } from 'entities/Article'
 import { type ArticleCommentsSchema } from 'features/ArticleComments'
 import { type ArticleCommentsFormSchema } from 'features/ArticleComments/model/types/articleCommentsFormSchema'
@@ -41,7 +46,6 @@ export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
 
 export interface ThunkExtra {
     api: AxiosInstance
-    navigate?: NavigateFunction
 }
 
 export interface ThunkApi<T> {

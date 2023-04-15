@@ -30,13 +30,12 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
     const { articles, className, isLoading, view = ArticleView.BIG, error } = props
     const { t } = useTranslation()
 
-    if (isLoading) {
-        return (
-            <div className={cls(styles.articleList, className, styles[view])}>
-                {getSkeletons(view)}
-            </div>
-        )
-    }
+    const renderArticle = (article: Article) =>
+        <ArticleListItem
+            key={article.id}
+            article={article}
+            view={view}
+        />
 
     if (error) {
         return (
@@ -52,18 +51,11 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
     return (
         <div className={cls(styles.articleList, className, styles[view])}>
             {articles.length > 0
-                ? (
-                    articles.map(article =>
-                        <ArticleListItem
-                            key={article.id}
-                            article={article}
-                            view={view}
-                        />
-                    )
-                )
-                : (
-                    <Text title={t('Статьи отсутствуют')} />
-                )}
+                ? articles.map(renderArticle)
+                : null
+            }
+            {isLoading && getSkeletons(view)}
+            {!isLoading && articles.length === 0 && <Text title={t('Статьи отсутствуют')} />}
         </div>
     )
 })

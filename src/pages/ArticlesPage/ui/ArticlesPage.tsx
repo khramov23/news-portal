@@ -1,4 +1,4 @@
-import { type FC, memo } from 'react'
+import { type FC, memo, useCallback } from 'react'
 
 import styles from './ArticlesPage.module.scss'
 import { cls } from 'shared/lib/classNames'
@@ -11,6 +11,8 @@ import { fetchArticles } from '../model/services/fetchArticles/fetchArticles'
 import { useSelector } from 'react-redux'
 import { getArticlesError, getArticlesIsLoading, getArticlesView } from '../model/selectors/articlesPage'
 import { ArticlesViewSelector } from 'features/ArticlesViewSelector'
+import { Page } from 'widgets/Page'
+import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 
 interface ArticlesPageProps {
     className?: string
@@ -29,21 +31,29 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
     const view = useSelector(getArticlesView)
 
     useInitialEffect(() => {
-        void dispatch(fetchArticles())
         void dispatch(articlesPageActions.initView())
+        void dispatch(fetchArticles({
+            page: 1
+        }))
     })
+
+    const onPageScrolled = useCallback(() => {
+        void dispatch(fetchNextArticlesPage())
+    }, [dispatch])
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <ArticlesViewSelector view={view} />
-            <div className={cls(styles.articlesPage, className)}>
-                <ArticleList
-                    articles={articles}
-                    isLoading={isLoading}
-                    error={error}
-                    view={view}
-                />
-            </div>
+            <Page onPageScrolled={onPageScrolled}>
+                <ArticlesViewSelector view={view} />
+                <div className={cls(styles.articlesPage, className)}>
+                    <ArticleList
+                        articles={articles}
+                        isLoading={isLoading}
+                        error={error}
+                        view={view}
+                    />
+                </div>
+            </Page>
         </DynamicModuleLoader>
 
     )

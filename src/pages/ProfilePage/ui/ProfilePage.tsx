@@ -4,6 +4,7 @@ import { cls } from 'shared/lib/classNames'
 import { EditProfileCard } from 'features/EditProfileCard'
 import { useParams } from 'react-router'
 import { useTranslation } from 'react-i18next'
+import { Page } from 'widgets/Page'
 
 interface ProfilePageProps {
     className?: string
@@ -18,9 +19,9 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     }
 
     return (
-        <div className={cls(className)}>
+        <Page className={cls(className)}>
             <EditProfileCard profileId={id} />
-        </div>
+        </Page>
     )
 }
 

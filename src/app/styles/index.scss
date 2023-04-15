@@ -18,12 +18,3 @@
 .center {
     display: flex;
 }
-
-.page-wrapper {
-    width: 100%;
-    flex-grow: 1;
-    flex-shrink: 100;
-    padding: 40px;
-    height: calc(100vh - var(--navbar-height));
-    overflow-y: auto;
-}

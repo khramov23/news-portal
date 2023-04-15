@@ -9,9 +9,7 @@ const renderWithAuth = (route: AppRouteProps) => {
     const { element, authOnly } = route
 
     const elem = <Suspense fallback={<PageLoader/>}>
-        <div className='page-wrapper'>
-            {element}
-        </div>
+        {element}
     </Suspense>
 
     return authOnly ? <RequireAuth>{elem}</RequireAuth> : elem

@@ -12,7 +12,7 @@ describe('initArticlesPage', () => {
                 _initiated: false
             }
         })
-        await thunk.callThunk()
+        await thunk.callThunk(new URLSearchParams())
 
         expect(thunk.dispatch).toBeCalledTimes(4)
         expect(fetchArticles).toBeCalledWith({})
@@ -25,7 +25,7 @@ describe('initArticlesPage', () => {
                 _initiated: true
             }
         })
-        await thunk.callThunk()
+        await thunk.callThunk(new URLSearchParams())
 
         expect(thunk.dispatch).toBeCalledTimes(2)
         expect(fetchArticles).not.toBeCalled()

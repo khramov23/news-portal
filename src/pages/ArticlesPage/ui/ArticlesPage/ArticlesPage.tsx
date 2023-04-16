@@ -12,6 +12,7 @@ import { initArticlesPage } from '../../model/services/initArticlesPage/initArti
 import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters'
 
 import styles from './ArticlesPage.module.scss'
+import { useSearchParams } from 'react-router-dom'
 
 interface ArticlesPageProps {
     className?: string
@@ -29,8 +30,10 @@ const ArticlesPage: FC<ArticlesPageProps> = () => {
     const error = useSelector(getArticlesError)
     const view = useSelector(getArticlesView)
 
+    const [searchParams] = useSearchParams()
+
     useInitialEffect(() => {
-        void dispatch(initArticlesPage())
+        void dispatch(initArticlesPage(searchParams))
     })
 
     const onPageScrolled = useCallback(() => {

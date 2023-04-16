@@ -19,6 +19,7 @@ import { articlesPageActions } from 'pages/ArticlesPage/model/slice/articlesPage
 import { type Order } from 'shared/types/sort'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles'
+import { useDebounce } from 'shared/hooks/useDebounce'
 
 interface ArticlesPageFiltersProps {
     className?: string
@@ -37,6 +38,8 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(({ classNa
         void dispatch(fetchArticles({ replace: true }))
     }, [dispatch])
 
+    const debouncedFetchArticles = useDebounce(fetchArticlesOnFilter, 500)
+
     const onChangeSort = useCallback((value: ArticleSortType) => {
         dispatch(articlesPageActions.setSort(value))
         dispatch(articlesPageActions.setPage(1))
@@ -52,8 +55,8 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(({ classNa
     const onChangeSearch = useCallback((value: string) => {
         dispatch(articlesPageActions.setSearch(value))
         dispatch(articlesPageActions.setPage(1))
-        fetchArticlesOnFilter()
-    }, [dispatch, fetchArticlesOnFilter])
+        debouncedFetchArticles()
+    }, [dispatch, debouncedFetchArticles])
 
     return (
         <div className={cls(styles.articlesPageFilters, className)}>

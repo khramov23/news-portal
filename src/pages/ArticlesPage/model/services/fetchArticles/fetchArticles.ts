@@ -6,9 +6,11 @@ import {
     getArticlesPageLimit,
     getArticlesPageNum,
     getArticlesSearch,
-    getArticlesSort
+    getArticlesSort,
+    getArticlesType
 } from '../../selectors/articlesPage'
 import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams'
+import { ArticleType } from 'entities/Article/model/types/article'
 
 interface FetchArticlesProps {
     replace?: boolean
@@ -24,9 +26,10 @@ export const fetchArticles = createAsyncThunk<Article[], FetchArticlesProps, Thu
         const order = getArticlesOrder(getState())
         const sort = getArticlesSort(getState())
         const search = getArticlesSearch(getState())
+        const type = getArticlesType(getState())
 
         try {
-            addQueryParams({ search, sort, order })
+            addQueryParams({ search, sort, order, type })
             const response = await extra.api.get<Article[]>('/articles', {
                 params: {
                     _expand: 'user',
@@ -34,6 +37,7 @@ export const fetchArticles = createAsyncThunk<Article[], FetchArticlesProps, Thu
                     _limit: limit,
                     _sort: sort,
                     _order: order,
+                    type: type === ArticleType.ALL ? undefined : type,
                     q: search
                 }
             })

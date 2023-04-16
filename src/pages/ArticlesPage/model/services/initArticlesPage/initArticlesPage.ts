@@ -4,12 +4,13 @@ import {
     getArticlesOrder,
     getArticlesPageInitiated,
     getArticlesSearch,
-    getArticlesSort
+    getArticlesSort,
+    getArticlesType
 } from '../../selectors/articlesPage'
 import { articlesPageActions } from '../../slice/articlesPageSlice'
 import { fetchArticles } from '../fetchArticles/fetchArticles'
 import { type Order } from 'shared/types/sort'
-import { type ArticleSortType } from 'entities/Article/model/types/article'
+import { type ArticleSortType, type ArticleType } from 'entities/Article/model/types/article'
 import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams'
 
 export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkApi<string> >(
@@ -21,28 +22,34 @@ export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkApi
         const sort = getArticlesSort(getState())
         const order = getArticlesOrder(getState())
         const search = getArticlesSearch(getState())
+        const type = getArticlesType(getState())
 
         if (!initiated) {
-            const order = searchParams.get('order') as Order
-            const sort = searchParams.get('sort') as ArticleSortType
-            const search = searchParams.get('search')
+            const orderFromUrl = searchParams.get('order') as Order
+            const sortFromUrl = searchParams.get('sort') as ArticleSortType
+            const searchFromUrl = searchParams.get('search')
+            const typeFromUrl = searchParams.get('type') as ArticleType
 
-            if (order) {
-                dispatch(articlesPageActions.setOrder(order))
+            if (orderFromUrl) {
+                dispatch(articlesPageActions.setOrder(orderFromUrl))
             }
 
-            if (sort) {
-                dispatch(articlesPageActions.setSort(sort))
+            if (sortFromUrl) {
+                dispatch(articlesPageActions.setSort(sortFromUrl))
             }
 
-            if (search) {
-                dispatch(articlesPageActions.setSearch(search))
+            if (searchFromUrl) {
+                dispatch(articlesPageActions.setSearch(searchFromUrl))
+            }
+
+            if (typeFromUrl) {
+                dispatch(articlesPageActions.setType(typeFromUrl))
             }
 
             void dispatch(articlesPageActions.initView())
             void dispatch(fetchArticles({}))
         }
 
-        addQueryParams({ sort, order, search })
+        addQueryParams({ sort, order, search, type })
     }
 )

@@ -1,4 +1,4 @@
-import { type FC, memo, useCallback } from 'react'
+import { type FC, memo, useCallback, useMemo } from 'react'
 
 import styles from './ArticlesPageFilters.module.scss'
 import { cls } from 'shared/lib/classNames'
@@ -8,18 +8,20 @@ import {
     getArticlesOrder,
     getArticlesSearch,
     getArticlesSort,
+    getArticlesType,
     getArticlesView
 } from 'pages/ArticlesPage/model/selectors/articlesPage'
 import { useTranslation } from 'react-i18next'
 import { Card } from 'shared/ui/Card/Card'
 import { Input } from 'shared/ui/Input/Input'
 import { ArticlesSortSelectors } from 'features/ArticlesSortSelector'
-import { type ArticleSortType } from 'entities/Article/model/types/article'
+import { type ArticleSortType, ArticleType } from 'entities/Article/model/types/article'
 import { articlesPageActions } from 'pages/ArticlesPage/model/slice/articlesPageSlice'
 import { type Order } from 'shared/types/sort'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles'
 import { useDebounce } from 'shared/hooks/useDebounce'
+import { type TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
 
 interface ArticlesPageFiltersProps {
     className?: string
@@ -33,6 +35,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(({ classNa
     const order = useSelector(getArticlesOrder)
     const sort = useSelector(getArticlesSort)
     const search = useSelector(getArticlesSearch)
+    const type = useSelector(getArticlesType)
 
     const fetchArticlesOnFilter = useCallback(() => {
         void dispatch(fetchArticles({ replace: true }))
@@ -58,6 +61,30 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(({ classNa
         debouncedFetchArticles()
     }, [dispatch, debouncedFetchArticles])
 
+    const items = useMemo<Array<TabItem<ArticleType>>>(() => [
+        {
+            value: ArticleType.ALL,
+            content: t('Все статьи')
+        },
+        {
+            value: ArticleType.ECONOMICS,
+            content: t('Экономика')
+        },
+        {
+            value: ArticleType.IT,
+            content: t('Информационные технологии')
+        },
+        {
+            value: ArticleType.SCIENCE,
+            content: t('Наука')
+        }
+    ], [t])
+
+    const onTabClick = useCallback((value: ArticleType) => {
+        dispatch(articlesPageActions.setType(value))
+        fetchArticlesOnFilter()
+    }, [dispatch, fetchArticlesOnFilter])
+
     return (
         <div className={cls(styles.articlesPageFilters, className)}>
             <div className={styles.sortWrapper}>
@@ -76,6 +103,12 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(({ classNa
                     onChange={onChangeSearch}
                 />
             </Card>
+            <Tabs
+                items={items}
+                value={type}
+                onTabClick={onTabClick}
+                className={styles.tabs}
+            />
         </div>
     )
 })

@@ -16,6 +16,7 @@ import { type ArticleCommentsSchema } from 'features/ArticleComments'
 import { type ArticleCommentsFormSchema } from 'features/ArticleComments/model/types/articleCommentsFormSchema'
 import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 import { type ScrollRestorationSchema } from 'widgets/ScrollRestoration'
+import { type ArticleRecommendationsSchema } from 'features/ArticleRecommendations/model/types/articleRecommendationsSchema'
 
 export interface StateSchema {
     counter: CounterSchema
@@ -28,6 +29,7 @@ export interface StateSchema {
     article?: ArticleSchema
     articleComments?: ArticleCommentsSchema
     articleCommentsForm?: ArticleCommentsFormSchema
+    articleRecommendations?: ArticleRecommendationsSchema
     articlesPage?: ArticlesPageSchema
 }
 

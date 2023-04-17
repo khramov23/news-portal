@@ -1,4 +1,4 @@
-import { type FC, memo, type ReactNode } from 'react'
+import { type FC, type HTMLAttributeAnchorTarget, memo, type ReactNode } from 'react'
 
 import styles from './ArticleList.module.scss'
 import { cls } from 'shared/lib/classNames'
@@ -14,20 +14,38 @@ interface ArticleListProps {
     isLoading?: boolean
     error?: string
     view?: ArticleView
+    target?: HTMLAttributeAnchorTarget
 }
 
-const getSkeletons = (view: ArticleView): ReactNode => <>
-    {
-        new Array(view === ArticleView.BIG ? 3 : 12)
-            .fill(0)
-            .map((_, index) =>
-                <ArticleListItemSkeleton key={index} view={view} />
-            )
+const getSkeletons = (view: ArticleView): ReactNode => {
+    let skeletonsNumber: number
+    switch (view) {
+        case ArticleView.BIG:
+            skeletonsNumber = 3
+            break
+        case ArticleView.ROW:
+            skeletonsNumber = 4
+            break
+        case ArticleView.SMALL:
+            skeletonsNumber = 12
+            break
+        default:
+            skeletonsNumber = 6
     }
-</>
+
+    return <>
+        {
+            new Array(skeletonsNumber)
+                .fill(0)
+                .map((_, index) =>
+                    <ArticleListItemSkeleton key={index} view={view} />
+                )
+        }
+    </>
+}
 
 export const ArticleList: FC<ArticleListProps> = memo((props) => {
-    const { articles, className, isLoading, view = ArticleView.BIG, error } = props
+    const { articles, className, isLoading, view = ArticleView.BIG, error, target = '_self' } = props
     const { t } = useTranslation()
 
     const renderArticle = (article: Article) =>
@@ -35,6 +53,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
             key={article.id}
             article={article}
             view={view}
+            target={target}
         />
 
     if (error) {

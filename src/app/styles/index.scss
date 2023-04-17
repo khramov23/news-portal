@@ -18,3 +18,21 @@
 .center {
     display: flex;
 }
+
+* {
+    /* плашка-бегунок и фон */
+    scrollbar-color: #999 #333;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-thumb { /* плашка-бегунок */
+    background: var(--inverted-bg-color);
+}
+
+*::-webkit-scrollbar-track { /* фон */
+    background: var(--card-bg);
+}

@@ -8,7 +8,8 @@ export enum ArticleBlockType {
 
 export enum ArticleView {
     BIG = 'BIG',
-    SMALL = 'SMALL'
+    SMALL = 'SMALL',
+    ROW = 'ROW'
 }
 
 export enum ArticleSortType {

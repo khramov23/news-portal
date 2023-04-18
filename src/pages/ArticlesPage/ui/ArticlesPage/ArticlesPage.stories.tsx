@@ -33,8 +33,6 @@ export default {
 
 const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />
 
-export const Light = Template.bind({})
-
 export const Dark = Template.bind({})
 Dark.decorators = [ThemeDecorator(Theme.DARK)]
 

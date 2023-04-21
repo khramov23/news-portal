@@ -2,7 +2,7 @@ import { type FC } from 'react'
 
 import styles from './ArticleTextBlockComponent.module.scss'
 import { cls } from 'shared/lib/classNames'
-import { type ArticleTextBlock } from 'entities/Article/model/types/article'
+import { type ArticleTextBlock } from '../../model/types/article'
 import { Text } from 'shared/ui/Text/Text'
 
 interface ArticleTextBlockComponentProps {

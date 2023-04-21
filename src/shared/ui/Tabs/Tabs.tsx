@@ -2,7 +2,7 @@ import { type ReactNode } from 'react'
 
 import styles from './Tabs.module.scss'
 import { cls } from 'shared/lib/classNames'
-import { Card } from 'shared/ui/Card/Card'
+import { Card } from '../Card/Card'
 
 export interface TabItem<T extends string> {
     value: T

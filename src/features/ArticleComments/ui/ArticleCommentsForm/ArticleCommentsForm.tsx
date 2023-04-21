@@ -2,7 +2,7 @@ import { type FC, memo, useCallback } from 'react'
 import { AddCommentForm } from 'entities/Comment/ui/AddCommentForm/AddCommentForm'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 import { addArticleComment } from '../../model/services/addArticleComment/addArticleComment'
-import { getArticleCommentsFormText } from 'features/ArticleComments/model/selectors/articleCommentsForm'
+import { getArticleCommentsFormText } from '../../model/selectors/articleCommentsForm'
 import { useSelector } from 'react-redux'
 import {
     articleCommentsFormActions, articleCommentsFormReducer
@@ -17,7 +17,7 @@ interface ArticleCommentsFormProps {
     className?: string
 }
 
-export const ArticleCommentsForm: FC<ArticleCommentsFormProps> = memo(({ className }) => {
+export const ArticleCommentsForm: FC<ArticleCommentsFormProps> = memo(() => {
     const dispatch = useAppDispatch()
 
     const text = useSelector(getArticleCommentsFormText)

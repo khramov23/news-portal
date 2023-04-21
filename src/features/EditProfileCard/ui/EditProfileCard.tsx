@@ -11,15 +11,15 @@ import { fetchProfileData } from '../model/services/fetchProfileData/fetchProfil
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { profileActions, profileReducer } from '../model/slice/profileSlice'
 import { EditProfileCardHeader } from './EditProfileCardHeader/EditProfileCardHeader'
-import { getProfileReadonly } from 'features/EditProfileCard/model/selectors/getProfileReadonly/getProfileReadonly'
-import { getProfileForm } from 'features/EditProfileCard/model/selectors/getProfileForm/getProfileForm'
+import { getProfileReadonly } from '../model/selectors/getProfileReadonly/getProfileReadonly'
+import { getProfileForm } from '../model/selectors/getProfileForm/getProfileForm'
 import { type Currency } from 'entities/Currency'
 import { type Country } from 'entities/Country'
 import {
     getProfileValidateErrors
-} from 'features/EditProfileCard/model/selectors/getProfileValidateErrors/getProfileValidateErrors'
+} from '../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
-import { ValidateError } from 'features/EditProfileCard/model/types/profileSchema'
+import { ValidateError } from '../model/types/profileSchema'
 import { useTranslation } from 'react-i18next'
 import { useInitialEffect } from 'shared/hooks/useInitialEffect'
 

@@ -15,7 +15,7 @@ import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams'
 
 export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkApi<string> >(
     'articlesPage/initArticlesPage',
-    async (searchParams, thunkAPI) => {
+    (searchParams, thunkAPI) => {
         const { getState, dispatch } = thunkAPI
 
         const initiated = getArticlesPageInitiated(getState())

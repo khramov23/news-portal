@@ -4,8 +4,8 @@ import { EditProfileCard } from './EditProfileCard'
 import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator'
 import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
-import { type Profile } from 'features/EditProfileCard'
-import { ValidateError } from 'features/EditProfileCard/model/types/profileSchema'
+import { type Profile } from '../model/types/profileSchema'
+import { ValidateError } from '../model/types/profileSchema'
 
 export default {
     title: 'features/EditProfileCard',

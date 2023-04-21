@@ -5,7 +5,7 @@ import ArticlesIcon from 'shared/assets/icons/articles.svg'
 import { RoutePath } from 'shared/config/routes/routes.config'
 import { createSelector } from 'reselect'
 import { getUserAuthData } from 'entities/User'
-import { type SidebarItemType } from 'widgets/Sidebar/model/types/sidebar'
+import { type SidebarItemType } from '../types/sidebar'
 
 export const getSidebarItems = createSelector(
     getUserAuthData,

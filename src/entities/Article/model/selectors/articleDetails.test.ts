@@ -1,7 +1,6 @@
 import { type StateSchema } from 'app/providers/StoreProvider'
 import { getArticleData, getArticleError, getArticleIsLoading } from './articleDetails'
-import { type Article } from 'entities/Article'
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article'
+import { ArticleBlockType, ArticleType, type Article } from '../types/article'
 
 describe('getArticleData', () => {
     test('works with value', () => {

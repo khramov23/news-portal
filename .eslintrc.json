@@ -17,7 +17,8 @@
     "plugins": [
         "react",
         "i18next",
-        "react-hooks"
+        "react-hooks",
+        "khramov-fsd"
     ],
     "rules": {
         "@typescript-eslint/prefer-nullish-coalescing": "off",
@@ -38,7 +39,8 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",
         "react/prop-types": "off",
-        "n/no-callback-literal": "off"
+        "n/no-callback-literal": "off",
+        "khramov-fsd/path-checker": "error"
     },
     "overrides": [
         {

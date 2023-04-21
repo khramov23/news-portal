@@ -52,3 +52,6 @@ export const fetchArticles = createAsyncThunk<Article[], FetchArticlesProps, Thu
         }
     }
 )
+
+// /articles?_expand=user&_page=1&_limit=12&_sort=date&_order=asc&q=
+// /articles?_expand=user&_page=1&_limit=12&_sort=date&_order=asc&q=

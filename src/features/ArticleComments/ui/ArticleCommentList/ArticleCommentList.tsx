@@ -9,7 +9,7 @@ import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/Dy
 import {
     getArticleCommentsError,
     getArticleCommentsIsLoading
-} from 'features/ArticleComments/model/selectors/articleComments'
+} from '../../model/selectors/articleComments'
 import { useInitialEffect } from 'shared/hooks/useInitialEffect'
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 import { fetchArticleCommentsById } from '../../model/services/fetchArticleCommentsById/fetchArticleCommentsById'

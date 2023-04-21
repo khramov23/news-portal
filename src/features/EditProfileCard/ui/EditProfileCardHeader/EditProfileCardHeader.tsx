@@ -10,7 +10,7 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { useAppDispatch } from 'shared/hooks/useAppDispatch'
 import { profileActions } from '../../model/slice/profileSlice'
 import { saveProfileData } from '../../model/services/saveProfileData/saveProfileData'
-import { getProfileData } from 'features/EditProfileCard/model/selectors/getProfileData/getProfileData'
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
 import { getUserAuthData } from 'entities/User'
 
 interface EditProfileCardHeaderProps {

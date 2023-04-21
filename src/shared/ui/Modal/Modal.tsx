@@ -2,7 +2,7 @@ import { type FC, type MouseEvent, type ReactNode, useCallback, useEffect, useSt
 
 import styles from './Modal.module.scss'
 import { cls } from 'shared/lib/classNames'
-import { Portal } from 'shared/ui/Portal/Portal'
+import { Portal } from '../Portal/Portal'
 import { useTheme } from 'shared/lib/theme/useTheme'
 
 interface ModalProps {

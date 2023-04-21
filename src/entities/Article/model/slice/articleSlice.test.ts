@@ -1,5 +1,6 @@
 import { articleReducer } from './articleSlice'
-import { type Article, type ArticleSchema } from 'entities/Article'
+import { type Article } from '../types/article'
+import { type ArticleSchema } from '../types/articleSchema'
 import { fetchArticleData } from '../services/fetchArticleData/fetchArticleData.test'
 import { type PayloadAction } from '@reduxjs/toolkit'
 import { articleMock } from '../mocks/article'

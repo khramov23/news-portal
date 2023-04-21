@@ -4,9 +4,9 @@ import styles from './ArticleList.module.scss'
 import { cls } from 'shared/lib/classNames'
 import { type Article, ArticleView } from '../../model/types/article'
 import { Text } from 'shared/ui/Text/Text'
-import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem'
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { useTranslation } from 'react-i18next'
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton'
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 
 interface ArticleListProps {
     className?: string

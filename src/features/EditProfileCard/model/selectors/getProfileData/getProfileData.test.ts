@@ -1,6 +1,6 @@
 import { type StateSchema } from 'app/providers/StoreProvider'
 import { getProfileData } from './getProfileData'
-import { type Profile } from 'features/EditProfileCard'
+import { type Profile } from '../../types/profileSchema'
 import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
 

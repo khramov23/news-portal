@@ -81,6 +81,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(({ classNa
     ], [t])
 
     const onTabClick = useCallback((value: ArticleType) => {
+        dispatch(articlesPageActions.setPage(1))
         dispatch(articlesPageActions.setType(value))
         fetchArticlesOnFilter()
     }, [dispatch, fetchArticlesOnFilter])

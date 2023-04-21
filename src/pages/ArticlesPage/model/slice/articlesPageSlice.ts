@@ -53,7 +53,7 @@ const articlesPageSlice = createSlice({
             state.type = action.payload
         },
         initView: (state) => {
-            const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView
+            const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView || ArticleView.SMALL
             state.view = view
             state.limit = state.view === ArticleView.BIG ? 4 : 12
             state._initiated = true

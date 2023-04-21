@@ -1,7 +1,8 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import { ArticleListItem } from './ArticleListItem'
-import { articleMock, ArticleView } from 'entities/Article'
+import { articleMock } from '../../model/mocks/article'
+import { ArticleView } from '../../model/types/article'
 
 export default {
     title: 'entities/Article/ArticleListItem',

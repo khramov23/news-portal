@@ -34,7 +34,7 @@
         "react/display-name": "warn",
         "i18next/no-literal-string": ["error", {
             "markupOnly": true,
-            "ignoreAttribute": ["data-testid", "to", "name", "align", "size", "target"]
+            "ignoreAttribute": ["data-testid", "to", "name", "align", "size", "target", "align", "justify", "direction"]
         }],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",
@@ -44,7 +44,7 @@
     },
     "overrides": [
         {
-            "files": ["**/src/**/*.test.{ts,tsx}"],
+            "files": ["**/src/**/*.test.{ts,tsx}", "**/src/**/*.stories.tsx"],
             "rules": {
                 "i18next/no-literal-string": "off"
             }

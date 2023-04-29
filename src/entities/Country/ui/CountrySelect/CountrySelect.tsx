@@ -1,8 +1,8 @@
 import { type FC } from 'react'
-import { Select } from 'shared/ui/Select/Select'
 import { countryOptions } from '../../model/const/country'
 import { useTranslation } from 'react-i18next'
 import { type Country } from '../../model/types/country'
+import { ListBox } from 'shared/ui/ListBox/ListBox'
 
 interface CountrySelectProps {
     className?: string
@@ -21,13 +21,24 @@ export const CountrySelect: FC<CountrySelectProps> = (props) => {
     }
 
     return (
-        <Select
+        <ListBox
             className={className}
             onChange={onCountryChange}
             value={value}
             readonly={readonly}
-            options={countryOptions}
+            items={countryOptions}
             label={t('Выберите страну')}
         />
     )
+
+    // return (
+    //     <Select
+    //         className={className}
+    //         onChange={onCountryChange}
+    //         value={value}
+    //         readonly={readonly}
+    //         options={countryOptions}
+    //         label={t('Выберите страну')}
+    //     />
+    // )
 }

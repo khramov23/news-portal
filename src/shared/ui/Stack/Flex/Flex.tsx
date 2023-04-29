@@ -1,4 +1,4 @@
-import { type FC, type ReactNode } from 'react'
+import { type DetailedHTMLProps, type FC, type HTMLAttributes, type ReactNode } from 'react'
 
 import styles from './Flex.module.scss'
 import { cls } from 'shared/lib/classNames'
@@ -8,7 +8,7 @@ type FlexAlign = 'start' | 'center' | 'end'
 type FlexDirection = 'row' | 'column'
 type FlexGap = 0 | 4 | 8 | 12 | 16 | 20 | 24 | 28 | 32 | 36 | 72
 
-export interface FlexProps {
+export interface FlexProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     className?: string
     children: ReactNode
     justify?: FlexJustify

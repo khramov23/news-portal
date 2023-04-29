@@ -1,0 +1,71 @@
+.listBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.disabled {
+    opacity: 0.6;
+}
+
+.trigger {
+    padding: 5px 10px;
+    background: none;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.options {
+    position: absolute;
+    z-index: 10;
+    background: var(--card-bg);
+}
+
+.top {
+    bottom: 100%;
+}
+
+.leave {
+    transition: all 0.3s;
+}
+
+.leaveFrom {
+    opacity: 1;
+}
+
+.leaveTo {
+    opacity: 0;
+}
+
+.option {
+    cursor: pointer;
+    padding: 5px 10px 5px 40px;
+}
+
+.optionWrapper {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -30px;
+}
+
+.chevron {
+    transition: all 0.2s;
+}
+
+.iconRotated {
+    transform: rotate(180deg);
+}
+
+.active {
+    background: var(--inverted-primary-color);
+}

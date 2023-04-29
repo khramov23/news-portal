@@ -1,8 +1,8 @@
 import { type FC } from 'react'
-import { Select } from 'shared/ui/Select/Select'
 import { currencies } from '../../model/const/currency'
 import { useTranslation } from 'react-i18next'
 import { type Currency } from '../../model/types/currency'
+import { ListBox } from 'shared/ui/ListBox/ListBox'
 
 interface CurrencySelectProps {
     className?: string
@@ -15,18 +15,25 @@ export const CurrencySelect: FC<CurrencySelectProps> = (props) => {
     const { t } = useTranslation()
     const { className, onChange, value, readonly } = props
 
-    const onChangeSelect = (value: string) => {
-        onChange?.(value as Currency)
-    }
-
     return (
-        <Select
+        <ListBox
             className={className}
-            options={currencies}
-            onChange={onChangeSelect}
-            label={t('Выберите валюту')}
+            items={currencies}
+            onChange={onChange}
             value={value}
             readonly={readonly}
+            label={t('Выберите валюту')}
         />
     )
+
+    // return (
+    //     <Select
+    //         className={className}
+    //         options={currencies}
+    //         onChange={onChangeSelect}
+    //         label={t('Выберите валюту')}
+    //         value={value}
+    //         readonly={readonly}
+    //     />
+    // )
 }

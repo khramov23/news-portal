@@ -8,8 +8,15 @@ export enum TextTheme {
     ERROR = 'error'
 }
 
+type TextTag = 'h2' | 'h3' | 'p'
+
 type Align = 'center' | 'left' | 'right'
 type Size = 'l' | 'xl'
+
+const mapSizeToTag: Record<Size, TextTag> = {
+    l: 'h3',
+    xl: 'h2'
+}
 
 interface TextProps {
     className?: string
@@ -22,9 +29,12 @@ interface TextProps {
 
 export const Text: FC<TextProps> = memo((props) => {
     const { className, text, title, theme = TextTheme.PRIMARY, align = 'left', size = 'l' } = props
+
+    const HeaderTag = mapSizeToTag[size]
+
     return (
         <div className={cls(styles.text, styles[theme], className, styles[align], styles[size])}>
-            {title && <p className={styles.title}>{title}</p>}
+            {title && <HeaderTag className={styles.title}>{title}</HeaderTag>}
             {text && <p className={styles.text}>{text}</p>}
         </div>
     )

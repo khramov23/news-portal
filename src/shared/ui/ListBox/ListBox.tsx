@@ -8,6 +8,7 @@ import OkIcon from 'shared/assets/icons/ok.svg'
 import ChevronTop from 'shared/assets/icons/chevron-top.svg'
 import { HStack } from '../Stack'
 import { Text } from '../Text/Text'
+import { Button } from '../Button/Button'
 
 interface ListBoxItem<T extends string> {
     content: string
@@ -15,7 +16,7 @@ interface ListBoxItem<T extends string> {
     disabled?: boolean
 }
 
-type DropdownDirection = 'top' | 'bottom'
+export type DropdownDirection = 'top_left' | 'bottom_left' | 'top_right' | 'bottom_right'
 
 export interface ListBoxProps<T extends string> {
     className?: string
@@ -37,35 +38,36 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
         items,
         readonly,
         label,
-        direction = 'bottom'
+        direction = 'bottom_left'
     } = props
 
     return (
-        <HListBox
-            // eslint-disable-next-line
-            as={'div'}
-            value={value ?? defaultValue}
-            onChange={onChange}
-            className={cls(className, styles.listBox)}
-            disabled={readonly}
-        >
-            {label && <Text text={label + '>'}/>}
-            <div className={cls({ [styles.disabled]: readonly })}>
+        <HStack gap={8} align={'center'}>
+            {label && <span>{label + '>'}</span>}
+            <HListBox
+                as={`${'div'}`}
+                value={value ?? defaultValue}
+                onChange={onChange}
+                className={cls(className, styles.listBox)}
+                disabled={readonly}
+            >
                 <HListBox.Button
                     className={styles.trigger}
                 >
                     {({ open }) => (
-                        <>
-                            <Text text={value}/>
-                            <Icon
-                                Svg={ChevronTop}
-                                className={cls(
-                                    styles.chevron,
-                                    { [styles.iconRotated]: !open }
-                                )}
-                                size={'l'}
-                            />
-                        </>
+                        <Button>
+                            <HStack align={'center'} justify={'around'}>
+                                {value}
+                                <Icon
+                                    Svg={ChevronTop}
+                                    className={cls(
+                                        styles.chevron,
+                                        { [styles.iconRotated]: !open }
+                                    )}
+                                    size={'l'}
+                                />
+                            </HStack>
+                        </Button>
                     )}
                 </HListBox.Button>
                 <Transition
@@ -94,7 +96,8 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                         ))}
                     </HListBox.Options>
                 </Transition>
-            </div>
-        </HListBox>
+            </HListBox>
+        </HStack>
+
     )
 }

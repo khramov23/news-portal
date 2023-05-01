@@ -1588,6 +1588,12 @@
       "userId": "1",
       "articleId": "7",
       "id": "c8bFa1M"
+    },
+    {
+      "text": "Отличная статья!",
+      "userId": "1",
+      "articleId": "11",
+      "id": "HsP5K90"
     }
   ],
   "users": [
@@ -1612,7 +1618,7 @@
       "lastname": "Храмов",
       "firstname": "Егор",
       "age": 21,
-      "currency": "EUR",
+      "currency": "RUB",
       "country": "Kazakhstan",
       "city": "Москва",
       "username": "admin",

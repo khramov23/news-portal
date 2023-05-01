@@ -16,7 +16,10 @@ export default {
             { value: 'third', content: 'third' },
             { value: 'uno', content: 'uno' }
         ]
-    }
+    },
+    decorators: [
+        Story => <div style={{ padding: 200 }}><Story /></div>
+    ]
 } as ComponentMeta<typeof ListBox>
 
 const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />

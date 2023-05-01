@@ -7,7 +7,6 @@ export const HStack: FC<HStackProps> = (props) => {
     return (
         <Flex {...props} direction='row'>
             {props.children}
-            <div></div>
         </Flex>
     )
 }

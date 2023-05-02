@@ -26,6 +26,6 @@
     "./"
   ],
   "exclude": [
-    "./scripts/generate-visual-json-report.js"
+    "./scripts/"
   ]
 }

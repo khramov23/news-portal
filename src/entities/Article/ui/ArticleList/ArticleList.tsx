@@ -7,12 +7,14 @@ import { Text } from 'shared/ui/Text/Text'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { useTranslation } from 'react-i18next'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+import { type FetchBaseQueryError } from '@reduxjs/toolkit/query'
+import { type SerializedError } from '@reduxjs/toolkit'
 
 interface ArticleListProps {
     className?: string
     articles: Article[]
     isLoading?: boolean
-    error?: string
+    error?: FetchBaseQueryError | SerializedError | string
     view?: ArticleView
     target?: HTMLAttributeAnchorTarget
 }
@@ -45,7 +47,14 @@ const getSkeletons = (view: ArticleView): ReactNode => {
 }
 
 export const ArticleList: FC<ArticleListProps> = memo((props) => {
-    const { articles, className, isLoading, view = ArticleView.BIG, error, target = '_self' } = props
+    const {
+        articles,
+        className,
+        isLoading,
+        view = ArticleView.BIG,
+        error,
+        target = '_self'
+    } = props
     const { t } = useTranslation()
 
     const renderArticle = (article: Article) =>
@@ -69,7 +78,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
 
     return (
         <div className={cls(styles.articleList, className, styles[view])}>
-            {articles.length > 0
+            {articles?.length > 0
                 ? articles.map(renderArticle)
                 : null
             }

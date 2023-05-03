@@ -5,6 +5,7 @@ import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
 import { counterReducer } from 'entities/Counter/model/slice/counterSlice'
 import { scrollRestorationReducer } from 'widgets/ScrollRestoration'
+import { rtkApi } from 'shared/api/rtk'
 
 export function createReduxStore (
     initialState?: StateSchema,
@@ -14,7 +15,8 @@ export function createReduxStore (
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
-        scroll: scrollRestorationReducer
+        scroll: scrollRestorationReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer
     }
 
     const reducerManager = createReducerManager(rootReducers)
@@ -29,7 +31,7 @@ export function createReduxStore (
                     api: $api
                 }
             }
-        })
+        }).concat(rtkApi.middleware)
     })
 
     // @ts-expect-error something eo fjs

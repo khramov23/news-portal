@@ -16,12 +16,13 @@ import { type ArticleCommentsSchema } from 'features/ArticleComments'
 import { type ArticleCommentsFormSchema } from 'features/ArticleComments/model/types/articleCommentsFormSchema'
 import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 import { type ScrollRestorationSchema } from 'widgets/ScrollRestoration'
-import { type ArticleRecommendationsSchema } from 'features/ArticleRecommendations/model/types/articleRecommendationsSchema'
+import { type rtkApi } from 'shared/api/rtk'
 
 export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
     scroll: ScrollRestorationSchema
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema
@@ -29,7 +30,6 @@ export interface StateSchema {
     article?: ArticleSchema
     articleComments?: ArticleCommentsSchema
     articleCommentsForm?: ArticleCommentsFormSchema
-    articleRecommendations?: ArticleRecommendationsSchema
     articlesPage?: ArticlesPageSchema
 }
 

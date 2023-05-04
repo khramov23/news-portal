@@ -96,7 +96,12 @@ export const EditProfileCard: FC<EditProfileCardProps> = ({ className, profileId
             <div className={cls(styles.editProfileCard, className)}>
                 <EditProfileCardHeader />
                 {validateErrors?.length && validateErrors.map(err =>
-                    <Text key={validateErrorTranslates[err]} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
+                    <Text
+                        key={validateErrorTranslates[err]}
+                        theme={TextTheme.ERROR}
+                        text={validateErrorTranslates[err]}
+                        data-testid='EditProfileCard.Error'
+                    />
                 )}
                 <ProfileCard
                     data={form}

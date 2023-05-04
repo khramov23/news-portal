@@ -59,7 +59,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
             <div className={cls(styles.profileCard, className, styles.error)}>
                 <Text
                     text={t('Попробуйте перезагрузить страницу')}
-                    title={t('Произошла ошибка при подгрузке данных')}
+                    title={t('Произошла ошибка при загрузке данных')}
                     theme={TextTheme.ERROR}
                     align='center'
                 />
@@ -81,6 +81,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     placeholder={t('Ваше имя')}
                     className={styles.input}
                     readonly={readonly}
+                    data-testid={'ProfileCard.firstname'}
                 />
                 <Input
                     value={data?.lastname}
@@ -88,6 +89,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     placeholder={t('Ваша фамилия')}
                     className={styles.input}
                     readonly={readonly}
+                    data-testid={'ProfileCard.lastname'}
                 />
                 <Input
                     value={data?.age}

@@ -25,17 +25,39 @@ interface TextProps {
     theme?: TextTheme
     align?: Align
     size?: Size
+
+    'data-testid'?: string
 }
 
 export const Text: FC<TextProps> = memo((props) => {
-    const { className, text, title, theme = TextTheme.PRIMARY, align = 'left', size = 'l' } = props
+    const {
+        className,
+        text,
+        title,
+        theme = TextTheme.PRIMARY,
+        align = 'left',
+        size = 'l',
+        'data-testid': dataTestId = 'Text'
+    } = props
 
     const HeaderTag = mapSizeToTag[size]
 
     return (
         <div className={cls(styles.text, styles[theme], className, styles[align], styles[size])}>
-            {title && <HeaderTag className={styles.title}>{title}</HeaderTag>}
-            {text && <p className={styles.text}>{text}</p>}
+            {title && (
+                <HeaderTag
+                    className={styles.title}
+                    data-testid={`${dataTestId}.Header`}
+                >
+                    {title}
+                </HeaderTag>
+            )}
+            {text && <p
+                className={styles.text}
+                data-testid={`${dataTestId}.Paragraph`}
+            >
+                {text}
+            </p>}
         </div>
     )
 })

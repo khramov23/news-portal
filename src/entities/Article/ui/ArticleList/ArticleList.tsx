@@ -12,7 +12,7 @@ import { type SerializedError } from '@reduxjs/toolkit'
 
 interface ArticleListProps {
     className?: string
-    articles: Article[]
+    articles?: Article[]
     isLoading?: boolean
     error?: FetchBaseQueryError | SerializedError | string
     view?: ArticleView
@@ -78,12 +78,12 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
 
     return (
         <div className={cls(styles.articleList, className, styles[view])}>
-            {articles?.length > 0
+            {articles && articles.length > 0
                 ? articles.map(renderArticle)
                 : null
             }
             {isLoading && getSkeletons(view)}
-            {!isLoading && articles.length === 0 && <Text title={t('Статьи отсутствуют')} />}
+            {!isLoading && articles?.length === 0 && <Text title={t('Статьи отсутствуют')} />}
         </div>
     )
 })

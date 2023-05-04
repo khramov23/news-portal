@@ -44,16 +44,16 @@ export const EditProfileCardHeader: FC<EditProfileCardHeaderProps> = ({ classNam
 
             {isMyProfile && (readonly
                 ? (
-                    <Button onClick={onEdit}>
+                    <Button onClick={onEdit} data-testid={'EditProfileCardHeader.EditButton'}>
                         {t('Редактировать')}
                     </Button>
                 )
                 : (
                     <div>
-                        <Button onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_ERROR}>
+                        <Button onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_ERROR} data-testid={'EditProfileCardHeader.CancelButton'}>
                             {t('Отменить ')}
                         </Button>
-                        <Button onClick={onProfileSave} className={styles.saveButton}>
+                        <Button onClick={onProfileSave} className={styles.saveButton} data-testid={'EditProfileCardHeader.SaveButton'}>
                             {t('Сохранить ')}
                         </Button>
                     </div>

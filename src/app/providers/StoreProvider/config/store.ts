@@ -3,7 +3,6 @@ import { type StateSchema } from './StateSchema'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
-import { counterReducer } from 'entities/Counter/model/slice/counterSlice'
 import { scrollRestorationReducer } from 'widgets/ScrollRestoration'
 import { rtkApi } from 'shared/api/rtk'
 
@@ -13,7 +12,6 @@ export function createReduxStore (
 ) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
-        counter: counterReducer,
         user: userReducer,
         scroll: scrollRestorationReducer,
         [rtkApi.reducerPath]: rtkApi.reducer

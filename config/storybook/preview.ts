@@ -3,6 +3,7 @@ import { StyleDecorator } from 'shared/config/storybook/decorators/StyleDecorato
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from 'shared/lib/theme/ThemeContext'
 import { RouterDecorator } from 'shared/config/storybook/decorators/RouterDecorator'
+import { SuspenseDecorator } from 'shared/config/storybook/decorators/SuspenseDecorator'
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -16,5 +17,6 @@ export const parameters = {
 
 addDecorator(StyleDecorator)
 addDecorator(ThemeDecorator(Theme.LIGHT))
+addDecorator(SuspenseDecorator)
 // @ts-expect-error working
 addDecorator(RouterDecorator)

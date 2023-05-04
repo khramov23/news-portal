@@ -6,6 +6,7 @@ import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorato
 import { Theme } from 'shared/lib/theme/ThemeContext'
 import { articleMock } from 'entities/Article/model/mocks/article'
 import { commentMock } from 'entities/Comment'
+import withMock from 'storybook-addon-mock'
 
 export default {
     title: 'pages/ArticleDetailsPage',
@@ -14,9 +15,21 @@ export default {
         router: {
             path: '/articles/:id',
             route: '/articles/1'
-        }
+        },
+        mockData: [
+            {
+                url: `${__API__}/articles?_limit=4`,
+                method: 'GET',
+                response: [
+                    { ...articleMock, id: '1' },
+                    { ...articleMock, id: '2' },
+                    { ...articleMock, id: '3' },
+                    { ...articleMock, id: '4' }
+                ]
+            }
+        ]
     },
-    decorators: [StoreDecorator({
+    decorators: [withMock, StoreDecorator({
         article: {
             data: articleMock
         },

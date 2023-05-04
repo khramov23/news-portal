@@ -27,7 +27,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     config.module?.rules?.push(buildSvgLoader())
     config.plugins?.push(new webpack.DefinePlugin({
         __IS_DEV__: JSON.stringify(false),
-        __API__: JSON.stringify(''),
+        __API__: JSON.stringify('https://something.com'),
         __PROJECT__: JSON.stringify('storybook')
     }))
 

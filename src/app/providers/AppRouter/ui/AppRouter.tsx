@@ -12,7 +12,7 @@ const renderWithAuth = (route: AppRouteProps) => {
         {element}
     </Suspense>
 
-    return authOnly ? <RequireAuth>{elem}</RequireAuth> : elem
+    return authOnly ? <RequireAuth roles={route.roles}>{elem}</RequireAuth> : elem
 }
 
 export const AppRouter = () => {

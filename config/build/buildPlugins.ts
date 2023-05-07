@@ -3,6 +3,7 @@ import webpack from 'webpack'
 import { type BuildOptions } from './types/config'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import CircularDependencyPlugin from 'circular-dependency-plugin'
 
 export function buildPlugins ({ paths, isDev, apiUrl, project }: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
@@ -18,6 +19,10 @@ export function buildPlugins ({ paths, isDev, apiUrl, project }: BuildOptions): 
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
             __PROJECT__: JSON.stringify(project)
+        }),
+        new CircularDependencyPlugin({
+            exclude: /noce_modules/,
+            failOnError: true
         })
     ]
 

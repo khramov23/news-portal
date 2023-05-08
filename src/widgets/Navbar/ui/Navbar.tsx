@@ -5,11 +5,12 @@ import { cls } from 'shared/lib/classNames'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/AuthByUsername'
-import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthData, isUserAdmin, isUserManager, type User, userActions } from 'entities/User'
-import { Dropdown, type DropdownItem } from 'shared/ui/Dropdown/Dropdown'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { RoutePath } from 'shared/config/routes/routes.config'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from 'entities/User'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
+import { AvatarDropdown } from 'features/AvatarDropdown'
+import { HStack } from 'shared/ui/Stack'
+import { NotificationButton } from 'features/NotificationButton'
 
 interface NavbarProps {
     className?: string
@@ -17,14 +18,9 @@ interface NavbarProps {
 
 export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     const { t } = useTranslation()
-    const dispatch = useDispatch()
 
     const [isAuthModal, setIsAuthModal] = useState(false)
     const authData = useSelector(getUserAuthData)
-    const isAdmin = useSelector(isUserAdmin)
-    const isManager = useSelector(isUserManager)
-
-    const isAdminPanelAvailable = isAdmin || isManager
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false)
@@ -34,43 +30,27 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
         setIsAuthModal(true)
     }, [])
 
-    const onLogout = useCallback(() => {
-        dispatch(userActions.logout())
-    }, [dispatch])
-
-    const generateDropdownItems: (authData: User) => DropdownItem[] = (authData: User) =>
-        [
-            ...(isAdminPanelAvailable
-                ? [{
-                    content: t('Админка'),
-                    href: RoutePath.admin_panel
-                }]
-                : []),
-            {
-                content: t('Профиль'),
-                href: RoutePath.profile + authData.id
-            },
-            {
-                content: t('Выйти'),
-                onClick: onLogout
-            }
-        ]
-
     if (authData) {
         return (
-            <div className={cls(styles.navbar, className)}>
-                <Dropdown
-                    trigger={<Avatar src={authData.avatar} size={35} />}
-                    direction={'bottom_right'}
-                    items={generateDropdownItems(authData)}
-                    className={styles.dropdown}
+            <header className={cls(styles.navbar, className)}>
+                <Text
+                    title={t('News portal')}
+                    theme={TextTheme.INVERTED}
                 />
-            </div>
+                <HStack
+                    gap={24}
+                    className={styles.actions}
+                    align={'center'}
+                >
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
+            </header>
         )
     }
 
     return (
-        <div className={cls(styles.navbar, className)}>
+        <header className={cls(styles.navbar, className)}>
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 className={styles.links}
@@ -79,6 +59,6 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
                 {t('Войти')}
             </Button>
             <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
-        </div>
+        </header>
     )
 })

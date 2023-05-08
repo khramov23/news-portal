@@ -1,18 +1,3 @@
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.trigger {
-    background: none;
-    outline-style: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    margin: 0;
-    color: var(--primary-color);
-}
-
 .menu {
     position: absolute;
     z-index: 10;
@@ -22,26 +7,6 @@
     flex-direction: column;
     border: 1px solid var(--primary-color);
     border-radius: 10px;
-}
-
-.top_left {
-    bottom: 100%;
-    left: 0;
-}
-
-.top_right {
-    bottom: 100%;
-    right: 0;
-}
-
-.bottom_left {
-    top: 100%;
-    left: 0;
-}
-
-.bottom_right {
-    top: 100%;
-    right: 0;
 }
 
 .item {

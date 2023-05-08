@@ -1,0 +1,11 @@
+.notificationItem {
+    width: 100%;
+}
+
+.link {
+    width: 100%;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}

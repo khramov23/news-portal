@@ -5,7 +5,8 @@ import { cls } from 'shared/lib/classNames'
 
 export enum TextTheme {
     PRIMARY = 'primary',
-    ERROR = 'error'
+    ERROR = 'error',
+    INVERTED = 'inverted'
 }
 
 type TextTag = 'h2' | 'h3' | 'p'

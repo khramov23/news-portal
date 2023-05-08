@@ -2,7 +2,7 @@ import { type FC } from 'react'
 import { countryOptions } from '../../model/const/country'
 import { useTranslation } from 'react-i18next'
 import { type Country } from '../../model/types/country'
-import { ListBox } from 'shared/ui/ListBox/ListBox'
+import { ListBox } from 'shared/ui/Popups'
 
 interface CountrySelectProps {
     className?: string

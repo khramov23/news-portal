@@ -2,9 +2,11 @@ import { Menu } from '@headlessui/react'
 import { type FC, Fragment, memo, type ReactNode, useCallback } from 'react'
 
 import styles from './Dropdown.module.scss'
+import popupStyles from '../../styles/Popups.module.scss'
+
 import { cls } from 'shared/lib/classNames'
-import { type DropdownDirection } from '../ListBox/ListBox'
-import { AppLink } from '../AppLink/AppLink'
+import { AppLink } from '../../../AppLink/AppLink'
+import { type PopupDirection } from '../../styles/Popup.types'
 
 export interface DropdownItem {
     content: ReactNode
@@ -17,7 +19,7 @@ interface DropdownProps {
     className?: string
     trigger?: ReactNode
     items?: DropdownItem[]
-    direction?: DropdownDirection
+    direction?: PopupDirection
 }
 
 export const Dropdown: FC<DropdownProps> = memo((props) => {
@@ -50,11 +52,11 @@ export const Dropdown: FC<DropdownProps> = memo((props) => {
     }, [])
 
     return (
-        <Menu as={`${'div'}`} className={cls(className, styles.dropdown)}>
-            <Menu.Button className={styles.trigger}>
+        <Menu as={`${'div'}`} className={cls(className, popupStyles.popup)}>
+            <Menu.Button className={popupStyles.trigger}>
                 {trigger}
             </Menu.Button>
-            <Menu.Items className={cls(styles.menu, styles[direction])}>
+            <Menu.Items className={cls(styles.menu, popupStyles[direction])}>
                 {items?.map(item =>
                     <Menu.Item
                         key={String(item.content)}

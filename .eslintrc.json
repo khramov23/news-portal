@@ -35,7 +35,7 @@
         "react/display-name": "warn",
         "i18next/no-literal-string": ["error", {
             "markupOnly": true,
-            "ignoreAttribute": ["data-testid", "to", "name", "align", "size", "target", "align", "justify", "direction"]
+            "ignoreAttribute": ["data-testid", "to", "name", "align", "size", "target", "align", "justify", "direction", "theme"]
         }],
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",

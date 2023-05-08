@@ -2,21 +2,21 @@ import { Fragment } from 'react'
 import { Listbox as HListBox, Transition } from '@headlessui/react'
 
 import styles from './ListBox.module.scss'
+import popupStyles from '../../styles/Popups.module.scss'
 import { cls } from 'shared/lib/classNames'
-import { Icon } from '../Icon/Icon'
+import { Icon } from '../../../Icon/Icon'
 import OkIcon from 'shared/assets/icons/ok.svg'
 import ChevronTop from 'shared/assets/icons/chevron-top.svg'
-import { HStack } from '../Stack'
-import { Text } from '../Text/Text'
-import { Button } from '../Button/Button'
+import { HStack } from '../../../Stack'
+import { Text } from '../../../Text/Text'
+import { Button } from '../../../Button/Button'
+import { type PopupDirection } from '../../styles/Popup.types'
 
 interface ListBoxItem<T extends string> {
     content: string
     value: T
     disabled?: boolean
 }
-
-export type DropdownDirection = 'top_left' | 'bottom_left' | 'top_right' | 'bottom_right'
 
 export interface ListBoxProps<T extends string> {
     className?: string
@@ -26,7 +26,7 @@ export interface ListBoxProps<T extends string> {
     onChange?: (value: T) => void
     readonly?: boolean
     label?: string
-    direction?: DropdownDirection
+    direction?: PopupDirection
 }
 
 export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
@@ -48,11 +48,11 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                 as={`${'div'}`}
                 value={value ?? defaultValue}
                 onChange={onChange}
-                className={cls(className, styles.listBox)}
+                className={cls(className, popupStyles.popup)}
                 disabled={readonly}
             >
                 <HListBox.Button
-                    className={styles.trigger}
+                    className={popupStyles.trigger}
                 >
                     {({ open }) => (
                         <Button>
@@ -76,7 +76,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                     leaveFrom={styles.leaveFrom}
                     leaveTo={styles.leaveTo}
                 >
-                    <HListBox.Options className={cls(styles.options, styles[direction])}>
+                    <HListBox.Options className={cls(styles.options, popupStyles[direction])}>
                         {items?.map((item) => (
                             <HListBox.Option
                                 key={item.value}

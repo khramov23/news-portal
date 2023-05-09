@@ -26,7 +26,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo(({ className
     }, [])
 
     const triggerElement = (
-        <Button theme={ButtonTheme.CLEAR} onClick={onOpenDrawer}>
+        <Button className={className} theme={ButtonTheme.CLEAR} onClick={onOpenDrawer}>
             <Icon Svg={NotificationIcon} theme={'inverted'} />
         </Button>
     )
@@ -35,7 +35,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo(({ className
         ? (
             <>
                 {triggerElement}
-                <Drawer isOpen={isOpen} closeHandler={onCloseDrawer}>
+                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
                     <NotificationList />
                 </Drawer>
             </>

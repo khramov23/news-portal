@@ -11,6 +11,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { AvatarDropdown } from 'features/AvatarDropdown'
 import { HStack } from 'shared/ui/Stack'
 import { NotificationButton } from 'features/NotificationButton'
+import { useMatchMedia } from 'shared/hooks/useMatchMedia'
 
 interface NavbarProps {
     className?: string
@@ -18,6 +19,7 @@ interface NavbarProps {
 
 export const Navbar: FC<NavbarProps> = memo(({ className }) => {
     const { t } = useTranslation()
+    const { mobile } = useMatchMedia()
 
     const [isAuthModal, setIsAuthModal] = useState(false)
     const authData = useSelector(getUserAuthData)
@@ -42,6 +44,7 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
                     className={styles.actions}
                     align={'center'}
                 >
+
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>

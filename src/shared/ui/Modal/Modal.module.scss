@@ -8,12 +8,6 @@
     opacity: 0;
     pointer-events: none;
     transition: z-index 0.3s, opacity 0.3s;
-}
-
-.overlay {
-    width: 100%;
-    height: 100%;
-    background: var(--overlay-color);
     display: flex;
     align-items: center;
     justify-content: center;

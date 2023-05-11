@@ -1,8 +1,8 @@
 import { type FC, memo } from 'react'
 
 import styles from './PageLoader.module.scss'
-import { cls } from 'shared/lib/classNames'
-import { Loader } from 'shared/ui/Loader/Loader'
+import { cls } from '@/shared/lib/classNames'
+import { Loader } from '@/shared/ui/Loader/Loader'
 
 interface PageLoaderProps {
     className?: string

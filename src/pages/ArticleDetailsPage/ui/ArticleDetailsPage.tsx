@@ -1,17 +1,17 @@
 import { type FC, useCallback } from 'react'
 
 import styles from './ArticleDetailsPage.module.scss'
-import { cls } from 'shared/lib/classNames'
+import { cls } from '@/shared/lib/classNames'
 import { useTranslation } from 'react-i18next'
-import { ArticleDetails } from 'entities/Article'
+import { ArticleDetails } from '@/entities/Article'
 import { useNavigate, useParams } from 'react-router'
-import { Text } from 'shared/ui/Text/Text'
-import { ArticleCommentList } from 'features/ArticleComments/ui/ArticleCommentList/ArticleCommentList'
-import { ArticleCommentsForm } from 'features/ArticleComments'
-import { Button } from 'shared/ui/Button/Button'
-import { RoutePath } from 'shared/config/routes/routes.config'
-import { Page } from 'widgets/Page'
-import { ArticleRecommendations } from 'features/ArticleRecommendations'
+import { Text } from '@/shared/ui/Text/Text'
+import { ArticleCommentList } from '@/features/ArticleComments/ui/ArticleCommentList/ArticleCommentList'
+import { ArticleCommentsForm } from '@/features/ArticleComments'
+import { Button } from '@/shared/ui/Button/Button'
+import { RoutePath } from '@/shared/config/routes/routes.config'
+import { Page } from '@/widgets/Page'
+import { ArticleRecommendations } from '@/features/ArticleRecommendations'
 
 interface ArticleDetailsPageProps {
     className?: string

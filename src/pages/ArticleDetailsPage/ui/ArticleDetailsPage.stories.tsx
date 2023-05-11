@@ -1,11 +1,11 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import ArticleDetailsPage from './ArticleDetailsPage'
-import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator'
-import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator'
-import { Theme } from 'shared/lib/theme/ThemeContext'
-import { articleMock } from 'entities/Article/model/mocks/article'
-import { commentMock } from 'entities/Comment'
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
+import { Theme } from '@/shared/lib/theme/ThemeContext'
+import { articleMock } from '@/entities/Article/model/mocks/article'
+import { commentMock } from '@/entities/Comment'
 import withMock from 'storybook-addon-mock'
 
 export default {

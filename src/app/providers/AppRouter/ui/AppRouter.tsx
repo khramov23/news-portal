@@ -1,8 +1,8 @@
 import { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { routes } from '../lib/routes'
-import { PageLoader } from 'widgets/PageLoader/ui/PageLoader'
-import { type AppRouteProps } from 'shared/config/routes/routes.config'
+import { PageLoader } from '@/widgets/PageLoader/ui/PageLoader'
+import { type AppRouteProps } from '@/shared/config/routes/routes.config'
 import { RequireAuth } from './RequireAuth'
 
 const renderWithAuth = (route: AppRouteProps) => {

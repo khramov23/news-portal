@@ -1,5 +1,5 @@
 import { ArticleBlockType, ArticleType, type Article } from '../types/article'
-import { profileMock } from 'entities/Profile'
+import { profileMock } from '@/entities/Profile'
 
 export const articleMock: Article = {
     id: '1',

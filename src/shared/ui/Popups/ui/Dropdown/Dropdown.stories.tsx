@@ -1,8 +1,8 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import { Dropdown } from './Dropdown'
-import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator'
-import { Theme } from 'shared/lib/theme/ThemeContext'
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
+import { Theme } from '@/shared/lib/theme/ThemeContext'
 
 export default {
     title: 'shared/Dropdown',

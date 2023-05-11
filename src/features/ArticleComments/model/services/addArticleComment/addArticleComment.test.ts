@@ -1,7 +1,7 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk'
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk'
 import { addArticleComment } from './addArticleComment'
-import { commentMock } from 'entities/Comment'
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { commentMock } from '@/entities/Comment'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 
 const stateMock: DeepPartial<StateSchema> = {
     article: {

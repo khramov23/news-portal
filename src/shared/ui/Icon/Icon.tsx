@@ -1,7 +1,7 @@
 import { type FC, type ReactElement, type SVGProps } from 'react'
 
 import styles from './Icon.module.scss'
-import { cls } from 'shared/lib/classNames'
+import { cls } from '@/shared/lib/classNames'
 
 type IconSize = 's' | 'm' | 'l' | 'xl'
 

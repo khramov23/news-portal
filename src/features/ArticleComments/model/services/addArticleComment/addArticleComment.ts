@@ -1,9 +1,9 @@
-import { getUserAuthData } from 'entities/User'
+import { getUserAuthData } from '@/entities/User'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type ThunkApi } from 'app/providers/StoreProvider'
+import { type ThunkApi } from '@/app/providers/StoreProvider'
 import { getArticleCommentsFormText } from '../../selectors/articleCommentsForm'
-import { getArticleData } from 'entities/Article/model/selectors/articleDetails'
-import { type Comment } from 'entities/Comment'
+import { getArticleData } from '@/entities/Article/model/selectors/articleDetails'
+import { type Comment } from '@/entities/Comment'
 import {
     fetchArticleCommentsById
 } from '../fetchArticleCommentsById/fetchArticleCommentsById'

@@ -1,7 +1,7 @@
 import { type FC, memo } from 'react'
 
 import styles from './ArticlesTypeSelector.module.scss'
-import { cls } from 'shared/lib/classNames'
+import { cls } from '@/shared/lib/classNames'
 
 interface ArticlesTypeSelectorProps {
     className?: string

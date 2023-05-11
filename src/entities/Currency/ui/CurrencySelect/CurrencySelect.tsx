@@ -2,7 +2,7 @@ import { type FC } from 'react'
 import { currencies } from '../../model/const/currency'
 import { useTranslation } from 'react-i18next'
 import { type Currency } from '../../model/types/currency'
-import { ListBox } from 'shared/ui/Popups'
+import { ListBox } from '@/shared/ui/Popups'
 
 interface CurrencySelectProps {
     className?: string

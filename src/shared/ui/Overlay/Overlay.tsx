@@ -1,7 +1,7 @@
 import { type DetailedHTMLProps, type FC, type HTMLAttributes, memo } from 'react'
 
 import styles from './Overlay.module.scss'
-import { cls } from 'shared/lib/classNames'
+import { cls } from '@/shared/lib/classNames'
 
 interface OverlayProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 

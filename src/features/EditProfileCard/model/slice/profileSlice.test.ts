@@ -1,7 +1,7 @@
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 import { type Profile, type ProfileSchema } from '../types/profileSchema'
-import { Currency } from 'entities/Currency'
-import { Country } from 'entities/Country'
+import { Currency } from '@/entities/Currency'
+import { Country } from '@/entities/Country'
 import { ValidateError } from '../types/profileSchema'
 import { saveProfileData } from '../services/saveProfileData/saveProfileData'
 

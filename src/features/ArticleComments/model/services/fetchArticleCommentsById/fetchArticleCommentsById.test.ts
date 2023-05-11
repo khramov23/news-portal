@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk'
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk'
 import { fetchArticleCommentsById } from './fetchArticleCommentsById'
-import { commentMock, type Comment } from 'entities/Comment'
+import { commentMock, type Comment } from '@/entities/Comment'
 
 const commentsMock: Comment[] = [
     { ...commentMock, id: '1' },

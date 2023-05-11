@@ -1,4 +1,4 @@
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 import { createSelector } from 'reselect'
 import { UserRole } from '../../types/userSchema'
 

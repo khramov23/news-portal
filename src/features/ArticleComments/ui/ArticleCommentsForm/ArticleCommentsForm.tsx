@@ -1,13 +1,13 @@
 import { type FC, memo, useCallback } from 'react'
-import { AddCommentForm } from 'entities/Comment/ui/AddCommentForm/AddCommentForm'
-import { useAppDispatch } from 'shared/hooks/useAppDispatch'
+import { AddCommentForm } from '@/entities/Comment/ui/AddCommentForm/AddCommentForm'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { addArticleComment } from '../../model/services/addArticleComment/addArticleComment'
 import { getArticleCommentsFormText } from '../../model/selectors/articleCommentsForm'
 import { useSelector } from 'react-redux'
 import {
     articleCommentsFormActions, articleCommentsFormReducer
 } from '../../model/slice/articleCommentsFormSlice/articleCommentsFormSlice'
-import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 const reducers: ReducersList = {
     articleCommentsForm: articleCommentsFormReducer

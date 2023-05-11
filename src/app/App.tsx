@@ -1,13 +1,13 @@
 import { Suspense, useEffect } from 'react'
-import { AppRouter } from 'app/providers/AppRouter'
-import { Navbar } from 'widgets/Navbar'
-import { Sidebar } from 'widgets/Sidebar'
-import { ErrorBoundary } from 'app/ErrorBoundary'
-import { cls } from 'shared/lib/classNames'
-import { useTheme } from 'shared/lib/theme/useTheme'
+import { AppRouter } from '@/app/providers/AppRouter'
+import { Navbar } from '@/widgets/Navbar'
+import { Sidebar } from '@/widgets/Sidebar'
+import { ErrorBoundary } from '@/app/ErrorBoundary'
+import { cls } from '@/shared/lib/classNames'
+import { useTheme } from '@/shared/lib/theme/useTheme'
 import { useDispatch, useSelector } from 'react-redux'
-import { userActions } from 'entities/User'
-import { getRouterMounted } from 'entities/User/model/selectors/getRouterMounted/getRouterMounted'
+import { userActions } from '@/entities/User'
+import { getRouterMounted } from '@/entities/User/model/selectors/getRouterMounted/getRouterMounted'
 
 const App = () => {
     const { theme } = useTheme()

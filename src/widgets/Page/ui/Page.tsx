@@ -1,14 +1,14 @@
 import { type FC, type MutableRefObject, type ReactNode, type UIEvent, useLayoutEffect, useRef } from 'react'
 
 import styles from './Page.module.scss'
-import { cls } from 'shared/lib/classNames'
-import { useInfiniteScroll } from 'shared/hooks/useInfiniteScroll'
-import { useAppDispatch } from 'shared/hooks/useAppDispatch'
-import { scrollRestorationActions } from 'widgets/ScrollRestoration/model/slice/scrollRestoratoinSlice'
+import { cls } from '@/shared/lib/classNames'
+import { useInfiniteScroll } from '@/shared/hooks/useInfiniteScroll'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import { scrollRestorationActions } from '@/widgets/ScrollRestoration/model/slice/scrollRestoratoinSlice'
 import { useLocation } from 'react-router'
-import { useThrottle } from 'shared/hooks/useThrottle'
+import { useThrottle } from '@/shared/hooks/useThrottle'
 import { useSelector } from 'react-redux'
-import { getScrollByPath } from 'widgets/ScrollRestoration'
+import { getScrollByPath } from '@/widgets/ScrollRestoration'
 
 interface PageProps {
     className?: string

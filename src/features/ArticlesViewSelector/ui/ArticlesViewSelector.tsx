@@ -1,15 +1,15 @@
 import { type FC, memo } from 'react'
 
 import styles from './ArticlesViewSelector.module.scss'
-import { cls } from 'shared/lib/classNames'
+import { cls } from '@/shared/lib/classNames'
 
-import ListIcon from 'shared/assets/icons/list.svg'
-import TiledIcon from 'shared/assets/icons/tiled.svg'
-import { ArticleView } from 'entities/Article'
-import { useAppDispatch } from 'shared/hooks/useAppDispatch'
-import { articlesPageActions } from 'pages/ArticlesPage/model/slice/articlesPageSlice'
-import { Icon } from 'shared/ui/Icon/Icon'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import ListIcon from '@/shared/assets/icons/list.svg'
+import TiledIcon from '@/shared/assets/icons/tiled.svg'
+import { ArticleView } from '@/entities/Article'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import { articlesPageActions } from '@/pages/ArticlesPage/model/slice/articlesPageSlice'
+import { Icon } from '@/shared/ui/Icon/Icon'
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 
 interface ArticlesViewSelectorProps {
     className?: string

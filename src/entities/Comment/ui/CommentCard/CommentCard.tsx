@@ -1,12 +1,12 @@
 import { type FC, memo } from 'react'
 
 import styles from './CommentCard.module.scss'
-import { cls } from 'shared/lib/classNames'
+import { cls } from '@/shared/lib/classNames'
 import { type Comment } from '../../model/types/comment'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Text } from 'shared/ui/Text/Text'
-import { AppLink } from 'shared/ui/AppLink/AppLink'
-import { RoutePath } from 'shared/config/routes/routes.config'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Text } from '@/shared/ui/Text/Text'
+import { AppLink } from '@/shared/ui/AppLink/AppLink'
+import { RoutePath } from '@/shared/config/routes/routes.config'
 
 interface CommentCardProps {
     className?: string

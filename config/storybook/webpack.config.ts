@@ -31,5 +31,11 @@ export default ({ config }: { config: webpack.Configuration }) => {
         __PROJECT__: JSON.stringify('storybook')
     }))
 
+    if (config.resolve) {
+        config.resolve.alias = {
+            '@': path.resolve(paths.src)
+        }
+    }
+
     return config
 }

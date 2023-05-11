@@ -1,5 +1,5 @@
 import { type FC, memo } from 'react'
-import { ArticleList, ArticleView } from 'entities/Article'
+import { ArticleList, ArticleView } from '@/entities/Article'
 import { useGetArticleRecommendationsQuery } from '../api/articleRecommendationsApi'
 
 interface ArticleRecommendationsProps {

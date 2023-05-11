@@ -1,7 +1,7 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import { ArticleDetails } from './ArticleDetails'
-import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator'
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
 import { type ArticleSchema } from '../../model/types/articleSchema'
 import { articleMock } from '../../model/mocks/article'
 

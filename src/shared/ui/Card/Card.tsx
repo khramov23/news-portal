@@ -1,7 +1,7 @@
 import { type FC, type HTMLAttributes, type ReactNode } from 'react'
 
 import styles from './Card.module.scss'
-import { cls } from 'shared/lib/classNames'
+import { cls } from '@/shared/lib/classNames'
 
 export type CardTheme = 'primary' | 'outlined'
 

@@ -1,5 +1,5 @@
-import { type Country } from 'entities/Country'
-import { type Currency } from 'entities/Currency'
+import { type Country } from '@/entities/Country'
+import { type Currency } from '@/entities/Currency'
 
 export enum ValidateError {
     INCORRECT_FIRSTNAME = 'INCORRECT_FIRSTNAME',

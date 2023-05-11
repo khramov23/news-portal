@@ -1,10 +1,10 @@
-import { componentRender } from 'shared/lib/tests/componentRender'
+import { componentRender } from '@/shared/lib/tests/componentRender'
 import { EditProfileCard } from './EditProfileCard'
-import { profileMock } from 'entities/Profile'
+import { profileMock } from '@/entities/Profile'
 import { profileReducer } from '../model/slice/profileSlice'
 import userEvent from '@testing-library/user-event'
 import { screen } from '@testing-library/react'
-import { $api } from 'shared/api/api'
+import { $api } from '@/shared/api/api'
 
 const noAuthState = {
     initialState: {

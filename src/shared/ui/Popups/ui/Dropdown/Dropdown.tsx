@@ -4,7 +4,7 @@ import { type FC, Fragment, memo, type ReactNode, useCallback } from 'react'
 import styles from './Dropdown.module.scss'
 import popupStyles from '../../styles/Popups.module.scss'
 
-import { cls } from 'shared/lib/classNames'
+import { cls } from '@/shared/lib/classNames'
 import { AppLink } from '../../../AppLink/AppLink'
 import { type PopupDirection } from '../../styles/Popup.types'
 

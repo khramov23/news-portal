@@ -1,9 +1,9 @@
 import { type FC, type HTMLAttributeAnchorTarget, memo, type ReactNode } from 'react'
 
 import styles from './ArticleList.module.scss'
-import { cls } from 'shared/lib/classNames'
+import { cls } from '@/shared/lib/classNames'
 import { type Article, ArticleView } from '../../model/types/article'
-import { Text } from 'shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text/Text'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { useTranslation } from 'react-i18next'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'

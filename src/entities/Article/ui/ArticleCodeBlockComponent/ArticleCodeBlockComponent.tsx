@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 import { type ArticleCodeBlock } from '../../model/types/article'
-import { Code } from 'shared/ui/Code/Code'
-import { cls } from 'shared/lib/classNames'
+import { Code } from '@/shared/ui/Code/Code'
+import { cls } from '@/shared/lib/classNames'
 
 interface ArticleCodeBlockComponentProps {
     className?: string

@@ -1,8 +1,8 @@
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 import { getProfileForm } from './getProfileForm'
 import { type Profile } from '../../types/profileSchema'
-import { Currency } from 'entities/Currency'
-import { Country } from 'entities/Country'
+import { Currency } from '@/entities/Currency'
+import { Country } from '@/entities/Country'
 
 describe('getProfileForm', () => {
     test('works with value', () => {

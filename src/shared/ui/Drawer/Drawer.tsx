@@ -1,13 +1,13 @@
 import { type FC, memo, type ReactNode, useCallback, useEffect } from 'react'
 
 import styles from './Drawer.module.scss'
-import { cls } from 'shared/lib/classNames'
+import { cls } from '@/shared/lib/classNames'
 import { Portal } from '../Portal/Portal'
 import { Overlay } from '..//Overlay/Overlay'
-import { useTheme } from 'shared/lib/theme/useTheme'
-import { useModal } from 'shared/hooks/useModal'
-import { ANIMATION_DURATION } from 'shared/const/common'
-import { AnimationProvider, useAnimationLibs } from 'shared/lib/components/AnimationProvider'
+import { useTheme } from '@/shared/lib/theme/useTheme'
+import { useModal } from '@/shared/hooks/useModal'
+import { ANIMATION_DURATION } from '@/shared/const/common'
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
 
 interface DrawerProps {
     className?: string

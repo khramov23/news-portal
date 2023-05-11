@@ -1,8 +1,8 @@
 @import "reset";
-@import "shared/styles/variables/global";
-@import "shared/styles/themes/dark";
-@import "shared/styles/themes/light";
-@import "shared/styles/themes/green";
+@import "@/shared/styles/variables/global";
+@import "@/shared/styles/themes/dark";
+@import "@/shared/styles/themes/light";
+@import "@/shared/styles/themes/green";
 
 .app,
 .appModal,

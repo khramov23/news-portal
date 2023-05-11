@@ -1673,5 +1673,49 @@
       "description": "Произошло какое-то событие",
       "userId": "1"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "stars": 3,
+      "userId": "1",
+      "feedback": "Средненькая статья",
+      "articleId": "1"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "stars": 3,
+      "feedback": "something",
+      "id": "ZwnSQQD"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "stars": 5,
+      "feedback": "",
+      "id": "uJifSOh"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "stars": 5,
+      "feedback": "Отличная",
+      "id": "UjxH9q4"
+    },
+    {
+      "articleId": "6",
+      "userId": "1",
+      "stars": 4,
+      "feedback": "",
+      "id": "Z2VSXKi"
+    },
+    {
+      "articleId": "6",
+      "userId": "1",
+      "stars": 4,
+      "feedback": "",
+      "id": "oWCQoAU"
+    }
   ]
 }

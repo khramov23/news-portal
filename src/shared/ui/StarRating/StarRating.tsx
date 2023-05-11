@@ -17,7 +17,7 @@ const starsCounts = [1, 2, 3, 4, 5]
 export const StarRating: FC<StarRatingProps> = memo((props) => {
     const { className, selectedStars, onSelect } = props
 
-    const [currentStars, setCurrentStars] = useState(0)
+    const [currentStars, setCurrentStars] = useState(selectedStars || 0)
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 
     const onMouseEnter = (star: number) => () => {

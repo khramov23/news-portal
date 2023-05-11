@@ -8,6 +8,9 @@ import {
     articleCommentsFormActions, articleCommentsFormReducer
 } from '../../model/slice/articleCommentsFormSlice/articleCommentsFormSlice'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { Text } from '@/shared/ui/Text/Text'
+import styles from '@/pages/ArticleDetailsPage/ui/ArticleDetailsPage.module.scss'
+import { useTranslation } from 'react-i18next'
 
 const reducers: ReducersList = {
     articleCommentsForm: articleCommentsFormReducer
@@ -18,6 +21,7 @@ interface ArticleCommentsFormProps {
 }
 
 export const ArticleCommentsForm: FC<ArticleCommentsFormProps> = memo(() => {
+    const { t } = useTranslation()
     const dispatch = useAppDispatch()
 
     const text = useSelector(getArticleCommentsFormText)
@@ -32,6 +36,7 @@ export const ArticleCommentsForm: FC<ArticleCommentsFormProps> = memo(() => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <Text className={styles.commentTitle} title={t('Комментарии')} />
             <AddCommentForm
                 onSendComment={onSendComment}
                 onChangeText={onChangeText}

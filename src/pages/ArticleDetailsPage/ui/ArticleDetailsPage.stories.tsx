@@ -7,6 +7,7 @@ import { Theme } from '@/shared/lib/theme/ThemeContext'
 import { articleMock } from '@/entities/Article/model/mocks/article'
 import { commentMock } from '@/entities/Comment'
 import withMock from 'storybook-addon-mock'
+import { articleRatingMock } from '@/features/ArticleRating'
 
 export default {
     title: 'pages/ArticleDetailsPage',
@@ -26,6 +27,15 @@ export default {
                     { ...articleMock, id: '3' },
                     { ...articleMock, id: '4' }
                 ]
+            },
+            {
+                url: `${__API__}/article-ratings?userId=1&articleId=1`,
+                method: 'GET',
+                response: [articleRatingMock]
+            },
+            {
+                url: `${__API__}/article-ratings`,
+                method: 'POST'
             }
         ]
     },
@@ -39,6 +49,11 @@ export default {
                 1: { ...commentMock, id: '1' },
                 2: { ...commentMock, id: '2' },
                 3: { ...commentMock, id: '3' }
+            }
+        },
+        user: {
+            authData: {
+                id: '1'
             }
         }
     })

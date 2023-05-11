@@ -5,13 +5,13 @@ import { cls } from '@/shared/lib/classNames'
 import { useTranslation } from 'react-i18next'
 import { ArticleDetails } from '@/entities/Article'
 import { useNavigate, useParams } from 'react-router'
-import { Text } from '@/shared/ui/Text/Text'
 import { ArticleCommentList } from '@/features/ArticleComments/ui/ArticleCommentList/ArticleCommentList'
 import { ArticleCommentsForm } from '@/features/ArticleComments'
 import { Button } from '@/shared/ui/Button/Button'
 import { RoutePath } from '@/shared/config/routes/routes.config'
 import { Page } from '@/widgets/Page'
 import { ArticleRecommendations } from '@/features/ArticleRecommendations'
+import { ArticleRating } from '@/features/ArticleRating'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -36,9 +36,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
         <Page className={cls(styles.articleDetailsPage, className)}>
             <Button onClick={onBackToList}>{t('Вернуться к списку')}</Button>
             <ArticleDetails id={id} />
-            <Text className={styles.commentTitle} title={t('Рекомендации')} />
+            <ArticleRating articleId={id} />
             <ArticleRecommendations />
-            <Text className={styles.commentTitle} title={t('Комментарии')} />
             <ArticleCommentsForm />
             <ArticleCommentList articleId={id} />
         </Page>

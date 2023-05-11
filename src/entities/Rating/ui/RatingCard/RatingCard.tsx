@@ -36,7 +36,7 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
     const { mobile } = useMatchMedia()
 
     const [isModal, setIsModal] = useState(false)
-    const [starsCount, setStarsCount] = useState(0)
+    const [starsCount, setStarsCount] = useState(selectedStars || 0)
     const [feedback, setFeedback] = useState('')
 
     const onCloseModal = useCallback(() => {
@@ -74,7 +74,7 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
     const modalContent = (isMobile: boolean) => (
         <form onSubmit={onFormSubmit}>
             <VStack max align={'center'} gap={16}>
-                <Text title={feedbackTitle} />
+                <Text title={feedbackTitle } />
                 <Input
                     placeholder={t('Ваш отзыв')}
                     value={feedback}
@@ -97,7 +97,7 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
     return (
         <Card className={cls(className)}>
             <VStack align={'center'} gap={8} justify='center'>
-                <Text title={title} />
+                <Text title={starsCount ? t('Спасибо за оценку!') : title} />
                 <StarRating
                     selectedStars={selectedStars}
                     onSelect={onSelectStars}

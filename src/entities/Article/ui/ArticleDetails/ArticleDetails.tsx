@@ -19,6 +19,7 @@ import { type ArticleBlock, ArticleBlockType } from '../../model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
+import { RatingCard } from '@/entities/Rating'
 
 interface ArticleDetailsProps {
     className?: string
@@ -96,6 +97,10 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={cls(styles.articleDetails, className)}>
                 {content}
+                <RatingCard
+                    title={t('Оцените статью')}
+                    feedbackTitle={t('Оставьте отзыв')}
+                />
             </div>
         </DynamicModuleLoader>
     )

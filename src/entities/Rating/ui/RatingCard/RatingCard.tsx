@@ -1,4 +1,4 @@
-import { FC, FormEventHandler, memo, useCallback, useMemo, useState } from 'react'
+import { FC, FormEventHandler, memo, useCallback, useState } from 'react'
 
 import { cls } from '@/shared/lib/classNames'
 import { Card } from '@/shared/ui/Card/Card'
@@ -95,7 +95,7 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
     )
 
     return (
-        <Card className={cls(styles.ratingCard, className)}>
+        <Card className={cls(className)}>
             <VStack align={'center'} gap={8} justify='center'>
                 <Text title={title} />
                 <StarRating

@@ -41,7 +41,8 @@
         "react-hooks/exhaustive-deps": "error",
         "react/prop-types": "off",
         "n/no-callback-literal": "off",
-        "khramov-fsd/path-checker": "error"
+        "khramov-fsd/path-checker": "error",
+        "@typescript-eslint/consistent-type-imports": "off"
     },
     "overrides": [
         {

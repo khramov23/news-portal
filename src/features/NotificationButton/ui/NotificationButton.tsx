@@ -35,7 +35,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo(({ className
         ? (
             <>
                 {triggerElement}
-                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                <Drawer isOpen={isOpen} onClose={onCloseDrawer} lazy>
                     <NotificationList />
                 </Drawer>
             </>

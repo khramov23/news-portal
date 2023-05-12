@@ -10,7 +10,7 @@ import {
 import { articlesPageActions } from '../../slice/articlesPageSlice'
 import { fetchArticles } from '../fetchArticles/fetchArticles'
 import { type Order } from '@/shared/types/sort'
-import { type ArticleSortType, type ArticleType } from '@/entities/Article/model/types/article'
+import { type ArticleSortType, type ArticleType } from '@/entities/Article'
 import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams'
 
 export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkApi<string> >(

@@ -44,6 +44,9 @@
         "khramov-fsd/path-checker": ["error", {
             "alias": "@/"
         }],
+        "khramov-fsd/public-api-imports": ["error", {
+            "alias": "@/"
+        }],
         "@typescript-eslint/consistent-type-imports": "off"
     },
     "overrides": [

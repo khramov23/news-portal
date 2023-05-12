@@ -1,5 +1,5 @@
 import { type FC, memo, useCallback } from 'react'
-import { AddCommentForm } from '@/entities/Comment/ui/AddCommentForm/AddCommentForm'
+import { AddCommentForm } from '@/entities/Comment'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { addArticleComment } from '../../model/services/addArticleComment/addArticleComment'
 import { getArticleCommentsFormText } from '../../model/selectors/articleCommentsForm'
@@ -9,8 +9,8 @@ import {
 } from '../../model/slice/articleCommentsFormSlice/articleCommentsFormSlice'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { Text } from '@/shared/ui/Text/Text'
-import styles from '@/pages/ArticleDetailsPage/ui/ArticleDetailsPage.module.scss'
 import { useTranslation } from 'react-i18next'
+import styles from './ArticleCommentsForm.module.scss'
 
 const reducers: ReducersList = {
     articleCommentsForm: articleCommentsFormReducer

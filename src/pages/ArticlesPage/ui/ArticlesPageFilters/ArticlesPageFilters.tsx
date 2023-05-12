@@ -10,13 +10,13 @@ import {
     getArticlesSort,
     getArticlesType,
     getArticlesView
-} from '@/pages/ArticlesPage/model/selectors/articlesPage'
+} from '../../model/selectors/articlesPage'
 import { useTranslation } from 'react-i18next'
 import { Card } from '@/shared/ui/Card/Card'
 import { Input } from '@/shared/ui/Input/Input'
 import { ArticlesSortSelectors } from '@/features/ArticlesSortSelector'
-import { type ArticleSortType, ArticleType } from '@/entities/Article/model/types/article'
-import { articlesPageActions } from '@/pages/ArticlesPage/model/slice/articlesPageSlice'
+import { type ArticleSortType, ArticleType } from '@/entities/Article'
+import { articlesPageActions } from '../../model/slice/articlesPageSlice'
 import { type Order } from '@/shared/types/sort'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles'

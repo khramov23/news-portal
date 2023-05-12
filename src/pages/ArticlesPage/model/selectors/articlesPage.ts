@@ -1,6 +1,5 @@
 import { type StateSchema } from '@/app/providers/StoreProvider'
-import { ArticleView } from '@/entities/Article'
-import { ArticleSortType, ArticleType } from '@/entities/Article/model/types/article'
+import { ArticleView, ArticleSortType, ArticleType } from '@/entities/Article'
 
 export const getArticlesIsLoading = (state: StateSchema) => state.articlesPage?.isLoading || false
 export const getArticlesError = (state: StateSchema) => state.articlesPage?.error || ''

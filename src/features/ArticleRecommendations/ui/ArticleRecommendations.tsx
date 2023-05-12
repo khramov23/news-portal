@@ -2,7 +2,6 @@ import { type FC, memo } from 'react'
 import { ArticleList, ArticleView } from '@/entities/Article'
 import { useGetArticleRecommendationsQuery } from '../api/articleRecommendationsApi'
 import { Text } from '@/shared/ui/Text/Text'
-import styles from '@/pages/ArticleDetailsPage/ui/ArticleDetailsPage.module.scss'
 import { useTranslation } from 'react-i18next'
 
 interface ArticleRecommendationsProps {
@@ -15,7 +14,7 @@ export const ArticleRecommendations: FC<ArticleRecommendationsProps> = memo(({ c
 
     return (
         <div className={className}>
-            <Text className={styles.commentTitle} title={t('Рекомендации')} />
+            <Text title={t('Рекомендации')} />
             <ArticleList
                 articles={recommendations}
                 view={ArticleView.ROW}

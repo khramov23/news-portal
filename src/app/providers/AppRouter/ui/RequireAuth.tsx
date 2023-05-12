@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router'
 import { RoutePath } from '@/shared/config/routes/routes.config'
 import { type FC, type ReactNode, useMemo } from 'react'
-import { useAuth } from '@/entities/User/hooks/useAuth'
+import { useAuth } from '@/entities/User'
 import { getRoles, type UserRole } from '@/entities/User'
 import { useSelector } from 'react-redux'
 

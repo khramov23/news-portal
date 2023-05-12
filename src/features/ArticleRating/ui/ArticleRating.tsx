@@ -3,7 +3,7 @@ import { RatingCard } from '@/entities/Rating'
 import { useTranslation } from 'react-i18next'
 import { useGetArticleRatingQuery, useRateArticleMutation } from '../api/articleRatingApi'
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
-import { useAuth } from '@/entities/User/hooks/useAuth'
+import { useAuth } from '@/entities/User'
 
 export interface ArticleRatingProps {
     className?: string

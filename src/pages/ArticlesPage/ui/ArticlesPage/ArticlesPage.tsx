@@ -9,7 +9,7 @@ import { getArticlesError, getArticlesIsLoading, getArticlesView } from '../../m
 import { Page } from '@/widgets/Page'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
-import { ArticlesPageFilters } from '@/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters'
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import styles from './ArticlesPage.module.scss'
 import { useSearchParams } from 'react-router-dom'
 

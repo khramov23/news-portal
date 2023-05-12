@@ -6,8 +6,7 @@ import { ErrorBoundary } from '@/app/ErrorBoundary'
 import { cls } from '@/shared/lib/classNames'
 import { useTheme } from '@/shared/lib/theme/useTheme'
 import { useDispatch, useSelector } from 'react-redux'
-import { userActions } from '@/entities/User'
-import { getRouterMounted } from '@/entities/User/model/selectors/getRouterMounted/getRouterMounted'
+import { userActions, getRouterMounted } from '@/entities/User'
 
 const App = () => {
     const { theme } = useTheme()

@@ -5,7 +5,7 @@ import { cls } from '@/shared/lib/classNames'
 import { Select, type SelectOption } from '@/shared/ui/Select/Select'
 import { useTranslation } from 'react-i18next'
 import { type Order } from '@/shared/types/sort'
-import { ArticleSortType } from '@/entities/Article/model/types/article'
+import { ArticleSortType } from '@/entities/Article'
 
 interface ArticlesSortSelectorsProps {
     className?: string

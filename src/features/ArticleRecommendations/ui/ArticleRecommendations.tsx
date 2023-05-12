@@ -13,8 +13,6 @@ export const ArticleRecommendations: FC<ArticleRecommendationsProps> = memo(({ c
     const { data: recommendations, isLoading, error } = useGetArticleRecommendationsQuery(4)
     const { t } = useTranslation()
 
-    console.log(recommendations)
-
     return (
         <div className={className}>
             <Text className={styles.commentTitle} title={t('Рекомендации')} />

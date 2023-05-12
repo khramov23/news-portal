@@ -3,7 +3,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import ArticleRating from './ArticleRating'
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
 import withMock from 'storybook-addon-mock'
-import { articleRatingMock } from '@/features/ArticleRating'
+import { articleRatingMock } from '../model/mocks/articleRatingMock'
 
 export default {
     title: 'features/ArticleRating',

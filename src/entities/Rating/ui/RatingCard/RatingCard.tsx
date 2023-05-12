@@ -1,16 +1,17 @@
 import { FC, FormEventHandler, memo, useCallback, useState } from 'react'
 
-import { cls } from '@/shared/lib/classNames'
-import { Card } from '@/shared/ui/Card/Card'
-import { HStack, VStack } from '@/shared/ui/Stack'
-import { Text } from '@/shared/ui/Text/Text'
-import { StarRating } from '@/shared/ui/StarRating/StarRating'
-import { Modal } from '@/shared/ui/Modal/Modal'
 import { useTranslation } from 'react-i18next'
-import { Input } from '@/shared/ui/Input/Input'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
+
 import { useMatchMedia } from '@/shared/hooks/useMatchMedia'
+import { cls } from '@/shared/lib/classNames'
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
+import { Card } from '@/shared/ui/Card/Card'
 import { Drawer } from '@/shared/ui/Drawer/Drawer'
+import { Input } from '@/shared/ui/Input/Input'
+import { Modal } from '@/shared/ui/Modal/Modal'
+import { HStack, VStack } from '@/shared/ui/Stack'
+import { StarRating } from '@/shared/ui/StarRating/StarRating'
+import { Text } from '@/shared/ui/Text/Text'
 
 interface RatingCardProps {
     className?: string

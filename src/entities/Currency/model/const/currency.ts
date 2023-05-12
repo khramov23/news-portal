@@ -1,5 +1,6 @@
-import { Currency } from '../types/currency'
 import { type SelectOption } from '@/shared/ui/Select/Select'
+
+import { Currency } from '../types/currency'
 
 type CurrencyArray = Array<SelectOption<Currency>>
 

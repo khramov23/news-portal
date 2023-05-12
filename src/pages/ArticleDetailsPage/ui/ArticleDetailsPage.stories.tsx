@@ -1,13 +1,14 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import withMock from 'storybook-addon-mock'
 
-import ArticleDetailsPage from './ArticleDetailsPage'
+import { articleMock } from '@/entities/Article'
+import { commentMock } from '@/entities/Comment'
+import { articleRatingMock } from '@/features/ArticleRating'
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from '@/shared/lib/theme/ThemeContext'
-import { articleMock } from '@/entities/Article'
-import { commentMock } from '@/entities/Comment'
-import withMock from 'storybook-addon-mock'
-import { articleRatingMock } from '@/features/ArticleRating'
+
+import ArticleDetailsPage from './ArticleDetailsPage'
 
 export default {
     title: 'pages/ArticleDetailsPage',

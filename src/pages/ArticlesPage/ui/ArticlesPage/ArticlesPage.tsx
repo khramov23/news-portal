@@ -1,17 +1,20 @@
 import { type FC, memo, useCallback } from 'react'
+
+import { useSelector } from 'react-redux'
+import { useSearchParams } from 'react-router-dom'
+
 import { ArticleList } from '@/entities/Article'
-import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
-import { useSelector } from 'react-redux'
-import { getArticlesError, getArticlesIsLoading, getArticlesView } from '../../model/selectors/articlesPage'
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { Page } from '@/widgets/Page'
+
+import styles from './ArticlesPage.module.scss'
+import { getArticlesError, getArticlesIsLoading, getArticlesView } from '../../model/selectors/articlesPage'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
+import { articlesPageReducer, getArticles } from '../../model/slice/articlesPageSlice'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
-import styles from './ArticlesPage.module.scss'
-import { useSearchParams } from 'react-router-dom'
 
 interface ArticlesPageProps {
     className?: string

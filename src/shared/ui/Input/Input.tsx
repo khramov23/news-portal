@@ -1,7 +1,8 @@
 import { type ChangeEvent, type FC, type InputHTMLAttributes, memo } from 'react'
 
-import styles from './Input.module.scss'
 import { cls } from '@/shared/lib/classNames'
+
+import styles from './Input.module.scss'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 

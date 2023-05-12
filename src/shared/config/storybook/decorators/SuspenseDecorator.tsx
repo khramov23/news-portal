@@ -1,5 +1,7 @@
-import { type Story } from '@storybook/react'
 import { Suspense } from 'react'
+
+import { type Story } from '@storybook/react'
+
 import { Loader } from '@/shared/ui/Loader/Loader'
 
 export const SuspenseDecorator = (StoryComponent: Story) => {

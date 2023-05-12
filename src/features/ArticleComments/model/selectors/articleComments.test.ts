@@ -1,4 +1,5 @@
 import { type StateSchema } from '@/app/providers/StoreProvider'
+
 import { getArticleCommentsError, getArticleCommentsIsLoading } from './articleComments'
 
 describe('getProfileData', () => {

@@ -1,16 +1,18 @@
 import { Fragment } from 'react'
+
 import { Listbox as HListBox, Transition } from '@headlessui/react'
 
-import styles from './ListBox.module.scss'
-import popupStyles from '../../styles/Popups.module.scss'
-import { cls } from '@/shared/lib/classNames'
-import { Icon } from '../../../Icon/Icon'
-import OkIcon from '@/shared/assets/icons/ok.svg'
 import ChevronTop from '@/shared/assets/icons/chevron-top.svg'
+import OkIcon from '@/shared/assets/icons/ok.svg'
+import { cls } from '@/shared/lib/classNames'
+
+import styles from './ListBox.module.scss'
+import { Button } from '../../../Button/Button'
+import { Icon } from '../../../Icon/Icon'
 import { HStack } from '../../../Stack'
 import { Text } from '../../../Text/Text'
-import { Button } from '../../../Button/Button'
 import { type PopupDirection } from '../../styles/Popup.types'
+import popupStyles from '../../styles/Popups.module.scss'
 
 interface ListBoxItem<T extends string> {
     content: string

@@ -1,10 +1,12 @@
 import { type FC, type FormEvent, memo } from 'react'
 
-import styles from './AddCommentForm.module.scss'
-import { cls } from '@/shared/lib/classNames'
-import { Input } from '@/shared/ui/Input/Input'
 import { useTranslation } from 'react-i18next'
+
+import { cls } from '@/shared/lib/classNames'
 import { Button } from '@/shared/ui/Button/Button'
+import { Input } from '@/shared/ui/Input/Input'
+
+import styles from './AddCommentForm.module.scss'
 
 interface AddCommentFormProps {
     className?: string

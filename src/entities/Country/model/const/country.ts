@@ -1,5 +1,6 @@
-import { Country } from '../types/country'
 import { type SelectOption } from '@/shared/ui/Select/Select'
+
+import { Country } from '../types/country'
 
 type CountryArray = Array<SelectOption<Country>>
 

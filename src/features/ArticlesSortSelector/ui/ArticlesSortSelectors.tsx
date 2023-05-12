@@ -1,11 +1,13 @@
 import { type FC, memo, useMemo } from 'react'
 
-import styles from './ArticlesSortSelectors.module.scss'
-import { cls } from '@/shared/lib/classNames'
-import { Select, type SelectOption } from '@/shared/ui/Select/Select'
 import { useTranslation } from 'react-i18next'
-import { type Order } from '@/shared/types/sort'
+
 import { ArticleSortType } from '@/entities/Article'
+import { cls } from '@/shared/lib/classNames'
+import { type Order } from '@/shared/types/sort'
+import { Select, type SelectOption } from '@/shared/ui/Select/Select'
+
+import styles from './ArticlesSortSelectors.module.scss'
 
 interface ArticlesSortSelectorsProps {
     className?: string

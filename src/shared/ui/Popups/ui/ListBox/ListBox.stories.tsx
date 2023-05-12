@@ -1,8 +1,9 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
-import { ListBox } from './ListBox'
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from '@/shared/lib/theme/ThemeContext'
+
+import { ListBox } from './ListBox'
 
 export default {
     title: 'shared/ListBox',

@@ -1,8 +1,11 @@
 import { type FC } from 'react'
-import { countryOptions } from '../../model/const/country'
+
 import { useTranslation } from 'react-i18next'
-import { type Country } from '../../model/types/country'
+
 import { ListBox } from '@/shared/ui/Popups'
+
+import { countryOptions } from '../../model/const/country'
+import { type Country } from '../../model/types/country'
 
 interface CountrySelectProps {
     className?: string

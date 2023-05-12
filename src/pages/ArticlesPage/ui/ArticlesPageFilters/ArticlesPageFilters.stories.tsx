@@ -1,8 +1,9 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
-import { ArticlesPageFilters } from './ArticlesPageFilters'
-import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
 import { ArticleSortType, ArticleView } from '@/entities/Article'
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
+
+import { ArticlesPageFilters } from './ArticlesPageFilters'
 
 export default {
     title: 'pages/ArticlesPageFilters',

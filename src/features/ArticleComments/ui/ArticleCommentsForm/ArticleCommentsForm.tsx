@@ -1,16 +1,19 @@
 import { type FC, memo, useCallback } from 'react'
+
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+
 import { AddCommentForm } from '@/entities/Comment'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
-import { addArticleComment } from '../../model/services/addArticleComment/addArticleComment'
+import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { Text } from '@/shared/ui/Text/Text'
+
+import styles from './ArticleCommentsForm.module.scss'
 import { getArticleCommentsFormText } from '../../model/selectors/articleCommentsForm'
-import { useSelector } from 'react-redux'
+import { addArticleComment } from '../../model/services/addArticleComment/addArticleComment'
 import {
     articleCommentsFormActions, articleCommentsFormReducer
 } from '../../model/slice/articleCommentsFormSlice/articleCommentsFormSlice'
-import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { Text } from '@/shared/ui/Text/Text'
-import { useTranslation } from 'react-i18next'
-import styles from './ArticleCommentsForm.module.scss'
 
 const reducers: ReducersList = {
     articleCommentsForm: articleCommentsFormReducer

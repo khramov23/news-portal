@@ -1,13 +1,15 @@
 import { type FC, memo, useMemo, useState } from 'react'
 
-import styles from './Sidebar.module.scss'
+import { useSelector } from 'react-redux'
+
 import { cls } from '@/shared/lib/classNames'
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button'
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher'
 import { LangSwitcher } from '@/widgets/LangSwitcher'
-import { SidebarItem } from '../SidebarItem/SidebarItem'
-import { useSelector } from 'react-redux'
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher'
+
+import styles from './Sidebar.module.scss'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
+import { SidebarItem } from '../SidebarItem/SidebarItem'
 
 interface SidebarProps {
     className?: string

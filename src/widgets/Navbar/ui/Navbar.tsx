@@ -1,17 +1,19 @@
 import { type FC, memo, useCallback, useState } from 'react'
 
-import styles from './Navbar.module.scss'
-import { cls } from '@/shared/lib/classNames'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
-import { LoginModal } from '@/features/AuthByUsername'
 import { useSelector } from 'react-redux'
+
 import { getUserAuthData } from '@/entities/User'
-import { Text, TextTheme } from '@/shared/ui/Text/Text'
+import { LoginModal } from '@/features/AuthByUsername'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
-import { HStack } from '@/shared/ui/Stack'
 import { NotificationButton } from '@/features/NotificationButton'
 import { useMatchMedia } from '@/shared/hooks/useMatchMedia'
+import { cls } from '@/shared/lib/classNames'
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
+import { HStack } from '@/shared/ui/Stack'
+import { Text, TextTheme } from '@/shared/ui/Text/Text'
+
+import styles from './Navbar.module.scss'
 
 interface NavbarProps {
     className?: string

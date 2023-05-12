@@ -1,8 +1,9 @@
-import { fetchProfileData } from './fetchProfileData'
-import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk'
-import { type Profile } from '../../types/profileSchema'
-import { Currency } from '@/entities/Currency'
 import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk'
+
+import { fetchProfileData } from './fetchProfileData'
+import { type Profile } from '../../types/profileSchema'
 
 describe('fetchProfileData', () => {
     test('success fetch', async () => {

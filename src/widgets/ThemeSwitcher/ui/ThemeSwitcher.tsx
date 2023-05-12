@@ -1,11 +1,11 @@
 import { type FC, memo } from 'react'
 
-import { cls } from '@/shared/lib/classNames'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
-import { useTheme } from '@/shared/lib/theme/useTheme'
-import { Theme } from '@/shared/lib/theme/ThemeContext'
 import DarkSwitcher from '@/shared/assets/icons/theme-dark.svg'
 import LightSwitcher from '@/shared/assets/icons/theme-light.svg'
+import { cls } from '@/shared/lib/classNames'
+import { Theme } from '@/shared/lib/theme/ThemeContext'
+import { useTheme } from '@/shared/lib/theme/useTheme'
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 
 import styles from './ThemeSwitcher.module.scss'
 

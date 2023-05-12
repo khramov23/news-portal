@@ -1,12 +1,13 @@
 import { type FC, type ReactNode } from 'react'
 
-import styles from './Modal.module.scss'
-import { cls } from '@/shared/lib/classNames'
-import { Portal } from '../Portal/Portal'
-import { useTheme } from '@/shared/lib/theme/useTheme'
-import { Overlay } from '../Overlay/Overlay'
 import { ANIMATION_DURATION } from '@/shared/const/common'
 import { useModal } from '@/shared/hooks/useModal'
+import { cls } from '@/shared/lib/classNames'
+import { useTheme } from '@/shared/lib/theme/useTheme'
+
+import styles from './Modal.module.scss'
+import { Overlay } from '../Overlay/Overlay'
+import { Portal } from '../Portal/Portal'
 
 interface ModalProps {
     className?: string

@@ -1,4 +1,5 @@
 import { type StateSchema } from '@/app/providers/StoreProvider'
+
 import { getArticleData, getArticleError, getArticleIsLoading } from './articleDetails'
 import { ArticleBlockType, ArticleType, type Article } from '../types/article'
 

@@ -1,9 +1,10 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
-import AdminPanelPage from './AdminPanelPage'
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from '@/shared/lib/theme/ThemeContext'
-import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
+
+import AdminPanelPage from './AdminPanelPage'
 
 export default {
     title: 'pages/AdminPanelPage',

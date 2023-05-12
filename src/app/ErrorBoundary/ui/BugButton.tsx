@@ -1,6 +1,8 @@
-import { Button } from '@/shared/ui/Button/Button'
-import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
+
+import { useTranslation } from 'react-i18next'
+
+import { Button } from '@/shared/ui/Button/Button'
 
 export const BugButton = () => {
     const { t } = useTranslation()

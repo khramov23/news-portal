@@ -1,10 +1,12 @@
 import { type CombinedState, configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
-import { type StateSchema } from './StateSchema'
+
 import { userReducer } from '@/entities/User'
-import { createReducerManager } from './reducerManager'
 import { $api } from '@/shared/api/api'
-import { scrollRestorationReducer } from '@/widgets/ScrollRestoration'
 import { rtkApi } from '@/shared/api/rtk'
+import { scrollRestorationReducer } from '@/widgets/ScrollRestoration'
+
+import { createReducerManager } from './reducerManager'
+import { type StateSchema } from './StateSchema'
 
 export function createReduxStore (
     initialState?: StateSchema,

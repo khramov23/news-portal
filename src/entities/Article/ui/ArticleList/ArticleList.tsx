@@ -1,14 +1,16 @@
 import { type FC, type HTMLAttributeAnchorTarget, memo, type ReactNode } from 'react'
 
-import styles from './ArticleList.module.scss'
-import { cls } from '@/shared/lib/classNames'
-import { type Article, ArticleView } from '../../model/types/article'
-import { Text } from '@/shared/ui/Text/Text'
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
-import { useTranslation } from 'react-i18next'
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
-import { type FetchBaseQueryError } from '@reduxjs/toolkit/query'
 import { type SerializedError } from '@reduxjs/toolkit'
+import { type FetchBaseQueryError } from '@reduxjs/toolkit/query'
+import { useTranslation } from 'react-i18next'
+
+import { cls } from '@/shared/lib/classNames'
+import { Text } from '@/shared/ui/Text/Text'
+
+import styles from './ArticleList.module.scss'
+import { type Article, ArticleView } from '../../model/types/article'
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 
 interface ArticleListProps {
     className?: string

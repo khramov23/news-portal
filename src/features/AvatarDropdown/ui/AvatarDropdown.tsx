@@ -1,11 +1,13 @@
 import { type FC, useCallback } from 'react'
-import { cls } from '@/shared/lib/classNames'
-import { Dropdown, type DropdownItem } from '@/shared/ui/Popups'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
+
+import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+
 import { getUserAuthData, isUserAdmin, isUserManager, type User, userActions } from '@/entities/User'
 import { RoutePath } from '@/shared/config/routes/routes.config'
-import { useDispatch, useSelector } from 'react-redux'
-import { useTranslation } from 'react-i18next'
+import { cls } from '@/shared/lib/classNames'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Dropdown, type DropdownItem } from '@/shared/ui/Popups'
 
 interface AvatarDropdownProps {
     className?: string

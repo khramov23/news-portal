@@ -1,12 +1,13 @@
-import { Menu } from '@headlessui/react'
 import { type FC, Fragment, memo, type ReactNode, useCallback } from 'react'
 
-import styles from './Dropdown.module.scss'
-import popupStyles from '../../styles/Popups.module.scss'
+import { Menu } from '@headlessui/react'
 
 import { cls } from '@/shared/lib/classNames'
+
+import styles from './Dropdown.module.scss'
 import { AppLink } from '../../../AppLink/AppLink'
 import { type PopupDirection } from '../../styles/Popup.types'
+import popupStyles from '../../styles/Popups.module.scss'
 
 export interface DropdownItem {
     content: ReactNode

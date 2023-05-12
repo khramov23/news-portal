@@ -1,18 +1,20 @@
 import { type FC, memo } from 'react'
 
-import styles from './ArticleCommentList.module.scss'
-import { cls } from '@/shared/lib/classNames'
 import { useSelector } from 'react-redux'
-import { articleCommentsReducer, getArticleComments } from '../../model/slice/articleCommentsSlice/articleCommentsSlice'
+
 import { CommentList } from '@/entities/Comment'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
+import { cls } from '@/shared/lib/classNames'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+
+import styles from './ArticleCommentList.module.scss'
 import {
     getArticleCommentsError,
     getArticleCommentsIsLoading
 } from '../../model/selectors/articleComments'
-import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { fetchArticleCommentsById } from '../../model/services/fetchArticleCommentsById/fetchArticleCommentsById'
+import { articleCommentsReducer, getArticleComments } from '../../model/slice/articleCommentsSlice/articleCommentsSlice'
 
 interface ArticleCommentListProps {
     className?: string

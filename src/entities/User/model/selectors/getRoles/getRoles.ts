@@ -1,5 +1,7 @@
-import { type StateSchema } from '@/app/providers/StoreProvider'
 import { createSelector } from 'reselect'
+
+import { type StateSchema } from '@/app/providers/StoreProvider'
+
 import { UserRole } from '../../types/userSchema'
 
 export const getRoles = (state: StateSchema) => state.user.authData?.roles

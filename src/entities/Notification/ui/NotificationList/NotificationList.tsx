@@ -1,10 +1,11 @@
 import { type FC, memo } from 'react'
 
 import { cls } from '@/shared/lib/classNames'
-import { useGetNotificationsQuery } from '../../api/notificationApi'
-import { VStack } from '@/shared/ui/Stack'
-import { NotificationItem } from '../NotificationItem/NotificationItem'
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { VStack } from '@/shared/ui/Stack'
+
+import { useGetNotificationsQuery } from '../../api/notificationApi'
+import { NotificationItem } from '../NotificationItem/NotificationItem'
 
 interface NotificationListProps {
     className?: string

@@ -1,10 +1,11 @@
 import { type FC, memo } from 'react'
 
-import styles from './ArticleListItem.module.scss'
 import { cls } from '@/shared/lib/classNames'
-import { ArticleView } from '../../model/types/article'
 import { Card } from '@/shared/ui/Card/Card'
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+
+import styles from './ArticleListItem.module.scss'
+import { ArticleView } from '../../model/types/article'
 
 interface ArticleListItemSkeletonProps {
     className?: string

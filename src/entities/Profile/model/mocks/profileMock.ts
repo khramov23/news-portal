@@ -1,6 +1,6 @@
-import { type Profile } from '@/features/EditProfileCard'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
+import { type Profile } from '@/features/EditProfileCard'
 
 export const profileMock: Profile = {
     username: 'username',

@@ -1,8 +1,9 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
-import { AddCommentForm } from './AddCommentForm'
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from '@/shared/lib/theme/ThemeContext'
+
+import { AddCommentForm } from './AddCommentForm'
 
 export default {
     title: 'entities/AddCommentForm',

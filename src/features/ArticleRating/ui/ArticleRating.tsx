@@ -1,9 +1,12 @@
 import { FC, memo, useCallback } from 'react'
-import { RatingCard } from '@/entities/Rating'
+
 import { useTranslation } from 'react-i18next'
-import { useGetArticleRatingQuery, useRateArticleMutation } from '../api/articleRatingApi'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+
+import { RatingCard } from '@/entities/Rating'
 import { useAuth } from '@/entities/User'
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+
+import { useGetArticleRatingQuery, useRateArticleMutation } from '../api/articleRatingApi'
 
 export interface ArticleRatingProps {
     className?: string

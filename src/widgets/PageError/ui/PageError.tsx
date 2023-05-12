@@ -1,9 +1,11 @@
 import { type FC, memo } from 'react'
 
-import styles from './PageError.module.scss'
-import { cls } from '@/shared/lib/classNames'
 import { useTranslation } from 'react-i18next'
+
+import { cls } from '@/shared/lib/classNames'
 import { Button } from '@/shared/ui/Button/Button'
+
+import styles from './PageError.module.scss'
 
 interface PageErrorProps {
     className?: string

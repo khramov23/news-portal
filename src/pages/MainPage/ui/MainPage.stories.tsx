@@ -1,9 +1,10 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
-import MainPage from './MainPage'
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from '@/shared/lib/theme/ThemeContext'
-import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
+
+import MainPage from './MainPage'
 
 export default {
     title: 'pages/MainPage',

@@ -1,9 +1,10 @@
-import { profileActions, profileReducer } from '../../model/slice/profileSlice'
-import { type Profile, type ProfileSchema } from '../types/profileSchema'
-import { Currency } from '@/entities/Currency'
 import { Country } from '@/entities/Country'
-import { ValidateError } from '../types/profileSchema'
+import { Currency } from '@/entities/Currency'
+
+import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 import { saveProfileData } from '../services/saveProfileData/saveProfileData'
+import { type Profile, type ProfileSchema } from '../types/profileSchema'
+import { ValidateError } from '../types/profileSchema'
 
 const data: Profile = {
     age: 21,

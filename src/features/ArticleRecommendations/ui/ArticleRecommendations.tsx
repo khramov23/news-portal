@@ -1,8 +1,11 @@
 import { type FC, memo } from 'react'
-import { ArticleList, ArticleView } from '@/entities/Article'
-import { useGetArticleRecommendationsQuery } from '../api/articleRecommendationsApi'
-import { Text } from '@/shared/ui/Text/Text'
+
 import { useTranslation } from 'react-i18next'
+
+import { ArticleList, ArticleView } from '@/entities/Article'
+import { Text } from '@/shared/ui/Text/Text'
+
+import { useGetArticleRecommendationsQuery } from '../api/articleRecommendationsApi'
 
 interface ArticleRecommendationsProps {
     className?: string

@@ -1,17 +1,19 @@
 import { type FC, useCallback } from 'react'
 
-import styles from './EditProfileCardHeader.module.scss'
-import { cls } from '@/shared/lib/classNames'
-import { Text } from '@/shared/ui/Text/Text'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
-import { profileActions } from '../../model/slice/profileSlice'
-import { saveProfileData } from '../../model/services/saveProfileData/saveProfileData'
-import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
+
 import { getUserAuthData } from '@/entities/User'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import { cls } from '@/shared/lib/classNames'
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
+import { Text } from '@/shared/ui/Text/Text'
+
+import styles from './EditProfileCardHeader.module.scss'
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
+import { saveProfileData } from '../../model/services/saveProfileData/saveProfileData'
+import { profileActions } from '../../model/slice/profileSlice'
 
 interface EditProfileCardHeaderProps {
     className?: string

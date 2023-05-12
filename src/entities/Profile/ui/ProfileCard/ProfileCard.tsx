@@ -1,15 +1,17 @@
 import { type FC } from 'react'
 
-import styles from './ProfileCard.module.scss'
-import { cls } from '@/shared/lib/classNames'
 import { useTranslation } from 'react-i18next'
-import { Text, TextTheme } from '@/shared/ui/Text/Text'
-import { Input } from '@/shared/ui/Input/Input'
-import { type Profile } from '@/features/EditProfileCard'
-import { Loader } from '@/shared/ui/Loader/Loader'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
-import { type Currency, CurrencySelect } from '@/entities/Currency'
+
 import { type Country, CountrySelect } from '@/entities/Country'
+import { type Currency, CurrencySelect } from '@/entities/Currency'
+import { type Profile } from '@/features/EditProfileCard'
+import { cls } from '@/shared/lib/classNames'
+import { Avatar } from '@/shared/ui/Avatar/Avatar'
+import { Input } from '@/shared/ui/Input/Input'
+import { Loader } from '@/shared/ui/Loader/Loader'
+import { Text, TextTheme } from '@/shared/ui/Text/Text'
+
+import styles from './ProfileCard.module.scss'
 
 interface ProfileCardProps {
     className?: string

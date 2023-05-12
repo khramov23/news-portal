@@ -1,9 +1,11 @@
 import { type FC, memo } from 'react'
 
-import styles from './LangSwitcher.module.scss'
+import { useTranslation } from 'react-i18next'
+
 import { cls } from '@/shared/lib/classNames'
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
-import { useTranslation } from 'react-i18next'
+
+import styles from './LangSwitcher.module.scss'
 
 interface LangSwitcherProps {
     className?: string

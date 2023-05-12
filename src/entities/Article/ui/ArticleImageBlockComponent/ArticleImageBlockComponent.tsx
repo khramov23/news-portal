@@ -1,9 +1,10 @@
 import { type FC } from 'react'
 
-import styles from './ArticleImageBlockComponent.module.scss'
 import { cls } from '@/shared/lib/classNames'
-import { type ArticleImageBlock } from '../../model/types/article'
 import { Text } from '@/shared/ui/Text/Text'
+
+import styles from './ArticleImageBlockComponent.module.scss'
+import { type ArticleImageBlock } from '../../model/types/article'
 
 interface ArticleImageBlockComponentProps {
     className?: string

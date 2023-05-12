@@ -1,9 +1,10 @@
 import { type FC } from 'react'
 
-import { cls } from '@/shared/lib/classNames'
-import { EditProfileCard } from '@/features/EditProfileCard'
-import { useParams } from 'react-router'
 import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router'
+
+import { EditProfileCard } from '@/features/EditProfileCard'
+import { cls } from '@/shared/lib/classNames'
 import { Page } from '@/widgets/Page'
 
 interface ProfilePageProps {

@@ -1,4 +1,5 @@
 import { type AnyAction, combineReducers, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
+
 import { type StateSchemaKey, type StateSchema, type ReducerManager } from './StateSchema'
 
 export function createReducerManager (initialReducers: ReducersMapObject<StateSchema>): ReducerManager {

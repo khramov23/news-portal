@@ -19,7 +19,8 @@
         "react",
         "i18next",
         "react-hooks",
-        "khramov-fsd"
+        "khramov-fsd",
+        "import"
     ],
     "rules": {
         "@typescript-eslint/prefer-nullish-coalescing": "off",
@@ -47,7 +48,31 @@
         "khramov-fsd/public-api-imports": ["error", {
             "alias": "@/"
         }],
-        "@typescript-eslint/consistent-type-imports": "off"
+        "@typescript-eslint/consistent-type-imports": "off",
+        "import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "internal"],
+                "pathGroups": [
+                    {
+                        "pattern": "react",
+                        "group": "external",
+                        "position": "before"
+                    },
+                    {
+                        "group": "external",
+                        "pattern": "@/**",
+                        "position": "after"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": ["react"],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ]
     },
     "overrides": [
         {

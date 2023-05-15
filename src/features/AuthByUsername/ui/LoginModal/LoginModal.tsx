@@ -1,8 +1,8 @@
 import { type FC, Suspense } from 'react'
 
 import { cls } from '@/shared/lib/classNames'
-import { Loader } from '@/shared/ui/Loader/Loader'
-import { Modal } from '@/shared/ui/Modal/Modal'
+import { Loader } from '@/shared/ui/Loader'
+import { Modal } from '@/shared/ui/Modal'
 
 import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 

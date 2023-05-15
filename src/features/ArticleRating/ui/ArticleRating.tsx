@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 
 import { RatingCard } from '@/entities/Rating'
 import { useAuth } from '@/entities/User'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Skeleton } from '@/shared/ui/Skeleton'
 
 import { useGetArticleRatingQuery, useRateArticleMutation } from '../api/articleRatingApi'
 

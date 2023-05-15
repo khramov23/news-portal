@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 import { AddCommentForm } from '@/entities/Comment'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { Text } from '@/shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text'
 
 import styles from './ArticleCommentsForm.module.scss'
 import { getArticleCommentsFormText } from '../../model/selectors/articleCommentsForm'

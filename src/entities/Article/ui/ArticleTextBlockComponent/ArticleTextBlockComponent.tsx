@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 
 import { cls } from '@/shared/lib/classNames'
-import { Text } from '@/shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text'
 
 import styles from './ArticleTextBlockComponent.module.scss'
 import { type ArticleTextBlock } from '../../model/types/article'

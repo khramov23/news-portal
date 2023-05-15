@@ -1,7 +1,7 @@
 import { type FC, memo } from 'react'
 
 import { cls } from '@/shared/lib/classNames'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import { VStack } from '@/shared/ui/Stack'
 
 import { useGetNotificationsQuery } from '../../api/notificationApi'
@@ -12,7 +12,7 @@ interface NotificationListProps {
 }
 
 export const NotificationList: FC<NotificationListProps> = memo(({ className }) => {
-    const { data: notifications, isLoading, error } = useGetNotificationsQuery(null, {
+    const { data: notifications, isLoading } = useGetNotificationsQuery(null, {
         pollingInterval: 5000
     })
 

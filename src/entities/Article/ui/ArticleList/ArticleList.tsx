@@ -5,7 +5,7 @@ import { type FetchBaseQueryError } from '@reduxjs/toolkit/query'
 import { useTranslation } from 'react-i18next'
 
 import { cls } from '@/shared/lib/classNames'
-import { Text } from '@/shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text'
 
 import styles from './ArticleList.module.scss'
 import { type Article, ArticleView } from '../../model/types/article'

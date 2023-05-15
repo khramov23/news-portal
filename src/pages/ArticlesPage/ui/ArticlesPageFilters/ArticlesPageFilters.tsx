@@ -9,9 +9,9 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { useDebounce } from '@/shared/hooks/useDebounce'
 import { cls } from '@/shared/lib/classNames'
 import { type Order } from '@/shared/types/sort'
-import { Card } from '@/shared/ui/Card/Card'
-import { Input } from '@/shared/ui/Input/Input'
-import { type TabItem, Tabs } from '@/shared/ui/Tabs/Tabs'
+import { Card } from '@/shared/ui/Card'
+import { Input } from '@/shared/ui/Input'
+import { type TabItem, Tabs } from '@/shared/ui/Tabs'
 
 import styles from './ArticlesPageFilters.module.scss'
 import {

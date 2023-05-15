@@ -3,7 +3,7 @@ import { type FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { cls } from '@/shared/lib/classNames'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
 
 import styles from './LangSwitcher.module.scss'
 

@@ -10,7 +10,7 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
 import { cls } from '@/shared/lib/classNames'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { Text, TextTheme } from '@/shared/ui/Text/Text'
+import { Text, TextTheme } from '@/shared/ui/Text'
 
 import styles from './EditProfileCard.module.scss'
 import { EditProfileCardHeader } from './EditProfileCardHeader/EditProfileCardHeader'

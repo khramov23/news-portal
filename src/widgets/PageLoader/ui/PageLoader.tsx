@@ -1,7 +1,7 @@
 import { type FC, memo } from 'react'
 
 import { cls } from '@/shared/lib/classNames'
-import { Loader } from '@/shared/ui/Loader/Loader'
+import { Loader } from '@/shared/ui/Loader'
 
 import styles from './PageLoader.module.scss'
 

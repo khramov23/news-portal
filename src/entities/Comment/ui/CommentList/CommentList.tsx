@@ -3,8 +3,8 @@ import { type FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { cls } from '@/shared/lib/classNames'
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton'
-import { Text } from '@/shared/ui/Text/Text'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { Text } from '@/shared/ui/Text'
 
 import styles from './CommentList.module.scss'
 import { type Comment } from '../../model/types/comment'

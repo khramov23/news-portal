@@ -9,7 +9,7 @@ import { ArticleRating } from '@/features/ArticleRating'
 import { ArticleRecommendations } from '@/features/ArticleRecommendations'
 import { RoutePath } from '@/shared/config/routes/routes.config'
 import { cls } from '@/shared/lib/classNames'
-import { Button } from '@/shared/ui/Button/Button'
+import { Button } from '@/shared/ui/Button'
 import { Page } from '@/widgets/Page'
 
 import styles from './ArticleDetailsPage.module.scss'

@@ -5,7 +5,7 @@ import LightSwitcher from '@/shared/assets/icons/theme-light.svg'
 import { cls } from '@/shared/lib/classNames'
 import { Theme } from '@/shared/lib/theme/ThemeContext'
 import { useTheme } from '@/shared/lib/theme/useTheme'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
 
 import styles from './ThemeSwitcher.module.scss'
 

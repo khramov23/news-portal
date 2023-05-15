@@ -1,4 +1,4 @@
-import { type SelectOption } from '@/shared/ui/Select/Select'
+import { type SelectOption } from '@/shared/ui/Select'
 
 import { Currency } from '../types/currency'
 

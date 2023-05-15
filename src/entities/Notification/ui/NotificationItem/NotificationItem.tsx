@@ -1,8 +1,8 @@
 import { type FC, memo } from 'react'
 
 import { cls } from '@/shared/lib/classNames'
-import { Card } from '@/shared/ui/Card/Card'
-import { Text } from '@/shared/ui/Text/Text'
+import { Card } from '@/shared/ui/Card'
+import { Text } from '@/shared/ui/Text'
 
 import styles from './NotificationItem.module.scss'
 import type { Notification } from '../../model/types/notifications'

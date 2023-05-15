@@ -1,8 +1,9 @@
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
+import { Profile } from '@/entities/Profile'
 
 import { validateProfileData } from './validateProfileData'
-import { type Profile, ValidateError } from '../../../model/types/profileSchema'
+import { ValidateError } from '../../../model/types/profileSchema'
 
 describe('validateProfileData', () => {
     test('all success', async () => {

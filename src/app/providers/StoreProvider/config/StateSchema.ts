@@ -12,9 +12,9 @@ import { type UserSchema } from '@/entities/User'
 import { type ArticleCommentsSchema, type ArticleCommentsFormSchema } from '@/features/ArticleComments'
 import { type LoginSchema } from '@/features/AuthByUsername'
 import { type ProfileSchema } from '@/features/EditProfileCard'
+import { type ScrollRestorationSchema } from '@/features/ScrollRestoration'
 import { type ArticlesPageSchema } from '@/pages/ArticlesPage'
 import { type rtkApi } from '@/shared/api/rtk'
-import { type ScrollRestorationSchema } from '@/widgets/ScrollRestoration'
 
 import { type createReduxStore } from './store'
 

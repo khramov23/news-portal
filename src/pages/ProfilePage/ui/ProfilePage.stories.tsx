@@ -2,7 +2,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
-import { type Profile } from '@/features/EditProfileCard'
+import { Profile } from '@/entities/Profile'
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from '@/shared/lib/theme/ThemeContext'

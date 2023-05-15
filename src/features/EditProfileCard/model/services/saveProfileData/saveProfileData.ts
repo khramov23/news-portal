@@ -1,9 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 import { type ThunkApi } from '@/app/providers/StoreProvider'
+import { Profile } from '@/entities/Profile'
 
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm'
-import { type Profile, ValidateError } from '../../types/profileSchema'
+import { ValidateError } from '../../types/profileSchema'
 import { validateProfileData } from '../validateProfileData/validateProfileData'
 
 export const saveProfileData = createAsyncThunk<Profile, void, ThunkApi<ValidateError[]>>(

@@ -2,10 +2,10 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
+import { Profile } from '@/entities/Profile'
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
 
 import { EditProfileCard } from './EditProfileCard'
-import { type Profile } from '../model/types/profileSchema'
 import { ValidateError } from '../model/types/profileSchema'
 
 export default {

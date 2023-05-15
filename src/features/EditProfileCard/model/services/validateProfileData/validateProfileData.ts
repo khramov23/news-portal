@@ -1,8 +1,9 @@
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
+import { Profile } from '@/entities/Profile'
 
 import { urlRegexp } from '../../../const/regexp'
-import { type Profile, ValidateError } from '../../../model/types/profileSchema'
+import { ValidateError } from '../../../model/types/profileSchema'
 
 export const validateProfileData = (profile?: Profile) => {
     if (!profile) { return [ValidateError.NO_DATA] }

@@ -1,9 +1,9 @@
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
+import { Profile } from '@/entities/Profile'
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk'
 
 import { fetchProfileData } from './fetchProfileData'
-import { type Profile } from '../../types/profileSchema'
 
 describe('fetchProfileData', () => {
     test('success fetch', async () => {

@@ -1,9 +1,10 @@
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
+import { Profile } from '@/entities/Profile'
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk'
 
 import { saveProfileData } from './saveProfileData'
-import { type Profile, ValidateError } from '../../types/profileSchema'
+import { ValidateError } from '../../types/profileSchema'
 
 const form: Profile = {
     id: '1',

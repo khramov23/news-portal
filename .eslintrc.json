@@ -46,11 +46,12 @@
             "alias": "@/"
         }],
         "khramov-fsd/public-api-imports": ["error", {
-            "alias": "@/"
+            "alias": "@/",
+            "testingPatterns": ["**/StoreDecorator.tsx"]
         }],
         "khramov-fsd/layer-imports": ["error", {
             "alias": "@/",
-            "ignorePatterns": ["**/StoreProvider"]
+            "ignorePatterns": ["**/StoreProvider", "**/testing"]
         }],
         "@typescript-eslint/consistent-type-imports": "off",
         "import/order": [

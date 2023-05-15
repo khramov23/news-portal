@@ -1,9 +1,10 @@
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
+import { Profile } from '@/entities/Profile'
 
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 import { saveProfileData } from '../services/saveProfileData/saveProfileData'
-import { type Profile, type ProfileSchema } from '../types/profileSchema'
+import { type ProfileSchema } from '../types/profileSchema'
 import { ValidateError } from '../types/profileSchema'
 
 const data: Profile = {

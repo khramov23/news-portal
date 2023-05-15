@@ -23,7 +23,7 @@ export function buildPlugins ({ paths, isDev, apiUrl, project }: BuildOptions): 
             __PROJECT__: JSON.stringify(project)
         }),
         new CircularDependencyPlugin({
-            exclude: /noce_modules/,
+            exclude: /node_modules/,
             failOnError: true
         }),
         new ForkTsCheckerWebpackPlugin({

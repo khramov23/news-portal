@@ -1,9 +1,9 @@
 import { type CombinedState, configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
 
 import { userReducer } from '@/entities/User'
+import { scrollRestorationReducer } from '@/features/ScrollRestoration'
 import { $api } from '@/shared/api/api'
 import { rtkApi } from '@/shared/api/rtk'
-import { scrollRestorationReducer } from '@/widgets/ScrollRestoration'
 
 import { createReducerManager } from './reducerManager'
 import { type StateSchema } from './StateSchema'

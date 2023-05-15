@@ -2,10 +2,10 @@ import { type FC, memo, useMemo, useState } from 'react'
 
 import { useSelector } from 'react-redux'
 
+import { LangSwitcher } from '@/features/LangSwitcher'
+import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { cls } from '@/shared/lib/classNames'
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button'
-import { LangSwitcher } from '@/widgets/LangSwitcher'
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher'
 
 import styles from './Sidebar.module.scss'
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
@@ -18,11 +18,9 @@ interface SidebarProps {
 export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     const [collapsed, setCollapsed] = useState(false)
     const sidebarItems = useSelector(getSidebarItems)
-    let a = 5
 
     const toggleCollapsed = () => {
         setCollapsed(prev => !prev)
-        a += 5
     }
 
     const itemsList = useMemo(() => {

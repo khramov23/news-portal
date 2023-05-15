@@ -1,5 +1,6 @@
 import { type RouteProps } from 'react-router-dom'
 
+// eslint-disable-next-line khramov-fsd/layer-imports
 import { type UserRole } from '@/entities/User'
 
 export type AppRouteProps = RouteProps & {

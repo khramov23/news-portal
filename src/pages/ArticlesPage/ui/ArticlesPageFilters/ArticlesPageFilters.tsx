@@ -3,9 +3,8 @@ import { type FC, memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
-import { type ArticleSortType, ArticleType } from '@/entities/Article'
-import { ArticlesSortSelectors } from '@/features/ArticlesSortSelector'
-import { ArticlesViewSelector } from '@/features/ArticlesViewSelector'
+import { type ArticleSortType, ArticleType, ArticleView } from '@/entities/Article'
+import { ArticlesSortSelectors, ArticlesViewSelector } from '@/entities/Article'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { useDebounce } from '@/shared/hooks/useDebounce'
 import { cls } from '@/shared/lib/classNames'
@@ -63,6 +62,10 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(({ classNa
         debouncedFetchArticles()
     }, [dispatch, debouncedFetchArticles])
 
+    const onChangeView = useCallback((value: ArticleView) => {
+        dispatch(articlesPageActions.setView(value))
+    }, [dispatch])
+
     const items = useMemo<Array<TabItem<ArticleType>>>(() => [
         {
             value: ArticleType.ALL,
@@ -97,7 +100,10 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(({ classNa
                     onChangeSort={onChangeSort}
                     onChangeOrder={onChangeOrder}
                 />
-                <ArticlesViewSelector view={view} />
+                <ArticlesViewSelector
+                    onChangeView={onChangeView}
+                    view={view}
+                />
             </div>
             <Card className={styles.searchCard}>
                 <Input

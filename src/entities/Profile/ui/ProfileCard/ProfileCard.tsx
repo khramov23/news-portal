@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next'
 
 import { type Country, CountrySelect } from '@/entities/Country'
 import { type Currency, CurrencySelect } from '@/entities/Currency'
-import { type Profile } from '@/features/EditProfileCard'
 import { cls } from '@/shared/lib/classNames'
 import { Avatar } from '@/shared/ui/Avatar/Avatar'
 import { Input } from '@/shared/ui/Input/Input'
@@ -12,6 +11,7 @@ import { Loader } from '@/shared/ui/Loader/Loader'
 import { Text, TextTheme } from '@/shared/ui/Text/Text'
 
 import styles from './ProfileCard.module.scss'
+import { Profile } from '../../model/types/profile'
 
 interface ProfileCardProps {
     className?: string

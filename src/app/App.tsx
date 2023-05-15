@@ -2,15 +2,16 @@ import { Suspense, useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 
-import { ErrorBoundary } from '@/app/ErrorBoundary'
-import { AppRouter } from '@/app/providers/AppRouter'
 import { userActions, getRouterMounted } from '@/entities/User'
 import { cls } from '@/shared/lib/classNames'
 import { useTheme } from '@/shared/lib/theme/useTheme'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
 
-const App = () => {
+import { ErrorBoundary } from './ErrorBoundary'
+import { AppRouter } from './providers/AppRouter'
+
+export const App = () => {
     const { theme } = useTheme()
     const dispatch = useDispatch()
     const routerMounted = useSelector(getRouterMounted)
@@ -33,5 +34,3 @@ const App = () => {
         </div>
     )
 }
-
-export default App

@@ -48,6 +48,10 @@
         "khramov-fsd/public-api-imports": ["error", {
             "alias": "@/"
         }],
+        "khramov-fsd/layer-imports": ["error", {
+            "alias": "@/",
+            "ignorePatterns": ["**/StoreProvider"]
+        }],
         "@typescript-eslint/consistent-type-imports": "off",
         "import/order": [
             "error",

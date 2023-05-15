@@ -1716,6 +1716,13 @@
       "stars": 4,
       "feedback": "",
       "id": "oWCQoAU"
+    },
+    {
+      "articleId": "20",
+      "userId": "1",
+      "stars": 3,
+      "feedback": "something",
+      "id": "yZxNOoI"
     }
   ]
 }

@@ -1,19 +1,18 @@
 import { type FC, memo } from 'react'
 
-import { ArticleView } from '@/entities/Article'
-import { articlesPageActions } from '@/pages/ArticlesPage'
 import ListIcon from '@/shared/assets/icons/list.svg'
 import TiledIcon from '@/shared/assets/icons/tiled.svg'
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { cls } from '@/shared/lib/classNames'
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 import { Icon } from '@/shared/ui/Icon/Icon'
 
 import styles from './ArticlesViewSelector.module.scss'
+import { ArticleView } from '../../model/types/article'
 
 interface ArticlesViewSelectorProps {
     className?: string
     view: ArticleView
+    onChangeView: (view: ArticleView) => void
 }
 
 const viewTypes = [
@@ -27,17 +26,17 @@ const viewTypes = [
     }
 ]
 
-export const ArticlesViewSelector: FC<ArticlesViewSelectorProps> = memo(({ className, view }) => {
-    const dispatch = useAppDispatch()
+export const ArticlesViewSelector: FC<ArticlesViewSelectorProps> = memo((props) => {
+    const { className, view, onChangeView } = props
 
-    const onViewChange = (view: ArticleView) => {
-        dispatch(articlesPageActions.setView(view))
+    const handleViewChange = (view: ArticleView) => () => {
+        onChangeView(view)
     }
 
     return (
         <div className={cls(styles.articlesViewSelector, className)}>
             {viewTypes.map(elem =>
-                <Button key={elem.view} theme={ButtonTheme.CLEAR} onClick={() => { onViewChange(elem.view) }}>
+                <Button key={elem.view} theme={ButtonTheme.CLEAR} onClick={handleViewChange(elem.view)}>
                     <Icon Svg={elem.Icon} className={cls(styles.icon, { [styles.notSelected]: elem.view !== view })}/>
                 </Button>
             )}

@@ -54,6 +54,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                 disabled={readonly}
             >
                 <HListBox.Button
+                    as={`${'div'}`}
                     className={popupStyles.trigger}
                 >
                     {({ open }) => (

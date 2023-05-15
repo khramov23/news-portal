@@ -3,11 +3,11 @@ import { type FC, type MutableRefObject, type ReactNode, type UIEvent, useLayout
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router'
 
+import { scrollRestorationActions, getScrollByPath } from '@/features/ScrollRestoration'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { useInfiniteScroll } from '@/shared/hooks/useInfiniteScroll'
 import { useThrottle } from '@/shared/hooks/useThrottle'
 import { cls } from '@/shared/lib/classNames'
-import { scrollRestorationActions, getScrollByPath } from '@/widgets/ScrollRestoration'
 
 import styles from './Page.module.scss'
 

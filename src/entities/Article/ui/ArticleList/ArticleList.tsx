@@ -78,8 +78,6 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
         )
     }
 
-    console.log(articles)
-
     return (
         <div className={cls(styles.articleList, className, styles[view])}>
             {articles && articles.length > 0

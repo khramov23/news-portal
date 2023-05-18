@@ -5,8 +5,6 @@ import { articleMock } from '@/entities/Article'
 import { commentMock } from '@/entities/Comment'
 import { articleRatingMock } from '@/features/ArticleRating'
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
-import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
-import { Theme } from '@/shared/lib/theme/ThemeContext'
 
 import ArticleDetailsPage from './ArticleDetailsPage'
 
@@ -63,10 +61,4 @@ export default {
 
 const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />
 
-export const Light = Template.bind({})
-
-export const Dark = Template.bind({})
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
-
-export const Green = Template.bind({})
-Green.decorators = [ThemeDecorator(Theme.GREEN)]
+export const Primary = Template.bind({})

@@ -16,10 +16,4 @@ export default {
 
 const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />
 
-export const Light = Template.bind({})
-
-export const Dark = Template.bind({})
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
-
-export const Green = Template.bind({})
-Green.decorators = [ThemeDecorator(Theme.GREEN)]
+export const Primary = Template.bind({})

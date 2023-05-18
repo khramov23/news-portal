@@ -1,8 +1,5 @@
 import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
-import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
-import { Theme } from '@/shared/lib/theme/ThemeContext'
-
 import { Dropdown } from './Dropdown'
 
 export default {
@@ -22,10 +19,4 @@ export default {
 
 const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />
 
-export const Light = Template.bind({})
-
-export const Dark = Template.bind({})
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
-
-export const Green = Template.bind({})
-Green.decorators = [ThemeDecorator(Theme.GREEN)]
+export const Primary = Template.bind({})

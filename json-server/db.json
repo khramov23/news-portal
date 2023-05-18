@@ -1723,6 +1723,20 @@
       "stars": 3,
       "feedback": "something",
       "id": "yZxNOoI"
+    },
+    {
+      "articleId": "15",
+      "userId": "1",
+      "stars": 3,
+      "feedback": "",
+      "id": "c5aeVRj"
+    },
+    {
+      "articleId": "15",
+      "userId": "1",
+      "stars": 3,
+      "feedback": "",
+      "id": "ETR-UeU"
     }
   ]
 }

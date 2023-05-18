@@ -2,8 +2,6 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 
 import { articleMock } from '@/entities/Article'
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
-import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
-import { Theme } from '@/shared/lib/theme/ThemeContext'
 
 import ArticlesPage from './ArticlesPage'
 
@@ -34,8 +32,4 @@ export default {
 
 const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />
 
-export const Dark = Template.bind({})
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
-
-export const Green = Template.bind({})
-Green.decorators = [ThemeDecorator(Theme.GREEN)]
+export const Primary = Template.bind({})

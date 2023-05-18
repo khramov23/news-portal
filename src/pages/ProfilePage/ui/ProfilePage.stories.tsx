@@ -4,8 +4,6 @@ import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 import { Profile } from '@/entities/Profile'
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator'
-import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
-import { Theme } from '@/shared/lib/theme/ThemeContext'
 
 import ProfilePage from './ProfilePage'
 
@@ -42,7 +40,4 @@ export default {
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />
 
-export const Light = Template.bind({})
-
-export const Dark = Template.bind({})
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+export const Primary = Template.bind({})

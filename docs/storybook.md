@@ -41,7 +41,7 @@ export default {
 
 const Template: ComponentStory<typeof AddCommentForm> = (args) => <AddCommentForm {...args} />
 
-export const Light = Template.bind({})
+export const Primary = Template.bind({})
 
 export const Dark = Template.bind({})
 Dark.decorators = [ThemeDecorator(Theme.DARK)]

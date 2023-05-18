@@ -1,6 +1,6 @@
 import { type FC, memo } from 'react'
 
-import { RoutePath } from '@/shared/config/routes/routes.config'
+import { getRouteProfile } from '@/shared/config/routes/routes.config'
 import { cls } from '@/shared/lib/classNames'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
@@ -17,7 +17,7 @@ interface CommentCardProps {
 export const CommentCard: FC<CommentCardProps> = memo(({ className, comment }) => {
     return (
         <div className={cls(styles.commentCard, className)}>
-            <AppLink to={RoutePath.profile + comment.user.id} className={styles.userInfo}>
+            <AppLink to={getRouteProfile(comment.user.id)} className={styles.userInfo}>
                 { comment.user.avatar && <Avatar size={40} src={comment.user.avatar} />}
                 <Text className={styles.username} title={comment.user.username} />
             </AppLink>

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { getUserAuthData, isUserAdmin, isUserManager, type User, userActions } from '@/entities/User'
-import { RoutePath } from '@/shared/config/routes/routes.config'
+import { getRouteAdmin, getRouteProfile } from '@/shared/config/routes/routes.config'
 import { cls } from '@/shared/lib/classNames'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Dropdown, type DropdownItem } from '@/shared/ui/Popups'
@@ -32,12 +32,12 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = ({ className }) => {
             ...(isAdminPanelAvailable
                 ? [{
                     content: t('Админка'),
-                    href: RoutePath.admin_panel
+                    href: getRouteAdmin()
                 }]
                 : []),
             {
                 content: t('Профиль'),
-                href: RoutePath.profile + authData.id
+                href: getRouteProfile(authData.id)
             },
             {
                 content: t('Выйти'),

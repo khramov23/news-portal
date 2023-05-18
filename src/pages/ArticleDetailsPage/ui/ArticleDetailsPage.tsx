@@ -7,7 +7,7 @@ import { ArticleDetails } from '@/entities/Article'
 import { ArticleCommentList, ArticleCommentsForm } from '@/features/ArticleComments'
 import { ArticleRating } from '@/features/ArticleRating'
 import { ArticleRecommendations } from '@/features/ArticleRecommendations'
-import { RoutePath } from '@/shared/config/routes/routes.config'
+import { getRouteArticles } from '@/shared/config/routes/routes.config'
 import { cls } from '@/shared/lib/classNames'
 import { Button } from '@/shared/ui/Button'
 import { Page } from '@/widgets/Page'
@@ -24,7 +24,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
     const navigate = useNavigate()
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles)
+        navigate(getRouteArticles())
     }, [navigate])
 
     if (!id) {

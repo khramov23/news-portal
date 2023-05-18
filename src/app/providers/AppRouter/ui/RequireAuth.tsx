@@ -5,7 +5,7 @@ import { Navigate } from 'react-router'
 
 import { useAuth } from '@/entities/User'
 import { getRoles, type UserRole } from '@/entities/User'
-import { RoutePath } from '@/shared/config/routes/routes.config'
+import { getRouteForbidden, getRouteMain } from '@/shared/config/routes/routes.config'
 
 interface RequireAuthProps {
     children?: ReactNode
@@ -24,11 +24,11 @@ export const RequireAuth: FC<RequireAuthProps> = (props) => {
     }, [roles, userRoles])
 
     if (!auth) {
-        return <Navigate to={RoutePath.main} />
+        return <Navigate to={getRouteMain()} />
     }
 
     if (!hasRequiredRoles) {
-        return <Navigate to={RoutePath.forbidden} />
+        return <Navigate to={getRouteForbidden()} />
     }
 
     return <>

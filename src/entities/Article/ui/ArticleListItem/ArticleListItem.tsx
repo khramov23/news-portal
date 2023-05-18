@@ -3,7 +3,7 @@ import { type FC, type HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import EyeIcon from '@/shared/assets/icons/eye.svg'
-import { RoutePath } from '@/shared/config/routes/routes.config'
+import { getRouteArticleDetails } from '@/shared/config/routes/routes.config'
 import { cls } from '@/shared/lib/classNames'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
@@ -49,12 +49,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                 </div>
                 <Text title={article.title} className={styles.title} />
                 {types}
-                <AppLink to={RoutePath.article_details + article.id} target={target}>
+                <AppLink to={getRouteArticleDetails(article.id)} target={target}>
                     <img src={article.img} alt={article.img} className={styles.img}/>
                 </AppLink>
                 {textBlock && <ArticleTextBlockComponent block={textBlock} className={styles.textBlock} />}
                 <div className={styles.footer}>
-                    <AppLink to={RoutePath.article_details + article.id} target={target}>
+                    <AppLink to={getRouteArticleDetails(article.id)} target={target}>
                         <Button>{t('Читать далее')}</Button>
                     </AppLink>
                     {views}
@@ -64,7 +64,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     }
 
     return (
-        <AppLink target={target} to={RoutePath.article_details + article.id}>
+        <AppLink target={target} to={getRouteArticleDetails(article.id)}>
             <Card className={cls(styles.articleListItem, className, styles[view])}>
                 <div className={styles.imgWrapper}>
                     <img src={article.img} alt={article.title} className={styles.img}/>

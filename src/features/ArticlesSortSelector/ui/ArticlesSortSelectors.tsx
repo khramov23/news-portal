@@ -2,12 +2,12 @@ import { type FC, memo, useMemo } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
+import { ArticleSortType } from '@/entities/Article'
 import { cls } from '@/shared/lib/classNames'
 import { type Order } from '@/shared/types/sort'
 import { Select, type SelectOption } from '@/shared/ui/Select'
 
 import styles from './ArticlesSortSelectors.module.scss'
-import { ArticleSortType } from '../../model/types/article'
 
 interface ArticlesSortSelectorsProps {
     className?: string

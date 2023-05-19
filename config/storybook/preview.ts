@@ -3,6 +3,7 @@ import { addDecorator } from '@storybook/react'
 import { RouterDecorator } from '@/shared/config/storybook/decorators/RouterDecorator'
 import { StyleDecorator } from '@/shared/config/storybook/decorators/StyleDecorator'
 import { SuspenseDecorator } from '@/shared/config/storybook/decorators/SuspenseDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from '@/shared/lib/theme/ThemeContext'
 
 export const parameters = {
@@ -24,6 +25,7 @@ export const parameters = {
     }
 }
 
+addDecorator(ThemeDecorator(Theme.LIGHT))
 addDecorator(StyleDecorator)
 addDecorator(SuspenseDecorator)
 // @ts-expect-error working

@@ -1,5 +1,6 @@
 import { type FC, memo } from 'react'
 
+import { ArticleView } from '@/entities/Article'
 import ListIcon from '@/shared/assets/icons/list.svg'
 import TiledIcon from '@/shared/assets/icons/tiled.svg'
 import { cls } from '@/shared/lib/classNames'
@@ -7,7 +8,6 @@ import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { Icon } from '@/shared/ui/Icon'
 
 import styles from './ArticlesViewSelector.module.scss'
-import { ArticleView } from '../../model/types/article'
 
 interface ArticlesViewSelectorProps {
     className?: string

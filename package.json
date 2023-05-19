@@ -24,7 +24,8 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
     "prepare": "husky install",
-    "generate:slice": "node ./scripts/createSlice/index.js"
+    "generate:slice": "node ./scripts/createSlice/index.js",
+    "postinstall": "ts-node ./scripts/clearCache.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
@@ -94,7 +95,7 @@
   "dependencies": {
     "@headlessui/react": "^1.6.6",
     "@react-spring/web": "^9.5.2",
-    "@reduxjs/toolkit": "^1.8.0",
+    "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/user-event": "^14.4.3",
     "@use-gesture/react": "^10.2.19",
     "@vitejs/plugin-react": "^2.2.0",
@@ -109,7 +110,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^11.18.3",
-    "react-redux": "^7.2.6",
+    "react-redux": "^7.2.9",
     "react-router-dom": "^6.2.1",
     "vite": "^3.2.6",
     "vite-plugin-svgr": "^3.2.0",

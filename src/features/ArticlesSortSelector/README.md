@@ -5,4 +5,4 @@
 ### Public API:
 
 #### Компоненты:
-- `ArticlesSortSelectors` - содержит в себе 2 select'a, отвечающих за сортировку
+- `ArticlesSortSelectors` - содержит в себе 2 select'а, отвечающих за сортировку

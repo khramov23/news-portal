@@ -4,21 +4,24 @@ import { cls } from '@/shared/lib/classNames'
 
 import styles from './Icon.module.scss'
 
-type IconSize = 's' | 'm' | 'l' | 'xl' | 'xxl'
-
 type IconTheme = 'primary' | 'inverted'
 
 interface IconProps extends SVGProps<SVGElement> {
     className?: string
-    size?: IconSize
+    size?: number
     theme?: IconTheme
     Svg: (props: SVGProps<SVGElement>) => ReactElement
 }
 
 export const Icon: FC<IconProps> = (props) => {
-    const { className, Svg, size = 'm', theme = 'primary', ...otherProps } = props
+    const { className, Svg, size = 20, theme = 'primary', ...otherProps } = props
 
     return (
-        <Svg className={cls(styles.icon, className, styles[size], styles[theme])} {...otherProps} />
+        <Svg
+            className={cls(styles.icon, className, styles[theme])}
+            width={size}
+            height={size}
+            {...otherProps}
+        />
     )
 }

@@ -50,7 +50,7 @@ export const StarRating: FC<StarRatingProps> = memo((props) => {
                 <Icon
                     key={starsCount}
                     Svg={StarIcon}
-                    size={'xxl'}
+                    size={64}
                     className={cls(
                         styles.icon,
                         {

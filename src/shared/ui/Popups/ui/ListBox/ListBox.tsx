@@ -67,7 +67,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                                         styles.chevron,
                                         { [styles.iconRotated]: !open }
                                     )}
-                                    size={'l'}
+                                    size={30}
                                 />
                             </HStack>
                         </Button>
@@ -90,7 +90,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                                 {({ active, selected }) => (
                                     <li className={cls(styles.option, { [styles.active]: active })}>
                                         <HStack gap={8} className={styles.optionWrapper}>
-                                            {selected && <Icon className={styles.icon} Svg={OkIcon} size={'m'}/>}
+                                            {selected && <Icon className={styles.icon} Svg={OkIcon} size={20}/>}
                                             <Text text={item.content}/>
                                         </HStack>
                                     </li>

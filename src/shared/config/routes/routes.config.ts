@@ -10,7 +10,7 @@ export type AppRouteProps = RouteProps & {
 
 export const getRouteMain = () => '/'
 export const getRouteAbout = () => '/about'
-export const getRouteProfile = (id: string) => `/about/${id}`
+export const getRouteProfile = (id: string) => `/profile/${id}`
 export const getRouteArticles = () => '/articles'
 export const getRouteArticleDetails = (id: string) => `/articles/${id}`
 export const getRouteAdmin = () => '/admin'

@@ -8,16 +8,19 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { useInfiniteScroll } from '@/shared/hooks/useInfiniteScroll'
 import { useThrottle } from '@/shared/hooks/useThrottle'
 import { cls } from '@/shared/lib/classNames'
+import { TestProps } from '@/shared/types'
 
 import styles from './Page.module.scss'
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string
     children: ReactNode
     onPageScrolled?: () => void
 }
 
-export const Page: FC<PageProps> = ({ className, children, onPageScrolled }) => {
+export const Page: FC<PageProps> = (props) => {
+    const { className, children, onPageScrolled } = props
+
     const dispatch = useAppDispatch()
     const { pathname } = useLocation()
 
@@ -49,6 +52,7 @@ export const Page: FC<PageProps> = ({ className, children, onPageScrolled }) => 
             onScroll={onScroll}
             ref={wrapperRef}
             className={cls(styles.page, className)}
+            data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
             <div ref={elementRef} />

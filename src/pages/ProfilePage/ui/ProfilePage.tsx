@@ -20,7 +20,7 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     }
 
     return (
-        <Page className={cls(className)}>
+        <Page className={cls(className)} data-testid={'ProfilePage'}>
             <EditProfileCard profileId={id} />
         </Page>
     )

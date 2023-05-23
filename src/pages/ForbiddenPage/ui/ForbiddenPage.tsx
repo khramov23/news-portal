@@ -8,11 +8,11 @@ interface ForbiddenPageProps {
     className?: string
 }
 
-export const ForbiddenPage: FC<ForbiddenPageProps> = ({ className }) => {
+export const ForbiddenPage: FC<ForbiddenPageProps> = () => {
     const { t } = useTranslation()
 
     return (
-        <Page>
+        <Page data-testid={'ForbiddenPage'}>
             {t('Доступ запрещен')}
         </Page>
     )

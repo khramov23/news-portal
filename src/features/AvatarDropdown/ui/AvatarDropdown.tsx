@@ -51,7 +51,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = ({ className }) => {
 
     return (
         <Dropdown
-            trigger={<Avatar src={authData.avatar} size={35} />}
+            trigger={<Avatar src={authData.avatar} size={35} fallbackInverted />}
             direction={'bottom_right'}
             items={generateDropdownItems(authData)}
             className={cls(className)}

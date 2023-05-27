@@ -34,7 +34,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
     }
 
     return (
-        <Page className={cls(styles.articleDetailsPage, className)}>
+        <Page className={cls(styles.articleDetailsPage, className)} data-testid={'ArticleDetailsPage'}>
             <Button onClick={onBackToList}>{t('Вернуться к списку')}</Button>
             <ArticleDetails id={id} />
             <ArticleRating articleId={id} />

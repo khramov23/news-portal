@@ -77,7 +77,8 @@
                     "caseInsensitive": true
                 }
             }
-        ]
+        ],
+        "@typescript-eslint/no-namespace": "off"
     },
     "overrides": [
         {

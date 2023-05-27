@@ -1633,6 +1633,17 @@
       "roles": [
         "USER"
       ]
+    },
+    {
+      "id": "3",
+      "avatar": "https://sun9-17.userapi.com/impg/88g88JCZ_V_KoGfqpJ_Em5_V8mdEzf09II3waA/_1orgxg5Zfk.jpg?size=548x604&quality=96&sign=e5e8aaf92b430e5ca056c6343240fc2b&type=album",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN",
+        "MANAGER",
+        "USER"
+      ]
     }
   ],
   "profile": [
@@ -1656,6 +1667,17 @@
       "country": "Belarus",
       "city": "Минск",
       "username": "user",
+      "avatar": "https://sun9-17.userapi.com/impg/88g88JCZ_V_KoGfqpJ_Em5_V8mdEzf09II3waA/_1orgxg5Zfk.jpg?size=548x604&quality=96&sign=e5e8aaf92b430e5ca056c6343240fc2b&type=album"
+    },
+    {
+      "id": "3",
+      "firstname": "Тест",
+      "lastname": "Тестовый",
+      "age": 21,
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "Минск",
+      "username": "testuser",
       "avatar": "https://sun9-17.userapi.com/impg/88g88JCZ_V_KoGfqpJ_Em5_V8mdEzf09II3waA/_1orgxg5Zfk.jpg?size=548x604&quality=96&sign=e5e8aaf92b430e5ca056c6343240fc2b&type=album"
     }
   ],

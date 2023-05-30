@@ -76,7 +76,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
         />
     } else {
         content = (
-            <>
+            <div data-testid='ArticleDetails.Info'>
                 <div className={styles.avatarWrapper}>
                     <Avatar size={200} src={article?.img} />
                 </div>
@@ -90,7 +90,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = (props) => {
                     <Text text={article?.createdAt} />
                 </div>
                 {article?.blocks.map(renderBlock)}
-            </>
+            </div>
         )
     }
 

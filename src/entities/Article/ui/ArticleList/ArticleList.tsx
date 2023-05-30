@@ -79,7 +79,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
     }
 
     return (
-        <div className={cls(styles.articleList, className, styles[view])}>
+        <div data-testid='ArticleList' className={cls(styles.articleList, className, styles[view])}>
             {articles && articles.length > 0
                 ? articles.map(renderArticle)
                 : null

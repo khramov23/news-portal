@@ -25,14 +25,19 @@ export const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
     }
 
     return (
-        <form className={cls(styles.addCommentForm, className)} onSubmit={onSubmit}>
+        <form
+            className={cls(styles.addCommentForm, className)}
+            onSubmit={onSubmit}
+            data-testid='AddCommentForm'
+        >
             <Input
                 className={styles.input}
                 placeholder={t('Введите текст комментария')}
                 value={text}
                 onChange={onChangeText}
+                data-testid='AddCommentForm.Input'
             />
-            <Button>{t('Отправить')}</Button>
+            <Button data-testid='AddCommentForm.SendButton'>{t('Отправить')}</Button>
         </form>
     )
 })

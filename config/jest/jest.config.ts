@@ -4,6 +4,7 @@
  */
 
 import path from 'path'
+import '@testing-library/jest-dom/extend-expect'
 
 export default {
     // All imported modules in your tests should be mocked automatically

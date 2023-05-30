@@ -29,6 +29,8 @@
   "exclude": [
     "./scripts/createSlice",
     "./scripts/generate-visual-json-report.js",
-    "./reports/"
+    "./reports/",
+    "cypress/**/*",
+    "cypress.config.ts"
   ]
 }

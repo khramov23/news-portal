@@ -13,7 +13,7 @@ describe('Роутинг', () => {
             cy.get(selectByTestId('ProfilePage')).should('not.exist')
         })
 
-        it('Переход на не существующую страницу', () => {
+        it('Переход на несуществующую страницу', () => {
             cy.visit('/somethingNotExisting/bebebe')
             cy.get(selectByTestId('NotFoundPage')).should('exist')
         })

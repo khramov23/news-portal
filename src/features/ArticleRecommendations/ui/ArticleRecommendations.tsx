@@ -16,7 +16,7 @@ export const ArticleRecommendations: FC<ArticleRecommendationsProps> = memo(({ c
     const { t } = useTranslation()
 
     return (
-        <div className={className}>
+        <div className={className} data-testid='ArticleRecommendations'>
             <Text title={t('Рекомендации')} />
             <ArticleList
                 articles={recommendations}

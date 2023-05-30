@@ -100,6 +100,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     className={styles.input}
                     readonly={readonly}
                     type={'number'}
+                    data-testid={'ProfileCard.age'}
                 />
                 <Input
                     value={data?.city}
@@ -107,6 +108,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     placeholder={t('Ваш город')}
                     className={styles.input}
                     readonly={readonly}
+                    data-testid={'ProfileCard.city'}
                 />
                 <Input
                     value={data?.username}
@@ -114,6 +116,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     placeholder={t('Ваш псевдоним')}
                     className={styles.input}
                     readonly={readonly}
+                    data-testid={'ProfileCard.username'}
                 />
                 <Input
                     value={data?.avatar}
@@ -121,6 +124,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     placeholder={t('Ваш аватар')}
                     className={styles.input}
                     readonly={readonly}
+                    data-testid={'ProfileCard.avatar'}
                 />
                 <CurrencySelect
                     onChange={onChangeCurrency}
